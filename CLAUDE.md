@@ -14,7 +14,14 @@ Los HTML de la raíz y de `en/` se GENERAN: no los edites a mano. Mismo sistema 
      `pedidos` (Rappi / Uber Eats), `maps_url`, `resenas_url`, `reservas` (`null` = no se menciona).
    - GA4: `sitio.ga4_id` (`G-XXXX`). Search Console por meta: `sitio.search_console_meta`.
 2. `./build.sh` (python3 + `pip install jinja2 pillow`).
-3. `git add -A && git commit -m "…" && git push`. Pages publica en ~1 min.
+3. Publicar. La sesión de Claude NO tiene el repo vinculado (push directo da 403), así que se publica igual que ambymu.mx:
+   por el Chrome de Fernando (extensión Claude in Chrome; preferir la Mac Studio, siempre encendida, con su sesión de GitHub abierta).
+   Abrir `https://github.com/corporativo-wq/mu-burgerhouse/upload/main`, inyectar por JavaScript los archivos cambiados en
+   `input[type=file]` (DataTransfer + File con el contenido; los archivos vacíos se ignoran) o pedirle a Fernando que arrastre
+   la carpeta "Mu Web" (sin `_old/` ni `preview/`), poner el mensaje y hacer clic en "Commit changes". Esperar a que
+   termine "Processing your files" antes de navegar. Subir siempre `contenido.json` + los HTML regenerados (y `assets/`
+   si cambió el hash). Pages publica en ~1 min.
+   Copia espejo en la Mac: Documentos → "Mu Web" (iCloud), vía device_commit_files.
 4. Verificar en vivo (descargar las páginas publicadas y compararlas con el build).
 
 ## Estructura
@@ -45,4 +52,4 @@ Eventos clave en GA4: como_llegar, whatsapp, phone, menu_nav (sin valor monetari
 - Mu Nichupté: Av. Nichupté, SM 51 MZ 51 Lote 11, 77533 Cancún. Mismo horario que Mu 40. Tel +52 998 138 2813. Google 4.5 (2 716).
 - Redes: instagram.com/muburgerhouse · facebook.com/MUBURGERHOUSE · tiktok.com/@muburgerhouse
 - Proteína estimada (por carne cruda, ~18 g/100 g; wagyu ~16 g/100 g): smash ≈17 g, classic cut ≈34 g, wagyu ≈32 g. Big Mu (carne+queso+pan): sencilla ≈29 g, doble ≈50 g, triple ≈70 g. Campos `carnes[].proteina_g` e `items[].proteina`.
-- Fundación: 2017. Menú vigente: septiembre 2026 (sin la Burger en Nogada; la Croissant Burger se retiró el 2026-10-01).
+- Fundación: 2017. Menú vigente: octubre 2026 (sin la Burger en Nogada; la Croissant Burger se retiró el 2026-10-01). Precios oct 2026: Hawai 290/390, Deseo 260/390, Mu 2.0 390, Mezcalita/copeo Montelobos 220, Tehuacán 65, Megacero solo botella 1490, Beyond Meat +20.
