@@ -1,1521 +1,1524 @@
 {
- "_nota": "Fuente única de verdad del sitio muburgers.mx. Los HTML se generan con build.py; no se editan a mano. Un campo en null no se muestra.",
- "sitio": {
-  "dominio": "https://muburgers.mx",
-  "nombre": "Mu. Burgerhouse",
-  "nombre_corto": "Mu",
-  "idioma": "es-MX",
-  "fundacion": 2017,
-  "ga4_id": null,
-  "search_console_meta": null,
-  "tema": "#0a0a0a",
-  "version_menu": "septiembre 2026"
- },
- "marca": {
-  "colores": {
-   "ink": "#0a0a0a",
-   "paper": "#f2f0eb",
-   "paper_2": "#e6e3dc",
-   "amber": "#d8792a",
-   "amber_deep": "#a8521a"
+  "_nota": "Fuente única de verdad del sitio muburgers.mx. Los HTML se generan con build.py; no se editan a mano. Un campo en null no se muestra.",
+  "sitio": {
+    "dominio": "https://muburgers.mx",
+    "nombre": "Mu. Burgerhouse",
+    "nombre_corto": "Mu",
+    "idioma": "es-MX",
+    "fundacion": 2017,
+    "ga4_id": null,
+    "search_console_meta": null,
+    "tema": "#0a0a0a",
+    "version_menu": "octubre 2026"
   },
-  "tipografias": {
-   "display": "Archivo",
-   "mono": "JetBrains Mono"
-  },
-  "lema": {
-   "es": "Te damos lo que te gusta.",
-   "en": "fuck love, get burgers."
-  }
- },
- "precios": {
-  "ajuste_pct": 0,
-  "redondeo": 5,
-  "moneda": "MXN",
-  "_ayuda": "ajuste_pct sube/baja todos los precios en %; redondeo = múltiplo al que se redondea."
- },
- "redes": {
-  "instagram": "https://www.instagram.com/muburgerhouse/",
-  "facebook": "https://www.facebook.com/MUBURGERHOUSE/",
-  "tiktok": "https://www.tiktok.com/@muburgerhouse"
- },
- "contacto": {
-  "whatsapp": "+52 984 168 8926",
-  "whatsapp_texto": "Hola Mu",
-  "email": null
- },
- "sucursales": [
-  {
-   "slug": "mu-10",
-   "id": "mu-10",
-   "nombre": "Mu 10",
-   "nombre_largo": "Mu. Burgerhouse Av. 10",
-   "ciudad": "Playa del Carmen",
-   "codigo": "PDC",
-   "direccion": {
-    "calle": "10 Avenida Norte esq. Calle 24 Norte",
-    "colonia": "Gonzalo Guerrero",
-    "ciudad": "Playa del Carmen",
-    "estado": "Quintana Roo",
-    "cp": "77720",
-    "pais": "MX"
-   },
-   "geo": {
-    "lat": 20.6320391,
-    "lng": -87.0699401
-   },
-   "place_id": "ChIJWUazmOtDTo8R_e8vjRE4WOM",
-   "maps_url": "https://www.google.com/maps/search/?api=1&query=Mu.%20Burgerhouse%20AV10&query_place_id=ChIJWUazmOtDTo8R_e8vjRE4WOM",
-   "resenas_url": "https://search.google.com/local/writereview?placeid=ChIJWUazmOtDTo8R_e8vjRE4WOM",
-   "telefono": "+52 984 231 2980",
-   "whatsapp": null,
-   "horario": {
-    "lun": [
-     "13:30",
-     "23:30"
-    ],
-    "mar": [
-     "13:30",
-     "23:30"
-    ],
-    "mie": [
-     "13:30",
-     "23:30"
-    ],
-    "jue": [
-     "13:30",
-     "23:30"
-    ],
-    "vie": [
-     "13:30",
-     "23:30"
-    ],
-    "sab": [
-     "13:30",
-     "23:30"
-    ],
-    "dom": [
-     "13:30",
-     "23:30"
-    ]
-   },
-   "pedidos": [
-    {
-     "id": "rappi",
-     "nombre": "Rappi",
-     "url": "https://www.rappi.com.mx/restaurantes/1923511660-mu-burger-house"
+  "marca": {
+    "colores": {
+      "ink": "#0a0a0a",
+      "paper": "#f2f0eb",
+      "paper_2": "#e6e3dc",
+      "amber": "#d8792a",
+      "amber_deep": "#a8521a"
     },
-    {
-     "id": "ubereats",
-     "nombre": "Uber Eats",
-     "url": "https://www.ubereats.com/mx/store/mu-burgerhouse-10-av/SsQpNzotUz2phChIeYpF6A"
+    "tipografias": {
+      "display": "Archivo",
+      "mono": "JetBrains Mono"
+    },
+    "lema": {
+      "es": "Te damos lo que te gusta.",
+      "en": "fuck love, get burgers."
     }
-   ],
-   "reservas": null,
-   "referencia": null,
-   "calificacion_google": 4.6,
-   "resenas_google": 2761
   },
-  {
-   "slug": "mu-40",
-   "id": "mu-40",
-   "nombre": "Mu 40",
-   "nombre_largo": "Mu. Burgerhouse Av. 40",
-   "ciudad": "Playa del Carmen",
-   "codigo": "PDC",
-   "direccion": {
-    "calle": "40 Avenida Norte 11, entre calles 4 y 6",
-    "colonia": "Centro",
-    "ciudad": "Playa del Carmen",
-    "estado": "Quintana Roo",
-    "cp": "77710",
-    "pais": "MX"
-   },
-   "geo": {
-    "lat": 20.6287275,
-    "lng": -87.0798462
-   },
-   "place_id": "ChIJZ2duKCNDTo8RZebG_EipoNk",
-   "maps_url": "https://www.google.com/maps/search/?api=1&query=Mu.%20Burgerhouse%20AV40&query_place_id=ChIJZ2duKCNDTo8RZebG_EipoNk",
-   "resenas_url": "https://search.google.com/local/writereview?placeid=ChIJZ2duKCNDTo8RZebG_EipoNk",
-   "telefono": "+52 984 879 4525",
-   "whatsapp": null,
-   "horario": {
-    "lun": null,
-    "mar": [
-     "14:00",
-     "22:00"
-    ],
-    "mie": [
-     "14:00",
-     "22:00"
-    ],
-    "jue": [
-     "14:00",
-     "23:00"
-    ],
-    "vie": [
-     "14:00",
-     "23:00"
-    ],
-    "sab": [
-     "14:00",
-     "23:00"
-    ],
-    "dom": [
-     "14:00",
-     "22:00"
-    ]
-   },
-   "pedidos": [
+  "precios": {
+    "ajuste_pct": 0,
+    "redondeo": 5,
+    "moneda": "MXN",
+    "_ayuda": "ajuste_pct sube/baja todos los precios en %; redondeo = múltiplo al que se redondea."
+  },
+  "redes": {
+    "instagram": "https://www.instagram.com/muburgerhouse/",
+    "facebook": "https://www.facebook.com/MUBURGERHOUSE/",
+    "tiktok": "https://www.tiktok.com/@muburgerhouse"
+  },
+  "contacto": {
+    "whatsapp": "+52 984 168 8926",
+    "whatsapp_texto": "Hola Mu",
+    "email": null
+  },
+  "sucursales": [
     {
-     "id": "rappi",
-     "nombre": "Rappi",
-     "url": "https://www.rappi.com.mx/restaurantes/1923211723-mu-burger-house"
-    },
-    {
-     "id": "ubereats",
-     "nombre": "Uber Eats",
-     "url": "https://www.ubereats.com/mx/store/mu-burgerhouse-40-av-riviera-maya/ezhEVLDvSouClWustLN_WQ"
-    }
-   ],
-   "reservas": null,
-   "referencia": null,
-   "calificacion_google": 4.6,
-   "resenas_google": 5743
-  },
-  {
-   "slug": "mu-nichupte",
-   "id": "mu-nichupte",
-   "nombre": "Mu Nichupté",
-   "nombre_largo": "Mu. Burgerhouse Nichupté",
-   "ciudad": "Cancún",
-   "codigo": "CUN",
-   "direccion": {
-    "calle": "Av. Nichupté, SM 51 MZ 51 Lote 11",
-    "colonia": "Supermanzana 51",
-    "ciudad": "Cancún",
-    "estado": "Quintana Roo",
-    "cp": "77533",
-    "pais": "MX"
-   },
-   "geo": {
-    "lat": 21.1409895,
-    "lng": -86.8403249
-   },
-   "place_id": "ChIJX0vMGGsrTI8RcPrQUQYyh0U",
-   "maps_url": "https://www.google.com/maps/search/?api=1&query=Mu.%20Burgerhouse%20Nichupt%C3%A9&query_place_id=ChIJX0vMGGsrTI8RcPrQUQYyh0U",
-   "resenas_url": "https://search.google.com/local/writereview?placeid=ChIJX0vMGGsrTI8RcPrQUQYyh0U",
-   "telefono": "+52 998 138 2813",
-   "whatsapp": null,
-   "horario": {
-    "lun": null,
-    "mar": [
-     "14:00",
-     "22:00"
-    ],
-    "mie": [
-     "14:00",
-     "22:00"
-    ],
-    "jue": [
-     "14:00",
-     "23:00"
-    ],
-    "vie": [
-     "14:00",
-     "23:00"
-    ],
-    "sab": [
-     "14:00",
-     "23:00"
-    ],
-    "dom": [
-     "14:00",
-     "22:00"
-    ]
-   },
-   "pedidos": [
-    {
-     "id": "rappi",
-     "nombre": "Rappi",
-     "url": "https://www.rappi.com.mx/restaurantes/1306714367-mu-burger-house"
-    },
-    {
-     "id": "ubereats",
-     "nombre": "Uber Eats",
-     "url": "https://www.ubereats.com/mx/store/mu-burgerhouse-nichupte-cancun/euBM5f10RXm8_LsYcm4HSQ"
-    }
-   ],
-   "reservas": null,
-   "referencia": null,
-   "calificacion_google": 4.5,
-   "resenas_google": 2716
-  }
- ],
- "seo": {
-  "inicio": {
-   "title": {
-    "es": "Mu. Burgerhouse · Hamburguesas en Playa del Carmen y Cancún",
-    "en": "Mu. Burgerhouse · Burgers in Playa del Carmen & Cancún"
-   },
-   "description": {
-    "es": "Hamburguesas smash, classic cut y wagyu con papas incluidas. Tres sucursales: Mu 10 y Mu 40 en Playa del Carmen y Mu Nichupté en Cancún. Menú, horarios y pedidos.",
-    "en": "Smash, classic cut and wagyu burgers, fries included. Three locations: Mu 10 and Mu 40 in Playa del Carmen and Mu Nichupté in Cancún. Menu, hours and delivery."
-   }
-  },
-  "menu": {
-   "title": {
-    "es": "Menú · Mu. Burgerhouse",
-    "en": "Menu · Mu. Burgerhouse"
-   },
-   "description": {
-    "es": "Menú completo de Mu. Burgerhouse con precios en MXN: burgers smash, classic cut y wagyu, Big Mu Cheese Burger, hot dogs, entradas, bar y vino mexicano.",
-    "en": "Full Mu. Burgerhouse menu with prices in MXN: smash, classic cut and wagyu burgers, Big Mu Cheese Burger, hot dogs, starters, bar and Mexican wine."
-   }
-  },
-  "sucursal": {
-   "title": {
-    "es": "{nombre} · Hamburguesas en {ciudad} · Mu. Burgerhouse",
-    "en": "{nombre} · Burgers in {ciudad} · Mu. Burgerhouse"
-   },
-   "description": {
-    "es": "{nombre_largo} en {ciudad}: dirección, horario, teléfono, cómo llegar y pedidos a domicilio. Hamburguesas smash, classic cut y wagyu.",
-    "en": "{nombre_largo} in {ciudad}: address, hours, phone, directions and delivery. Smash, classic cut and wagyu burgers."
-   }
-  },
-  "og_imagen": "/og.jpg"
- },
- "textos": {
-  "hero_titulo": {
-   "es": "Te damos lo que te gusta.",
-   "en": "Te damos lo que te gusta."
-  },
-  "hero_producto": {
-   "es": "(Una hamburguesa llamada Deseo)",
-   "en": "(A burger called Deseo)"
-  },
-  "hero_lead": {
-   "es": "Tocino, hongos salteados, queso fundido y salsa secreta Mu. 255 / 380.",
-   "en": "Bacon, sautéed mushrooms, melted cheese and Mu secret sauce. 255 / 380."
-  },
-  "carnes_kicker": {
-   "es": "Tú eliges la base",
-   "en": "You pick the base"
-  },
-  "nuevo_titulo": {
-   "es": "Lo nuevo",
-   "en": "What's new"
-  },
-  "burgers_titulo": {
-   "es": "Las burgers",
-   "en": "The burgers"
-  },
-  "juego_desc": {
-   "es": "Los ingredientes caen desde arriba, cada vez más rápido y más chuecos. Tú mueves el pan con el dedo, el mouse o las flechas para que caigan encima. No hay límite: la torre crece hasta que un ingrediente toque el piso o la torre se incline de más. Un solo error y se acabó.",
-   "en": "Ingredients fall from the top, faster and more crooked each time. Move the bun with your finger, mouse or arrow keys so they land on it. No limit: the tower grows until an ingredient hits the floor or the tower leans too far. One mistake and it's over."
-  },
-  "ticker": {
-   "es": [
-    "Mu",
-    "Burgerhouse",
-    "Playa del Carmen",
-    "Cancún",
-    "Smash",
-    "Classic cut",
-    "Wagyu",
-    "Papas incluidas"
-   ],
-   "en": [
-    "Mu",
-    "Burgerhouse",
-    "Playa del Carmen",
-    "Cancún",
-    "Smash",
-    "Classic cut",
-    "Wagyu",
-    "Fries included"
-   ]
-  },
-  "menu_notas": {
-   "es": "Precios en pesos mexicanos. Papas fritas incluidas en todas las burgers. Impossible burger +50.",
-   "en": "Prices in Mexican pesos. Fries included with every burger. Impossible burger +50."
-  },
-  "solo_en": {
-   "es": "Solo en Mu Av. 40 y Mu Nichupté",
-   "en": "Only at Mu Av. 40 & Mu Nichupté"
-  },
-  "nosotros": null,
-  "proteina_nota": {
-   "es": "Proteína estimada por carne, antes de cocinar.",
-   "en": "Estimated protein per patty, raw weight."
-  }
- },
- "faq": [],
- "destacados": [
-  "croquetas",
-  "queseria",
-  "hawai",
-  "ensalada-roja",
-  "hotdog-queso"
- ],
- "vitrina": [
-  "deseo",
-  "hawai",
-  "aguacatona",
-  "reina"
- ],
- "carnes": [
-  {
-   "id": "smash",
-   "name": {
-    "es": "Smash",
-    "en": "Smash"
-   },
-   "grams": "90 g",
-   "desc": {
-    "es": "Carne aplastada, delgada y con una costra crujiente. Sin términos.",
-    "en": "Thin, smashed patty with a crisp sear. Always well done."
-   },
-   "proteina_g": 17
-  },
-  {
-   "id": "classic",
-   "name": {
-    "es": "Classic cut",
-    "en": "Classic cut"
-   },
-   "grams": "180 g",
-   "desc": {
-    "es": "Carne gruesa y jugosa. Solo término medio y 3/4.",
-    "en": "Thick, juicy patty, cooked to medium or medium-well only."
-   },
-   "proteina_g": 34
-  },
-  {
-   "id": "wagyu",
-   "name": {
-    "es": "Wagyu",
-    "en": "Wagyu"
-   },
-   "grams": "200 g",
-   "desc": {
-    "es": "Mezcla premium, marmoleada. Más carne, más sabor, más jugosa.",
-    "en": "Marbled premium blend. More meat, more flavor, extra juicy."
-   },
-   "proteina_g": 32
-  }
- ],
- "menu": {
-  "secciones": [
-   {
-    "id": "especiales",
-    "tab": {
-     "es": "Especiales",
-     "en": "Specials"
-    },
-    "layout": "photos",
-    "nota": {
-     "es": "Lo nuevo y lo de temporada",
-     "en": "New & seasonal"
-    },
-    "items": [
-     {
-      "n": {
-       "es": "Croquetas de plátano",
-       "en": "Plantain croquettes"
+      "slug": "mu-10",
+      "id": "mu-10",
+      "nombre": "Mu 10",
+      "nombre_largo": "Mu. Burgerhouse Av. 10",
+      "ciudad": "Playa del Carmen",
+      "codigo": "PDC",
+      "direccion": {
+        "calle": "10 Avenida Norte esq. Calle 24 Norte",
+        "colonia": "Gonzalo Guerrero",
+        "ciudad": "Playa del Carmen",
+        "estado": "Quintana Roo",
+        "cp": "77720",
+        "pais": "MX"
       },
-      "p": 120,
-      "d": {
-       "es": "Plátano macho, queso oaxaca, aderezo de chipotle, queso parmesano, toque de cilantro.",
-       "en": "Sweet plantain, oaxaca cheese, chipotle dressing, parmesan, a touch of cilantro."
+      "geo": {
+        "lat": 20.6320391,
+        "lng": -87.0699401
       },
-      "tags": [
-       "new"
+      "place_id": "ChIJWUazmOtDTo8R_e8vjRE4WOM",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Mu.%20Burgerhouse%20AV10&query_place_id=ChIJWUazmOtDTo8R_e8vjRE4WOM",
+      "resenas_url": "https://search.google.com/local/writereview?placeid=ChIJWUazmOtDTo8R_e8vjRE4WOM",
+      "telefono": "+52 984 231 2980",
+      "whatsapp": null,
+      "horario": {
+        "lun": [
+          "13:30",
+          "23:30"
+        ],
+        "mar": [
+          "13:30",
+          "23:30"
+        ],
+        "mie": [
+          "13:30",
+          "23:30"
+        ],
+        "jue": [
+          "13:30",
+          "23:30"
+        ],
+        "vie": [
+          "13:30",
+          "23:30"
+        ],
+        "sab": [
+          "13:30",
+          "23:30"
+        ],
+        "dom": [
+          "13:30",
+          "23:30"
+        ]
+      },
+      "pedidos": [
+        {
+          "id": "rappi",
+          "nombre": "Rappi",
+          "url": "https://www.rappi.com.mx/restaurantes/1923511660-mu-burger-house"
+        },
+        {
+          "id": "ubereats",
+          "nombre": "Uber Eats",
+          "url": "https://www.ubereats.com/mx/store/mu-burgerhouse-10-av/SsQpNzotUz2phChIeYpF6A"
+        }
       ],
-      "solo_en": [
-       "mu-40",
-       "mu-nichupte"
+      "reservas": null,
+      "referencia": null,
+      "calificacion_google": 4.6,
+      "resenas_google": 2761
+    },
+    {
+      "slug": "mu-40",
+      "id": "mu-40",
+      "nombre": "Mu 40",
+      "nombre_largo": "Mu. Burgerhouse Av. 40",
+      "ciudad": "Playa del Carmen",
+      "codigo": "PDC",
+      "direccion": {
+        "calle": "40 Avenida Norte 11, entre calles 4 y 6",
+        "colonia": "Centro",
+        "ciudad": "Playa del Carmen",
+        "estado": "Quintana Roo",
+        "cp": "77710",
+        "pais": "MX"
+      },
+      "geo": {
+        "lat": 20.6287275,
+        "lng": -87.0798462
+      },
+      "place_id": "ChIJZ2duKCNDTo8RZebG_EipoNk",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Mu.%20Burgerhouse%20AV40&query_place_id=ChIJZ2duKCNDTo8RZebG_EipoNk",
+      "resenas_url": "https://search.google.com/local/writereview?placeid=ChIJZ2duKCNDTo8RZebG_EipoNk",
+      "telefono": "+52 984 879 4525",
+      "whatsapp": null,
+      "horario": {
+        "lun": null,
+        "mar": [
+          "14:00",
+          "22:00"
+        ],
+        "mie": [
+          "14:00",
+          "22:00"
+        ],
+        "jue": [
+          "14:00",
+          "23:00"
+        ],
+        "vie": [
+          "14:00",
+          "23:00"
+        ],
+        "sab": [
+          "14:00",
+          "23:00"
+        ],
+        "dom": [
+          "14:00",
+          "22:00"
+        ]
+      },
+      "pedidos": [
+        {
+          "id": "rappi",
+          "nombre": "Rappi",
+          "url": "https://www.rappi.com.mx/restaurantes/1923211723-mu-burger-house"
+        },
+        {
+          "id": "ubereats",
+          "nombre": "Uber Eats",
+          "url": "https://www.ubereats.com/mx/store/mu-burgerhouse-40-av-riviera-maya/ezhEVLDvSouClWustLN_WQ"
+        }
       ],
-      "foto": "croquetas",
-      "id": "croquetas"
-     },
-     {
-      "n": {
-       "es": "Hawai de vacaciones",
-       "en": "Hawai de vacaciones"
+      "reservas": null,
+      "referencia": null,
+      "calificacion_google": 4.6,
+      "resenas_google": 5743
+    },
+    {
+      "slug": "mu-nichupte",
+      "id": "mu-nichupte",
+      "nombre": "Mu Nichupté",
+      "nombre_largo": "Mu. Burgerhouse Nichupté",
+      "ciudad": "Cancún",
+      "codigo": "CUN",
+      "direccion": {
+        "calle": "Av. Nichupté, SM 51 MZ 51 Lote 11",
+        "colonia": "Supermanzana 51",
+        "ciudad": "Cancún",
+        "estado": "Quintana Roo",
+        "cp": "77533",
+        "pais": "MX"
       },
-      "p": 255,
-      "d": {
-       "es": "Piña asada, tocino, queso fundido y salsa de la casa.",
-       "en": "Grilled pineapple, bacon, melted cheese and house sauce."
+      "geo": {
+        "lat": 21.1409895,
+        "lng": -86.8403249
       },
-      "p_nota": {
-       "es": "angus / wagyu",
-       "en": "angus / wagyu"
+      "place_id": "ChIJX0vMGGsrTI8RcPrQUQYyh0U",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Mu.%20Burgerhouse%20Nichupt%C3%A9&query_place_id=ChIJX0vMGGsrTI8RcPrQUQYyh0U",
+      "resenas_url": "https://search.google.com/local/writereview?placeid=ChIJX0vMGGsrTI8RcPrQUQYyh0U",
+      "telefono": "+52 998 138 2813",
+      "whatsapp": null,
+      "horario": {
+        "lun": null,
+        "mar": [
+          "14:00",
+          "22:00"
+        ],
+        "mie": [
+          "14:00",
+          "22:00"
+        ],
+        "jue": [
+          "14:00",
+          "23:00"
+        ],
+        "vie": [
+          "14:00",
+          "23:00"
+        ],
+        "sab": [
+          "14:00",
+          "23:00"
+        ],
+        "dom": [
+          "14:00",
+          "22:00"
+        ]
       },
-      "foto": "hawai",
-      "recorte": "hawai-cut",
-      "id": "hawai",
-      "variantes": {
-       "angus": 255,
-       "wagyu": 380
+      "pedidos": [
+        {
+          "id": "rappi",
+          "nombre": "Rappi",
+          "url": "https://www.rappi.com.mx/restaurantes/1306714367-mu-burger-house"
+        },
+        {
+          "id": "ubereats",
+          "nombre": "Uber Eats",
+          "url": "https://www.ubereats.com/mx/store/mu-burgerhouse-nichupte-cancun/euBM5f10RXm8_LsYcm4HSQ"
+        }
+      ],
+      "reservas": null,
+      "referencia": null,
+      "calificacion_google": 4.5,
+      "resenas_google": 2716
+    }
+  ],
+  "seo": {
+    "inicio": {
+      "title": {
+        "es": "Mu. Burgerhouse · Hamburguesas en Playa del Carmen y Cancún",
+        "en": "Mu. Burgerhouse · Burgers in Playa del Carmen & Cancún"
+      },
+      "description": {
+        "es": "Hamburguesas smash, classic cut y wagyu con papas incluidas. Tres sucursales: Mu 10 y Mu 40 en Playa del Carmen y Mu Nichupté en Cancún. Menú, horarios y pedidos.",
+        "en": "Smash, classic cut and wagyu burgers, fries included. Three locations: Mu 10 and Mu 40 in Playa del Carmen and Mu Nichupté in Cancún. Menu, hours and delivery."
       }
-     },
-     {
-      "n": {
-       "es": "Una hamburguesa llamada Deseo",
-       "en": "A burger called Deseo"
+    },
+    "menu": {
+      "title": {
+        "es": "Menú · Mu. Burgerhouse",
+        "en": "Menu · Mu. Burgerhouse"
       },
-      "p": 255,
-      "d": {
-       "es": "Tocino, hongos salteados, queso fundido y salsa secreta Mu.",
-       "en": "Bacon, sautéed mushrooms, melted cheese and Mu secret sauce."
-      },
-      "p_nota": {
-       "es": "angus / wagyu",
-       "en": "angus / wagyu"
-      },
-      "foto": "deseo",
-      "recorte": "deseo-cut",
-      "id": "deseo",
-      "variantes": {
-       "angus": 255,
-       "wagyu": 380
+      "description": {
+        "es": "Menú completo de Mu. Burgerhouse con precios en MXN: burgers smash, classic cut y wagyu, Big Mu Cheese Burger, hot dogs, entradas, bar y vino mexicano.",
+        "en": "Full Mu. Burgerhouse menu with prices in MXN: smash, classic cut and wagyu burgers, Big Mu Cheese Burger, hot dogs, starters, bar and Mexican wine."
       }
-     },
-     {
-      "n": {
-       "es": "Quesería de mí sin ti",
-       "en": "Quesería de mí sin ti"
-      },
-      "p": 250,
-      "d": {
-       "es": "Carne angus, queso oaxaca, sobre una chilaca caliente, cebolla parrillada, bañada con nuestra salsa de queso y jalapeño.",
-       "en": "Angus patty, oaxaca cheese, on a hot chilaca pepper, grilled onions, covered in our cheese & jalapeño sauce."
-      },
-      "foto": "queseria",
-      "id": "queseria"
-     },
-     {
-      "n": {
-       "es": "La Reina Trufada",
-       "en": "Truffle Queen"
-      },
-      "p": 395,
-      "d": {
-       "es": "200 g wagyu-cross burger, mayo trufada, miel de trufa, queso cheddar, harto parmesano.",
-       "en": "200 g wagyu-cross patty, truffle mayo, truffle honey, cheddar, lots of parmesan."
-      },
-      "p_nota": {
-       "es": "wagyu",
-       "en": "wagyu"
-      },
-      "foto": "reina-trufada",
-      "recorte": "reina-cut",
-      "id": "reina"
-     },
-     {
-      "n": {
-       "es": "Dedos de queso",
-       "en": "Cheese fingers"
-      },
-      "p": 160,
-      "d": {
-       "es": "Queso cheddar crujiente, miel de trufa y salsa secreta Mu.",
-       "en": "Crispy cheddar, truffle honey and Mu secret sauce."
-      },
-      "foto": "dedos-queso",
-      "id": "dedos"
-     },
-     {
-      "n": {
-       "es": "Costillas de elote",
-       "en": "Grilled corn ribs"
-      },
-      "p": 160,
-      "d": {
-       "es": "Elote amarillo con menjurjes Mu: mayo chipotle, cajún, parmesano, cilantro.",
-       "en": "Yellow corn ribs with Mu fixings: chipotle mayo, cajun, parmesan, cilantro."
-      },
-      "foto": "costillas-elote",
-      "id": "costillas"
-     },
-     {
-      "n": {
-       "es": "Hot dog queso, tocino y jalapeño",
-       "en": "Cheese, bacon & jalapeño hot dog"
-      },
-      "p": 80,
-      "d": {
-       "es": "Salchicha de res premium, tocino, queso oaxaca, salsa de queso y jalapeño.",
-       "en": "Premium beef sausage, bacon, oaxaca cheese, cheese & jalapeño sauce."
-      },
-      "solo_en": [
-       "mu-40",
-       "mu-nichupte"
-      ],
-      "foto": "hotdog-queso",
-      "recorte": "hotdog-cut",
-      "id": "hotdog-queso"
-     },
-     {
-      "n": {
-       "es": "Ensalada roja",
-       "en": "Red salad"
-      },
-      "p": 120,
-      "d": {
-       "es": "Arúgula, compota de frutos rojos con chipotle, croquetas de queso de cabra con bites de tocino, mix de nueces.",
-       "en": "Arugula, berry & chipotle compote, goat cheese croquettes with bacon bites, mixed nuts."
-      },
-      "solo_en": [
-       "mu-40",
-       "mu-nichupte"
-      ],
-      "foto": "ensalada-roja",
-      "id": "ensalada-roja"
-     },
-     {
-      "n": {
-       "es": "Mezcalita, Margarita, Mojito & Daiquiri",
-       "en": "Mezcalita, Margarita, Mojito & Daiquiri"
-      },
-      "p": 99,
-      "d": {
-       "es": "Escoge tu coctel con destilado de la casa. Sabores: jamaica, maracuyá-ginger, mango.",
-       "en": "Pick your cocktail with house spirits. Flavors: hibiscus, passion fruit-ginger, mango."
-      },
-      "foto": "cocteles",
-      "id": "cocteles"
-     }
-    ]
-   },
-   {
-    "id": "burgers",
-    "tab": {
-     "es": "Burgers",
-     "en": "Burgers"
     },
-    "layout": "burgers",
-    "nota": {
-     "es": "Papas fritas incluidas · Impossible burger +50",
-     "en": "Fries included · Impossible burger +50"
+    "sucursal": {
+      "title": {
+        "es": "{nombre} · Hamburguesas en {ciudad} · Mu. Burgerhouse",
+        "en": "{nombre} · Burgers in {ciudad} · Mu. Burgerhouse"
+      },
+      "description": {
+        "es": "{nombre_largo} en {ciudad}: dirección, horario, teléfono, cómo llegar y pedidos a domicilio. Hamburguesas smash, classic cut y wagyu.",
+        "en": "{nombre_largo} in {ciudad}: address, hours, phone, directions and delivery. Smash, classic cut and wagyu burgers."
+      }
     },
-    "columnas": [
-     {
+    "og_imagen": "/og.jpg"
+  },
+  "textos": {
+    "hero_titulo": {
+      "es": "Te damos lo que te gusta.",
+      "en": "Te damos lo que te gusta."
+    },
+    "hero_producto": {
+      "es": "(Una hamburguesa llamada Deseo)",
+      "en": "(A burger called Deseo)"
+    },
+    "hero_lead": {
+      "es": "Tocino, hongos salteados, queso fundido y salsa secreta Mu. 260 / 390.",
+      "en": "Bacon, sautéed mushrooms, melted cheese and Mu secret sauce. 260 / 390."
+    },
+    "carnes_kicker": {
+      "es": "Tú eliges la base",
+      "en": "You pick the base"
+    },
+    "nuevo_titulo": {
+      "es": "Lo nuevo",
+      "en": "What's new"
+    },
+    "burgers_titulo": {
+      "es": "Las burgers",
+      "en": "The burgers"
+    },
+    "juego_desc": {
+      "es": "Los ingredientes caen desde arriba, cada vez más rápido y más chuecos. Tú mueves el pan con el dedo, el mouse o las flechas para que caigan encima. No hay límite: la torre crece hasta que un ingrediente toque el piso o la torre se incline de más. Un solo error y se acabó.",
+      "en": "Ingredients fall from the top, faster and more crooked each time. Move the bun with your finger, mouse or arrow keys so they land on it. No limit: the tower grows until an ingredient hits the floor or the tower leans too far. One mistake and it's over."
+    },
+    "ticker": {
+      "es": [
+        "Mu",
+        "Burgerhouse",
+        "Playa del Carmen",
+        "Cancún",
+        "Smash",
+        "Classic cut",
+        "Wagyu",
+        "Papas incluidas"
+      ],
+      "en": [
+        "Mu",
+        "Burgerhouse",
+        "Playa del Carmen",
+        "Cancún",
+        "Smash",
+        "Classic cut",
+        "Wagyu",
+        "Fries included"
+      ]
+    },
+    "menu_notas": {
+      "es": "Precios en pesos mexicanos. Papas fritas incluidas en todas las burgers. Beyond Meat (carne vegana) +20.",
+      "en": "Prices in Mexican pesos. Fries included with every burger. Beyond Meat (vegan patty) +20."
+    },
+    "solo_en": {
+      "es": "Solo en Mu Av. 40 y Mu Nichupté",
+      "en": "Only at Mu Av. 40 & Mu Nichupté"
+    },
+    "nosotros": null,
+    "proteina_nota": {
+      "es": "Proteína estimada por carne, antes de cocinar.",
+      "en": "Estimated protein per patty, raw weight."
+    }
+  },
+  "faq": [],
+  "destacados": [
+    "croquetas",
+    "queseria",
+    "hawai",
+    "ensalada-roja",
+    "hotdog-queso"
+  ],
+  "vitrina": [
+    "deseo",
+    "hawai",
+    "aguacatona",
+    "reina"
+  ],
+  "carnes": [
+    {
       "id": "smash",
-      "es": "smash",
-      "en": "smash"
-     },
-     {
-      "id": "doble",
-      "es": "smash doble ó classic cut",
-      "en": "double smash or classic cut"
-     },
-     {
+      "name": {
+        "es": "Smash",
+        "en": "Smash"
+      },
+      "grams": "90 g",
+      "desc": {
+        "es": "Carne aplastada, delgada y con una costra crujiente. Sin términos.",
+        "en": "Thin, smashed patty with a crisp sear. Always well done."
+      },
+      "proteina_g": 17
+    },
+    {
+      "id": "classic",
+      "name": {
+        "es": "Classic cut",
+        "en": "Classic cut"
+      },
+      "grams": "180 g",
+      "desc": {
+        "es": "Carne gruesa y jugosa. Solo término medio y 3/4.",
+        "en": "Thick, juicy patty, cooked to medium or medium-well only."
+      },
+      "proteina_g": 34
+    },
+    {
       "id": "wagyu",
-      "es": "wagyu",
-      "en": "wagyu"
-     }
-    ],
-    "items": [
-     {
-      "n": {
-       "es": "La Lolita",
-       "en": "La Lolita"
+      "name": {
+        "es": "Wagyu",
+        "en": "Wagyu"
       },
-      "p": 160,
-      "d": {
-       "es": "Queso azul, arúgula baby, cebolla caramelizada, tomate fresco.",
-       "en": "Sourdough bun, blue cheese, baby arugula, caramelized onions, tomato."
+      "grams": "200 g",
+      "desc": {
+        "es": "Mezcla premium, marmoleada. Más carne, más sabor, más jugosa.",
+        "en": "Marbled premium blend. More meat, more flavor, extra juicy."
       },
-      "variantes": {
-       "smash": 160,
-       "doble": 240,
-       "wagyu": 350
+      "proteina_g": 32
+    }
+  ],
+  "menu": {
+    "secciones": [
+      {
+        "id": "especiales",
+        "tab": {
+          "es": "Especiales",
+          "en": "Specials"
+        },
+        "layout": "photos",
+        "nota": {
+          "es": "Lo nuevo y lo de temporada",
+          "en": "New & seasonal"
+        },
+        "items": [
+          {
+            "n": {
+              "es": "Croquetas de plátano",
+              "en": "Plantain croquettes"
+            },
+            "p": 120,
+            "d": {
+              "es": "Plátano macho, queso oaxaca, aderezo de chipotle, queso parmesano, toque de cilantro.",
+              "en": "Sweet plantain, oaxaca cheese, chipotle dressing, parmesan, a touch of cilantro."
+            },
+            "tags": [
+              "new"
+            ],
+            "solo_en": [
+              "mu-40",
+              "mu-nichupte"
+            ],
+            "foto": "croquetas",
+            "id": "croquetas"
+          },
+          {
+            "n": {
+              "es": "Hawai de vacaciones",
+              "en": "Hawai de vacaciones"
+            },
+            "p": 290,
+            "d": {
+              "es": "Piña asada, tocino, queso fundido y salsa de la casa.",
+              "en": "Grilled pineapple, bacon, melted cheese and house sauce."
+            },
+            "p_nota": {
+              "es": "angus / wagyu",
+              "en": "angus / wagyu"
+            },
+            "foto": "hawai",
+            "recorte": "hawai-cut",
+            "id": "hawai",
+            "variantes": {
+              "angus": 290,
+              "wagyu": 390
+            }
+          },
+          {
+            "n": {
+              "es": "Una hamburguesa llamada Deseo",
+              "en": "A burger called Deseo"
+            },
+            "p": 260,
+            "d": {
+              "es": "Tocino, hongos salteados, queso fundido y salsa secreta Mu.",
+              "en": "Bacon, sautéed mushrooms, melted cheese and Mu secret sauce."
+            },
+            "p_nota": {
+              "es": "angus / wagyu",
+              "en": "angus / wagyu"
+            },
+            "foto": "deseo",
+            "recorte": "deseo-cut",
+            "id": "deseo",
+            "variantes": {
+              "angus": 260,
+              "wagyu": 390
+            }
+          },
+          {
+            "n": {
+              "es": "Quesería de mí sin ti",
+              "en": "Quesería de mí sin ti"
+            },
+            "p": 250,
+            "d": {
+              "es": "Carne angus, queso oaxaca, sobre una chilaca caliente, cebolla parrillada, bañada con nuestra salsa de queso y jalapeño.",
+              "en": "Angus patty, oaxaca cheese, on a hot chilaca pepper, grilled onions, covered in our cheese & jalapeño sauce."
+            },
+            "foto": "queseria",
+            "id": "queseria"
+          },
+          {
+            "n": {
+              "es": "La Reina Trufada",
+              "en": "Truffle Queen"
+            },
+            "p": 395,
+            "d": {
+              "es": "200 g wagyu-cross burger, mayo trufada, miel de trufa, queso cheddar, harto parmesano.",
+              "en": "200 g wagyu-cross patty, truffle mayo, truffle honey, cheddar, lots of parmesan."
+            },
+            "p_nota": {
+              "es": "wagyu",
+              "en": "wagyu"
+            },
+            "foto": "reina-trufada",
+            "recorte": "reina-cut",
+            "id": "reina"
+          },
+          {
+            "n": {
+              "es": "Dedos de queso",
+              "en": "Cheese fingers"
+            },
+            "p": 160,
+            "d": {
+              "es": "Queso cheddar crujiente, miel de trufa y salsa secreta Mu.",
+              "en": "Crispy cheddar, truffle honey and Mu secret sauce."
+            },
+            "foto": "dedos-queso",
+            "id": "dedos"
+          },
+          {
+            "n": {
+              "es": "Costillas de elote",
+              "en": "Grilled corn ribs"
+            },
+            "p": 160,
+            "d": {
+              "es": "Elote amarillo con menjurjes Mu: mayo chipotle, cajún, parmesano, cilantro.",
+              "en": "Yellow corn ribs with Mu fixings: chipotle mayo, cajun, parmesan, cilantro."
+            },
+            "foto": "costillas-elote",
+            "id": "costillas"
+          },
+          {
+            "n": {
+              "es": "Hot dog queso, tocino y jalapeño",
+              "en": "Cheese, bacon & jalapeño hot dog"
+            },
+            "p": 80,
+            "d": {
+              "es": "Salchicha de res premium, tocino, queso oaxaca, salsa de queso y jalapeño.",
+              "en": "Premium beef sausage, bacon, oaxaca cheese, cheese & jalapeño sauce."
+            },
+            "solo_en": [
+              "mu-40",
+              "mu-nichupte"
+            ],
+            "foto": "hotdog-queso",
+            "recorte": "hotdog-cut",
+            "id": "hotdog-queso"
+          },
+          {
+            "n": {
+              "es": "Ensalada roja",
+              "en": "Red salad"
+            },
+            "p": 120,
+            "d": {
+              "es": "Arúgula, compota de frutos rojos con chipotle, croquetas de queso de cabra con bites de tocino, mix de nueces.",
+              "en": "Arugula, berry & chipotle compote, goat cheese croquettes with bacon bites, mixed nuts."
+            },
+            "solo_en": [
+              "mu-40",
+              "mu-nichupte"
+            ],
+            "foto": "ensalada-roja",
+            "id": "ensalada-roja"
+          },
+          {
+            "n": {
+              "es": "Mezcalita, Margarita, Mojito & Daiquiri",
+              "en": "Mezcalita, Margarita, Mojito & Daiquiri"
+            },
+            "p": 99,
+            "d": {
+              "es": "Escoge tu coctel con destilado de la casa. Sabores: jamaica, maracuyá-ginger, mango.",
+              "en": "Pick your cocktail with house spirits. Flavors: hibiscus, passion fruit-ginger, mango."
+            },
+            "foto": "cocteles",
+            "id": "cocteles"
+          }
+        ]
       },
-      "id": "lolita"
-     },
-     {
-      "n": {
-       "es": "Aguacatona",
-       "en": "Aguacatona"
+      {
+        "id": "burgers",
+        "tab": {
+          "es": "Burgers",
+          "en": "Burgers"
+        },
+        "layout": "burgers",
+        "nota": {
+          "es": "Papas fritas incluidas · Impossible burger +50",
+          "en": "Fries included · Impossible burger +50"
+        },
+        "columnas": [
+          {
+            "id": "smash",
+            "es": "smash",
+            "en": "smash"
+          },
+          {
+            "id": "doble",
+            "es": "smash doble ó classic cut",
+            "en": "double smash or classic cut"
+          },
+          {
+            "id": "wagyu",
+            "es": "wagyu",
+            "en": "wagyu"
+          }
+        ],
+        "items": [
+          {
+            "n": {
+              "es": "La Lolita",
+              "en": "La Lolita"
+            },
+            "p": 160,
+            "d": {
+              "es": "Queso azul, arúgula baby, cebolla caramelizada, tomate fresco.",
+              "en": "Sourdough bun, blue cheese, baby arugula, caramelized onions, tomato."
+            },
+            "variantes": {
+              "smash": 160,
+              "doble": 240,
+              "wagyu": 350
+            },
+            "id": "lolita"
+          },
+          {
+            "n": {
+              "es": "Aguacatona",
+              "en": "Aguacatona"
+            },
+            "p": 195,
+            "d": {
+              "es": "Medio aguacate, chimichurri, queso oaxaca, chicharrón crujiente.",
+              "en": "Sourdough bun, avocado, oaxaca cheese, crunchy chicharrón, chimichurri."
+            },
+            "variantes": {
+              "smash": 195,
+              "doble": 285,
+              "wagyu": 390
+            },
+            "recorte": "aguacatona-cut",
+            "id": "aguacatona"
+          },
+          {
+            "n": {
+              "es": "Granja",
+              "en": "Granja"
+            },
+            "p": 160,
+            "d": {
+              "es": "Costra de dijon, tocino, queso oaxaca, cebolla picada, mayo xcatic.",
+              "en": "Sourdough bun, dijon crust, crunchy bacon, oaxaca cheese, onions, xcatic mayo."
+            },
+            "variantes": {
+              "smash": 160,
+              "doble": 240,
+              "wagyu": 350
+            },
+            "id": "granja"
+          },
+          {
+            "n": {
+              "es": "Me haces sentir en el cielo",
+              "en": "Me haces sentir en el cielo"
+            },
+            "p": 180,
+            "d": {
+              "es": "Carne envuelta en tocino, cheddar, laqueada de maple, cebolla parrillada.",
+              "en": "Sourdough bun, bacon-wrapped patty, maple syrup, cheddar, grilled onions."
+            },
+            "variantes": {
+              "smash": 180,
+              "doble": 280,
+              "wagyu": 390
+            },
+            "id": "cielo"
+          },
+          {
+            "n": {
+              "es": "Una dulce fantasía",
+              "en": "Una dulce fantasía"
+            },
+            "p": 185,
+            "d": {
+              "es": "Mermelada de tocino, mayo trufa, manchego, cebolla crunch.",
+              "en": "Sourdough bun, bacon jam, truffle mayo, crunchy onions, manchego."
+            },
+            "variantes": {
+              "smash": 185,
+              "doble": 275,
+              "wagyu": 390
+            },
+            "id": "fantasia"
+          },
+          {
+            "n": {
+              "es": "Cómeme mucho",
+              "en": "Cómeme mucho"
+            },
+            "p": 250,
+            "d": {
+              "es": "New York a la brasa, cheddar, cebolla crunch, BBQ mexa.",
+              "en": "Sourdough bun, grilled ribeye, cheddar, crunchy onions, BBQ mexa."
+            },
+            "variantes": {
+              "smash": 250,
+              "doble": 300,
+              "wagyu": 430
+            },
+            "id": "comeme"
+          },
+          {
+            "n": {
+              "es": "La Roja",
+              "en": "La Roja"
+            },
+            "p": 205,
+            "d": {
+              "es": "Compota de frutos rojos/chipotle, mayo trufa, croqueta de queso de cabra y bites de tocino.",
+              "en": "Sourdough bun, berries & chipotle jam, truffle mayo, goat cheese & bacon bites croquette."
+            },
+            "variantes": {
+              "smash": 205,
+              "doble": 290,
+              "wagyu": 390
+            },
+            "id": "roja"
+          }
+        ]
       },
-      "p": 195,
-      "d": {
-       "es": "Medio aguacate, chimichurri, queso oaxaca, chicharrón crujiente.",
-       "en": "Sourdough bun, avocado, oaxaca cheese, crunchy chicharrón, chimichurri."
+      {
+        "id": "big-mu",
+        "tab": {
+          "es": "Big Mu Cheese Burger",
+          "en": "Big Mu Cheese Burger"
+        },
+        "layout": "tiers",
+        "nota": {
+          "es": "¡Nuevo!",
+          "en": "New!"
+        },
+        "columnas": [
+          {
+            "id": "sencilla",
+            "es": "sencilla (90 g)",
+            "en": "single (90 g)"
+          },
+          {
+            "id": "doble",
+            "es": "doble (180 g)",
+            "en": "double (180 g)"
+          },
+          {
+            "id": "triple",
+            "es": "triple (270 g)",
+            "en": "triple (270 g)"
+          }
+        ],
+        "items": [
+          {
+            "n": {
+              "es": "Big Mu Cheese Burger",
+              "en": "Big Mu Cheese Burger"
+            },
+            "p": 185,
+            "d": {
+              "es": "Jugosa carne smash, cremoso queso americano, salsa secreta Mu, cebolla fresca, lechuga picada y pepinillos.",
+              "en": "Juicy smash patty, creamy american cheese, Mu secret sauce, minced onions, minced lettuce & pickles."
+            },
+            "variantes": {
+              "sencilla": 185,
+              "doble": 250,
+              "triple": 295
+            },
+            "tags": [
+              "new"
+            ],
+            "id": "bigmu",
+            "proteina": {
+              "sencilla": 29,
+              "doble": 50,
+              "triple": 70
+            },
+            "proteina_nota": {
+              "es": "Proteína aprox. (carne, queso y pan)",
+              "en": "Approx. protein (patty, cheese & bun)"
+            }
+          }
+        ]
       },
-      "variantes": {
-       "smash": 195,
-       "doble": 285,
-       "wagyu": 390
+      {
+        "id": "wagyu",
+        "tab": {
+          "es": "Wagyu double smash",
+          "en": "Wagyu double smash"
+        },
+        "layout": "list",
+        "nota": {
+          "es": "200 g wagyu-cross",
+          "en": "200 g wagyu-cross"
+        },
+        "items": [
+          {
+            "n": {
+              "es": "Mu 2.0",
+              "en": "Mu 2.0"
+            },
+            "p": 390,
+            "d": {
+              "es": "200 g wagyu-cross doble smash burger, cebolla a la plancha, salsa secreta Mu, queso americano, cheddar.",
+              "en": "Sourdough bun, 200 g double smash burger, grilled onions, Mu secret sauce, american cheese, cheddar."
+            },
+            "id": "mu2"
+          },
+          {
+            "n": {
+              "es": "Reina trufada",
+              "en": "Truffle queen"
+            },
+            "p": 395,
+            "d": {
+              "es": "200 g wagyu-cross burger, mayo trufada, miel de trufa, queso cheddar, harto parmesano.",
+              "en": "Sourdough bun, 200 g wagyu thick burger, truffle mayo, truffle honey, cheddar, parmesan."
+            },
+            "id": "reina-w"
+          }
+        ]
       },
-      "recorte": "aguacatona-cut",
-      "id": "aguacatona"
-     },
-     {
-      "n": {
-       "es": "Granja",
-       "en": "Granja"
+      {
+        "id": "alternativas",
+        "tab": {
+          "es": "Alternativas",
+          "en": "Alternative burgers"
+        },
+        "layout": "list",
+        "nota": {
+          "es": "Burgers alternativas",
+          "en": "No beef, still burgers"
+        },
+        "items": [
+          {
+            "n": {
+              "es": "Nunca te olvidaré",
+              "en": "Nunca te olvidaré"
+            },
+            "p": 210,
+            "d": {
+              "es": "Pollo frito, salsa secreta Mu, queso americano, pepinillos caseros.",
+              "en": "Fried chicken, Mu secret sauce, american cheese, pickles."
+            },
+            "id": "olvidare"
+          },
+          {
+            "n": {
+              "es": "No como carne",
+              "en": "No como carne"
+            },
+            "p": 250,
+            "d": {
+              "es": "Beyond Meat (carne vegana), 3 ingredientes a elegir.",
+              "en": "Beyond Meat (vegan patty), 3 ingredients to choose."
+            },
+            "id": "nocarne"
+          }
+        ]
       },
-      "p": 160,
-      "d": {
-       "es": "Costra de dijon, tocino, queso oaxaca, cebolla picada, mayo xcatic.",
-       "en": "Sourdough bun, dijon crust, crunchy bacon, oaxaca cheese, onions, xcatic mayo."
+      {
+        "id": "hotdogs",
+        "tab": {
+          "es": "Hot dogs",
+          "en": "Hot dogs"
+        },
+        "layout": "list",
+        "nota": {
+          "es": "Salchicha de res premium y suavecito pan caliente",
+          "en": "Beef hot dog & soft, warm potato bun"
+        },
+        "items": [
+          {
+            "n": {
+              "es": "Clásico",
+              "en": "The classic"
+            },
+            "p": 70,
+            "d": {
+              "es": "Mayo, mostaza dijon, jalapeños encurtidos.",
+              "en": "Mayo, dijon mustard, pickled jalapeños."
+            },
+            "id": "hd-clasico"
+          },
+          {
+            "n": {
+              "es": "Bocado travieso",
+              "en": "Bocado travieso"
+            },
+            "p": 70,
+            "d": {
+              "es": "Queso cheddar, salsa secreta Mu, tocino crujiente, BBQ de tamarindo, cebolla crunchy.",
+              "en": "Cheddar, Mu secret sauce, crunchy bacon, crunchy onions, tamarind BBQ."
+            },
+            "id": "hd-travieso"
+          },
+          {
+            "n": {
+              "es": "El delicioso",
+              "en": "El delicioso"
+            },
+            "p": 70,
+            "d": {
+              "es": "Queso manchego, mayo trufada, cebolla crunchy, parmesano rallado.",
+              "en": "Manchego, truffled mayo, crunchy onions, parmesan."
+            },
+            "id": "hd-delicioso"
+          }
+        ]
       },
-      "variantes": {
-       "smash": 160,
-       "doble": 240,
-       "wagyu": 350
+      {
+        "id": "lunch",
+        "tab": {
+          "es": "Lunch / Cena",
+          "en": "Lunch / Dinner"
+        },
+        "layout": "list",
+        "nota": {
+          "es": "Para empezar o para compartir",
+          "en": "To start or to share"
+        },
+        "items": [
+          {
+            "n": {
+              "es": "Ensalada Bru",
+              "en": "Bru salad"
+            },
+            "p": 130,
+            "d": {
+              "es": "Arúgula orgánica, vinagreta de tomatillo, coles de Bruselas fritas, parmesano, pepitas.",
+              "en": "Organic arugula, tomatillo vinaigrette, crunchy brussels sprouts, queso de bola, toasted pumpkin seeds."
+            },
+            "id": "bru"
+          },
+          {
+            "n": {
+              "es": "Tenders",
+              "en": "Truffle tenders"
+            },
+            "p": 160,
+            "d": {
+              "es": "Boneless crunchy, miel de trufa, salsa secreta Mu.",
+              "en": "Crunchy boneless, truffle honey, Mu secret sauce."
+            },
+            "id": "tenders"
+          },
+          {
+            "n": {
+              "es": "Papas con trufa y mermelada de tocino",
+              "en": "Truffle & bacon jam fries"
+            },
+            "p": 155,
+            "d": {
+              "es": "Papas fritas, chimichurri, mayo trufa, mermelada de tocino, cilantro.",
+              "en": "French fries, chimichurri, truffle mayo, bacon jam, cilantro."
+            },
+            "id": "papas-trufa"
+          },
+          {
+            "n": {
+              "es": "Costillas de elote amarillo",
+              "en": "Grilled corn ribs"
+            },
+            "p": 160,
+            "d": {
+              "es": "Mayo chipotle, cajún, parmesano, cilantro.",
+              "en": "Chipotle mayo, cajun, parmesan, cilantro."
+            },
+            "foto": "costillas-elote",
+            "id": "costillas-l"
+          },
+          {
+            "n": {
+              "es": "Dedos de queso",
+              "en": "Cheese fingers"
+            },
+            "p": 160,
+            "d": {
+              "es": "Queso cheddar crujiente, miel de trufa, salsa secreta Mu.",
+              "en": "Crispy cheddar, truffle honey, Mu secret sauce."
+            },
+            "foto": "dedos-queso",
+            "id": "dedos-l"
+          },
+          {
+            "n": {
+              "es": "Quesadillota de New York",
+              "en": "NY big quesadilla"
+            },
+            "p": 110,
+            "d": {
+              "es": "Tortillota de harina recién hecha, queso oaxaca, NY picado, salsa verde.",
+              "en": "Big fresh flour tortilla, oaxaca cheese, chopped NY, salsa verde."
+            },
+            "id": "quesadillota"
+          }
+        ]
       },
-      "id": "granja"
-     },
-     {
-      "n": {
-       "es": "Me haces sentir en el cielo",
-       "en": "Me haces sentir en el cielo"
+      {
+        "id": "ordenes",
+        "tab": {
+          "es": "Órdenes y sides",
+          "en": "Orders & sides"
+        },
+        "layout": "grid",
+        "nota": {
+          "es": "Órdenes de 300 g · sides para acompañar",
+          "en": "300 g orders · sides to go with it"
+        },
+        "items": [
+          {
+            "n": {
+              "es": "Camote (300 g)",
+              "en": "Sweet potato (300 g)"
+            },
+            "p": 140,
+            "d": null,
+            "id": "o-camote"
+          },
+          {
+            "n": {
+              "es": "Papas (300 g)",
+              "en": "French fries (300 g)"
+            },
+            "p": 80,
+            "d": null,
+            "id": "o-papas"
+          },
+          {
+            "n": {
+              "es": "Platanitos (300 g)",
+              "en": "Plantains (300 g)"
+            },
+            "p": 70,
+            "d": null,
+            "id": "o-platanitos"
+          },
+          {
+            "n": {
+              "es": "Side costillas de elote",
+              "en": "Side grilled corn ribs"
+            },
+            "p": 45,
+            "d": null,
+            "id": "s-elote"
+          },
+          {
+            "n": {
+              "es": "Side camote",
+              "en": "Side sweet potato"
+            },
+            "p": 35,
+            "d": null,
+            "id": "s-camote"
+          },
+          {
+            "n": {
+              "es": "Side papas XL",
+              "en": "Side XL fries"
+            },
+            "p": 45,
+            "d": null,
+            "id": "s-papasxl"
+          },
+          {
+            "n": {
+              "es": "Side papas trufa",
+              "en": "Side truffle fries"
+            },
+            "p": 35,
+            "d": null,
+            "id": "s-trufa"
+          },
+          {
+            "n": {
+              "es": "Side platanitos",
+              "en": "Side plantains"
+            },
+            "p": 25,
+            "d": null,
+            "id": "s-platanitos"
+          },
+          {
+            "n": {
+              "es": "Side ensalada",
+              "en": "Side salad"
+            },
+            "p": 40,
+            "d": null,
+            "id": "s-ensalada"
+          },
+          {
+            "n": {
+              "es": "To go",
+              "en": "To go"
+            },
+            "p": null,
+            "d": null,
+            "p_texto": "25–70",
+            "id": "togo"
+          }
+        ]
       },
-      "p": 180,
-      "d": {
-       "es": "Carne envuelta en tocino, cheddar, laqueada de maple, cebolla parrillada.",
-       "en": "Sourdough bun, bacon-wrapped patty, maple syrup, cheddar, grilled onions."
+      {
+        "id": "postres",
+        "tab": {
+          "es": "Postres",
+          "en": "Desserts"
+        },
+        "layout": "list",
+        "items": [
+          {
+            "n": {
+              "es": "Plátanos postreros",
+              "en": "Plátanos postreros"
+            },
+            "p": 160,
+            "d": {
+              "es": "Plátano macho flambeado, dulce de leche, helado de vainilla.",
+              "en": "Flambéed sweet plantains, dulce de leche, vanilla ice cream."
+            },
+            "id": "platanos"
+          },
+          {
+            "n": {
+              "es": "Copa de helado",
+              "en": "Ice cream cup"
+            },
+            "p": 140,
+            "d": null,
+            "id": "copa"
+          }
+        ]
       },
-      "variantes": {
-       "smash": 180,
-       "doble": 280,
-       "wagyu": 390
+      {
+        "id": "mezcalita-bar",
+        "tab": {
+          "es": "Margarita & Mezcalita Bar",
+          "en": "Margarita & Mezcalita Bar"
+        },
+        "layout": "grid",
+        "nota": {
+          "es": "Escoge tu coctel · destilado de la casa 99 / ultra premium 180 · Mezcalita con Montelobos 220",
+          "en": "Pick your cocktail · house spirits 99 / ultra premium 180 · Mezcalita with Montelobos 220"
+        },
+        "items": [
+          {
+            "n": {
+              "es": "Margarita",
+              "en": "Margarita"
+            },
+            "p": null,
+            "d": {
+              "es": "Cabrito / Don Julio",
+              "en": "Cabrito / Don Julio"
+            },
+            "p_texto": "99 / 180",
+            "id": "margarita"
+          },
+          {
+            "n": {
+              "es": "Mezcalita",
+              "en": "Mezcalita"
+            },
+            "p": null,
+            "d": {
+              "es": "Chinocuac / Montelobos",
+              "en": "Chinocuac / Montelobos"
+            },
+            "p_texto": "99 / 220",
+            "id": "mezcalita"
+          },
+          {
+            "n": {
+              "es": "Mojito",
+              "en": "Mojito"
+            },
+            "p": null,
+            "d": {
+              "es": "Bacardí / Havana 7",
+              "en": "Bacardí / Havana 7"
+            },
+            "p_texto": "99 / 180",
+            "id": "mojito"
+          },
+          {
+            "n": {
+              "es": "Daikiri",
+              "en": "Daiquiri"
+            },
+            "p": null,
+            "d": {
+              "es": "Bacardí / Havana 7",
+              "en": "Bacardí / Havana 7"
+            },
+            "p_texto": "99 / 180",
+            "id": "daikiri"
+          },
+          {
+            "n": {
+              "es": "Sabores",
+              "en": "Flavors"
+            },
+            "p": null,
+            "d": {
+              "es": "Jamaica · maracuyá-ginger · mango",
+              "en": "Hibiscus · passion fruit-ginger · mango"
+            },
+            "id": "sabores"
+          }
+        ]
       },
-      "id": "cielo"
-     },
-     {
-      "n": {
-       "es": "Una dulce fantasía",
-       "en": "Una dulce fantasía"
+      {
+        "id": "cocteleria",
+        "tab": {
+          "es": "Coctelería clásica",
+          "en": "Classic cocktails"
+        },
+        "layout": "list",
+        "items": [
+          {
+            "n": {
+              "es": "Aperol spritz",
+              "en": "Aperol spritz"
+            },
+            "p": 140,
+            "d": {
+              "es": "Prosecco, aperol, agua carbonatada.",
+              "en": "Prosecco, aperol, soda water."
+            },
+            "id": "aperol"
+          },
+          {
+            "n": {
+              "es": "Hugo spritz",
+              "en": "Hugo spritz"
+            },
+            "p": 180,
+            "d": {
+              "es": "Prosecco, St. Germain, agua carbonatada, menta.",
+              "en": "Prosecco, St. Germain, soda water, mint."
+            },
+            "id": "hugo"
+          },
+          {
+            "n": {
+              "es": "Carajillo tradicional",
+              "en": "Traditional carajillo"
+            },
+            "p": 175,
+            "d": {
+              "es": "Licor 43, espresso.",
+              "en": "Licor 43, espresso."
+            },
+            "id": "carajillo"
+          },
+          {
+            "n": {
+              "es": "Baileys shakeado",
+              "en": "Shaken Baileys"
+            },
+            "p": 170,
+            "d": {
+              "es": "Baileys, Licor 43, espresso.",
+              "en": "Baileys, Licor 43, espresso."
+            },
+            "id": "baileys"
+          }
+        ]
       },
-      "p": 185,
-      "d": {
-       "es": "Mermelada de tocino, mayo trufa, manchego, cebolla crunch.",
-       "en": "Sourdough bun, bacon jam, truffle mayo, crunchy onions, manchego."
+      {
+        "id": "cerveza",
+        "tab": {
+          "es": "Cerveza",
+          "en": "Beer"
+        },
+        "layout": "grid",
+        "items": [
+          {
+            "n": {
+              "es": "Colimita",
+              "en": "Colimita"
+            },
+            "p": 110,
+            "d": {
+              "es": "Pilsner",
+              "en": "Pilsner"
+            },
+            "id": "colimita"
+          },
+          {
+            "n": {
+              "es": "Piedra Lisa",
+              "en": "Piedra Lisa"
+            },
+            "p": 115,
+            "d": {
+              "es": "Session IPA",
+              "en": "Session IPA"
+            },
+            "id": "piedralisa"
+          },
+          {
+            "n": {
+              "es": "Espectra",
+              "en": "Espectra"
+            },
+            "p": 140,
+            "d": {
+              "es": "IPA",
+              "en": "IPA"
+            },
+            "id": "espectra"
+          },
+          {
+            "n": {
+              "es": "Cerveza (355 ml)",
+              "en": "Beer (355 ml)"
+            },
+            "p": 50,
+            "d": {
+              "es": "Indio, XX",
+              "en": "Indio, XX"
+            },
+            "id": "cerveza"
+          },
+          {
+            "n": {
+              "es": "Cerveza premium (355 ml)",
+              "en": "Premium beer (355 ml)"
+            },
+            "p": 60,
+            "d": {
+              "es": "Ultra, Heineken",
+              "en": "Ultra, Heineken"
+            },
+            "id": "premium"
+          },
+          {
+            "n": {
+              "es": "Vasos",
+              "en": "Prepared glasses"
+            },
+            "p": null,
+            "d": {
+              "es": "Chelado / michelado / ojo rojo",
+              "en": "Chelado / michelado / ojo rojo"
+            },
+            "p_texto": "20 / 25 / 50",
+            "id": "vasos"
+          }
+        ]
       },
-      "variantes": {
-       "smash": 185,
-       "doble": 275,
-       "wagyu": 390
+      {
+        "id": "suaves",
+        "tab": {
+          "es": "Bebidas suaves",
+          "en": "Soft drinks"
+        },
+        "layout": "grid",
+        "items": [
+          {
+            "n": {
+              "es": "Limonadas",
+              "en": "Lemonades"
+            },
+            "p": 65,
+            "d": {
+              "es": "Maracuyá, jamaica, mango",
+              "en": "Passion fruit, hibiscus, mango"
+            },
+            "id": "limonadas"
+          },
+          {
+            "n": {
+              "es": "Félix (355 ml)",
+              "en": "Félix (355 ml)"
+            },
+            "p": 65,
+            "d": {
+              "es": "Manzana, guayaba",
+              "en": "Apple, guava"
+            },
+            "id": "felix"
+          },
+          {
+            "n": {
+              "es": "Sodas (355 ml)",
+              "en": "Sodas (355 ml)"
+            },
+            "p": 50,
+            "d": {
+              "es": "Coca, Fanta, Sprite",
+              "en": "Coke, Fanta, Sprite"
+            },
+            "id": "sodas"
+          },
+          {
+            "n": {
+              "es": "Agua (600 ml)",
+              "en": "Water (600 ml)"
+            },
+            "p": 40,
+            "d": {
+              "es": "Ciel",
+              "en": "Ciel"
+            },
+            "id": "agua"
+          },
+          {
+            "n": {
+              "es": "Agua mineral (355 ml)",
+              "en": "Sparkling water (355 ml)"
+            },
+            "p": 65,
+            "d": {
+              "es": "Tehuacán",
+              "en": "Tehuacán"
+            },
+            "id": "mineral"
+          },
+          {
+            "n": {
+              "es": "Café",
+              "en": "Coffee"
+            },
+            "p": 50,
+            "d": {
+              "es": "Americano, espresso",
+              "en": "Americano, espresso"
+            },
+            "id": "cafe"
+          }
+        ]
       },
-      "id": "fantasia"
-     },
-     {
-      "n": {
-       "es": "Cómeme mucho",
-       "en": "Cómeme mucho"
-      },
-      "p": 250,
-      "d": {
-       "es": "New York a la brasa, cheddar, cebolla crunch, BBQ mexa.",
-       "en": "Sourdough bun, grilled ribeye, cheddar, crunchy onions, BBQ mexa."
-      },
-      "variantes": {
-       "smash": 250,
-       "doble": 300,
-       "wagyu": 430
-      },
-      "id": "comeme"
-     },
-     {
-      "n": {
-       "es": "La Roja",
-       "en": "La Roja"
-      },
-      "p": 205,
-      "d": {
-       "es": "Compota de frutos rojos/chipotle, mayo trufa, croqueta de queso de cabra y bites de tocino.",
-       "en": "Sourdough bun, berries & chipotle jam, truffle mayo, goat cheese & bacon bites croquette."
-      },
-      "variantes": {
-       "smash": 205,
-       "doble": 290,
-       "wagyu": 390
-      },
-      "id": "roja"
-     }
-    ]
-   },
-   {
-    "id": "big-mu",
-    "tab": {
-     "es": "Big Mu Cheese Burger",
-     "en": "Big Mu Cheese Burger"
-    },
-    "layout": "tiers",
-    "nota": {
-     "es": "¡Nuevo!",
-     "en": "New!"
-    },
-    "columnas": [
-     {
-      "id": "sencilla",
-      "es": "sencilla (90 g)",
-      "en": "single (90 g)"
-     },
-     {
-      "id": "doble",
-      "es": "doble (180 g)",
-      "en": "double (180 g)"
-     },
-     {
-      "id": "triple",
-      "es": "triple (270 g)",
-      "en": "triple (270 g)"
-     }
-    ],
-    "items": [
-     {
-      "n": {
-       "es": "Big Mu Cheese Burger",
-       "en": "Big Mu Cheese Burger"
-      },
-      "p": 185,
-      "d": {
-       "es": "Jugosa carne smash, cremoso queso americano, salsa secreta Mu, cebolla fresca, lechuga picada y pepinillos.",
-       "en": "Juicy smash patty, creamy american cheese, Mu secret sauce, minced onions, minced lettuce & pickles."
-      },
-      "variantes": {
-       "sencilla": 185,
-       "doble": 250,
-       "triple": 295
-      },
-      "tags": [
-       "new"
-      ],
-      "id": "bigmu",
-      "proteina": {
-       "sencilla": 29,
-       "doble": 50,
-       "triple": 70
-      },
-      "proteina_nota": {
-       "es": "Proteína aprox. (carne, queso y pan)",
-       "en": "Approx. protein (patty, cheese & bun)"
+      {
+        "id": "vino",
+        "tab": {
+          "es": "Vino mexicano",
+          "en": "Mexican wine"
+        },
+        "layout": "list",
+        "nota": {
+          "es": "Copa / botella 700 ml",
+          "en": "Glass / 700 ml bottle"
+        },
+        "items": [
+          {
+            "n": {
+              "es": "Sangría tinta",
+              "en": "Red sangria"
+            },
+            "p": 140,
+            "d": null,
+            "id": "sangria"
+          },
+          {
+            "n": {
+              "es": "Puerto Nuevo Sauvignon Blanc",
+              "en": "Puerto Nuevo Sauvignon Blanc"
+            },
+            "p": null,
+            "d": {
+              "es": "Blanco · Valle de Guadalupe, B. California",
+              "en": "White · Valle de Guadalupe, B. California"
+            },
+            "p_texto": "99 / 450",
+            "id": "pn-blanco"
+          },
+          {
+            "n": {
+              "es": "Puerto Nuevo Cabernet Malbec",
+              "en": "Puerto Nuevo Cabernet Malbec"
+            },
+            "p": null,
+            "d": {
+              "es": "Tinto · Valle de Guadalupe, B. California",
+              "en": "Red · Valle de Guadalupe, B. California"
+            },
+            "p_texto": "99 / 450",
+            "id": "pn-tinto"
+          },
+          {
+            "n": {
+              "es": "Megacero",
+              "en": "Megacero"
+            },
+            "p": 1490,
+            "d": {
+              "es": "Tinto · Encinillas, Chihuahua",
+              "en": "Red · Encinillas, Chihuahua"
+            },
+            "id": "megacero",
+            "p_nota": {
+              "es": "solo botella",
+              "en": "bottle only"
+            }
+          }
+        ]
       }
-     }
     ]
-   },
-   {
-    "id": "wagyu",
-    "tab": {
-     "es": "Wagyu double smash",
-     "en": "Wagyu double smash"
-    },
-    "layout": "list",
-    "nota": {
-     "es": "200 g wagyu-cross",
-     "en": "200 g wagyu-cross"
-    },
-    "items": [
-     {
-      "n": {
-       "es": "Mu 2.0",
-       "en": "Mu 2.0"
-      },
-      "p": 395,
-      "d": {
-       "es": "200 g wagyu-cross doble smash burger, cebolla a la plancha, salsa secreta Mu, queso americano, cheddar.",
-       "en": "Sourdough bun, 200 g double smash burger, grilled onions, Mu secret sauce, american cheese, cheddar."
-      },
-      "id": "mu2"
-     },
-     {
-      "n": {
-       "es": "Reina trufada",
-       "en": "Truffle queen"
-      },
-      "p": 395,
-      "d": {
-       "es": "200 g wagyu-cross burger, mayo trufada, miel de trufa, queso cheddar, harto parmesano.",
-       "en": "Sourdough bun, 200 g wagyu thick burger, truffle mayo, truffle honey, cheddar, parmesan."
-      },
-      "id": "reina-w"
-     }
-    ]
-   },
-   {
-    "id": "alternativas",
-    "tab": {
-     "es": "Alternativas",
-     "en": "Alternative burgers"
-    },
-    "layout": "list",
-    "nota": {
-     "es": "Burgers alternativas",
-     "en": "No beef, still burgers"
-    },
-    "items": [
-     {
-      "n": {
-       "es": "Nunca te olvidaré",
-       "en": "Nunca te olvidaré"
-      },
-      "p": 210,
-      "d": {
-       "es": "Pollo frito, salsa secreta Mu, queso americano, pepinillos caseros.",
-       "en": "Fried chicken, Mu secret sauce, american cheese, pickles."
-      },
-      "id": "olvidare"
-     },
-     {
-      "n": {
-       "es": "No como carne",
-       "en": "No como carne"
-      },
-      "p": 250,
-      "d": {
-       "es": "Beyond Meat (carne vegana), 3 ingredientes a elegir.",
-       "en": "Beyond Meat (vegan patty), 3 ingredients to choose."
-      },
-      "id": "nocarne"
-     }
-    ]
-   },
-   {
-    "id": "hotdogs",
-    "tab": {
-     "es": "Hot dogs",
-     "en": "Hot dogs"
-    },
-    "layout": "list",
-    "nota": {
-     "es": "Salchicha de res premium y suavecito pan caliente",
-     "en": "Beef hot dog & soft, warm potato bun"
-    },
-    "items": [
-     {
-      "n": {
-       "es": "Clásico",
-       "en": "The classic"
-      },
-      "p": 70,
-      "d": {
-       "es": "Mayo, mostaza dijon, jalapeños encurtidos.",
-       "en": "Mayo, dijon mustard, pickled jalapeños."
-      },
-      "id": "hd-clasico"
-     },
-     {
-      "n": {
-       "es": "Bocado travieso",
-       "en": "Bocado travieso"
-      },
-      "p": 70,
-      "d": {
-       "es": "Queso cheddar, salsa secreta Mu, tocino crujiente, BBQ de tamarindo, cebolla crunchy.",
-       "en": "Cheddar, Mu secret sauce, crunchy bacon, crunchy onions, tamarind BBQ."
-      },
-      "id": "hd-travieso"
-     },
-     {
-      "n": {
-       "es": "El delicioso",
-       "en": "El delicioso"
-      },
-      "p": 70,
-      "d": {
-       "es": "Queso manchego, mayo trufada, cebolla crunchy, parmesano rallado.",
-       "en": "Manchego, truffled mayo, crunchy onions, parmesan."
-      },
-      "id": "hd-delicioso"
-     }
-    ]
-   },
-   {
-    "id": "lunch",
-    "tab": {
-     "es": "Lunch / Cena",
-     "en": "Lunch / Dinner"
-    },
-    "layout": "list",
-    "nota": {
-     "es": "Para empezar o para compartir",
-     "en": "To start or to share"
-    },
-    "items": [
-     {
-      "n": {
-       "es": "Ensalada Bru",
-       "en": "Bru salad"
-      },
-      "p": 130,
-      "d": {
-       "es": "Arúgula orgánica, vinagreta de tomatillo, coles de Bruselas fritas, parmesano, pepitas.",
-       "en": "Organic arugula, tomatillo vinaigrette, crunchy brussels sprouts, queso de bola, toasted pumpkin seeds."
-      },
-      "id": "bru"
-     },
-     {
-      "n": {
-       "es": "Tenders",
-       "en": "Truffle tenders"
-      },
-      "p": 160,
-      "d": {
-       "es": "Boneless crunchy, miel de trufa, salsa secreta Mu.",
-       "en": "Crunchy boneless, truffle honey, Mu secret sauce."
-      },
-      "id": "tenders"
-     },
-     {
-      "n": {
-       "es": "Papas con trufa y mermelada de tocino",
-       "en": "Truffle & bacon jam fries"
-      },
-      "p": 155,
-      "d": {
-       "es": "Papas fritas, chimichurri, mayo trufa, mermelada de tocino, cilantro.",
-       "en": "French fries, chimichurri, truffle mayo, bacon jam, cilantro."
-      },
-      "id": "papas-trufa"
-     },
-     {
-      "n": {
-       "es": "Costillas de elote amarillo",
-       "en": "Grilled corn ribs"
-      },
-      "p": 160,
-      "d": {
-       "es": "Mayo chipotle, cajún, parmesano, cilantro.",
-       "en": "Chipotle mayo, cajun, parmesan, cilantro."
-      },
-      "foto": "costillas-elote",
-      "id": "costillas-l"
-     },
-     {
-      "n": {
-       "es": "Dedos de queso",
-       "en": "Cheese fingers"
-      },
-      "p": 160,
-      "d": {
-       "es": "Queso cheddar crujiente, miel de trufa, salsa secreta Mu.",
-       "en": "Crispy cheddar, truffle honey, Mu secret sauce."
-      },
-      "foto": "dedos-queso",
-      "id": "dedos-l"
-     },
-     {
-      "n": {
-       "es": "Quesadillota de New York",
-       "en": "NY big quesadilla"
-      },
-      "p": 110,
-      "d": {
-       "es": "Tortillota de harina recién hecha, queso oaxaca, NY picado, salsa verde.",
-       "en": "Big fresh flour tortilla, oaxaca cheese, chopped NY, salsa verde."
-      },
-      "id": "quesadillota"
-     }
-    ]
-   },
-   {
-    "id": "ordenes",
-    "tab": {
-     "es": "Órdenes y sides",
-     "en": "Orders & sides"
-    },
-    "layout": "grid",
-    "nota": {
-     "es": "Órdenes de 300 g · sides para acompañar",
-     "en": "300 g orders · sides to go with it"
-    },
-    "items": [
-     {
-      "n": {
-       "es": "Camote (300 g)",
-       "en": "Sweet potato (300 g)"
-      },
-      "p": 140,
-      "d": null,
-      "id": "o-camote"
-     },
-     {
-      "n": {
-       "es": "Papas (300 g)",
-       "en": "French fries (300 g)"
-      },
-      "p": 80,
-      "d": null,
-      "id": "o-papas"
-     },
-     {
-      "n": {
-       "es": "Platanitos (300 g)",
-       "en": "Plantains (300 g)"
-      },
-      "p": 70,
-      "d": null,
-      "id": "o-platanitos"
-     },
-     {
-      "n": {
-       "es": "Side costillas de elote",
-       "en": "Side grilled corn ribs"
-      },
-      "p": 45,
-      "d": null,
-      "id": "s-elote"
-     },
-     {
-      "n": {
-       "es": "Side camote",
-       "en": "Side sweet potato"
-      },
-      "p": 35,
-      "d": null,
-      "id": "s-camote"
-     },
-     {
-      "n": {
-       "es": "Side papas XL",
-       "en": "Side XL fries"
-      },
-      "p": 45,
-      "d": null,
-      "id": "s-papasxl"
-     },
-     {
-      "n": {
-       "es": "Side papas trufa",
-       "en": "Side truffle fries"
-      },
-      "p": 35,
-      "d": null,
-      "id": "s-trufa"
-     },
-     {
-      "n": {
-       "es": "Side platanitos",
-       "en": "Side plantains"
-      },
-      "p": 25,
-      "d": null,
-      "id": "s-platanitos"
-     },
-     {
-      "n": {
-       "es": "Side ensalada",
-       "en": "Side salad"
-      },
-      "p": 40,
-      "d": null,
-      "id": "s-ensalada"
-     },
-     {
-      "n": {
-       "es": "To go",
-       "en": "To go"
-      },
-      "p": null,
-      "d": null,
-      "p_texto": "25–70",
-      "id": "togo"
-     }
-    ]
-   },
-   {
-    "id": "postres",
-    "tab": {
-     "es": "Postres",
-     "en": "Desserts"
-    },
-    "layout": "list",
-    "items": [
-     {
-      "n": {
-       "es": "Plátanos postreros",
-       "en": "Plátanos postreros"
-      },
-      "p": 160,
-      "d": {
-       "es": "Plátano macho flambeado, dulce de leche, helado de vainilla.",
-       "en": "Flambéed sweet plantains, dulce de leche, vanilla ice cream."
-      },
-      "id": "platanos"
-     },
-     {
-      "n": {
-       "es": "Copa de helado",
-       "en": "Ice cream cup"
-      },
-      "p": 140,
-      "d": null,
-      "id": "copa"
-     }
-    ]
-   },
-   {
-    "id": "mezcalita-bar",
-    "tab": {
-     "es": "Margarita & Mezcalita Bar",
-     "en": "Margarita & Mezcalita Bar"
-    },
-    "layout": "grid",
-    "nota": {
-     "es": "Escoge tu coctel · destilado de la casa / ultra premium 99 / 180",
-     "en": "Pick your cocktail · house spirits / ultra premium 99 / 180"
-    },
-    "items": [
-     {
-      "n": {
-       "es": "Margarita",
-       "en": "Margarita"
-      },
-      "p": null,
-      "d": {
-       "es": "Cabrito / Don Julio",
-       "en": "Cabrito / Don Julio"
-      },
-      "p_texto": "99 / 180",
-      "id": "margarita"
-     },
-     {
-      "n": {
-       "es": "Mezcalita",
-       "en": "Mezcalita"
-      },
-      "p": null,
-      "d": {
-       "es": "Chinocuac / Montelobos",
-       "en": "Chinocuac / Montelobos"
-      },
-      "p_texto": "99 / 180",
-      "id": "mezcalita"
-     },
-     {
-      "n": {
-       "es": "Mojito",
-       "en": "Mojito"
-      },
-      "p": null,
-      "d": {
-       "es": "Bacardí / Havana 7",
-       "en": "Bacardí / Havana 7"
-      },
-      "p_texto": "99 / 180",
-      "id": "mojito"
-     },
-     {
-      "n": {
-       "es": "Daikiri",
-       "en": "Daiquiri"
-      },
-      "p": null,
-      "d": {
-       "es": "Bacardí / Havana 7",
-       "en": "Bacardí / Havana 7"
-      },
-      "p_texto": "99 / 180",
-      "id": "daikiri"
-     },
-     {
-      "n": {
-       "es": "Sabores",
-       "en": "Flavors"
-      },
-      "p": null,
-      "d": {
-       "es": "Jamaica · maracuyá-ginger · mango",
-       "en": "Hibiscus · passion fruit-ginger · mango"
-      },
-      "id": "sabores"
-     }
-    ]
-   },
-   {
-    "id": "cocteleria",
-    "tab": {
-     "es": "Coctelería clásica",
-     "en": "Classic cocktails"
-    },
-    "layout": "list",
-    "items": [
-     {
-      "n": {
-       "es": "Aperol spritz",
-       "en": "Aperol spritz"
-      },
-      "p": 140,
-      "d": {
-       "es": "Prosecco, aperol, agua carbonatada.",
-       "en": "Prosecco, aperol, soda water."
-      },
-      "id": "aperol"
-     },
-     {
-      "n": {
-       "es": "Hugo spritz",
-       "en": "Hugo spritz"
-      },
-      "p": 180,
-      "d": {
-       "es": "Prosecco, St. Germain, agua carbonatada, menta.",
-       "en": "Prosecco, St. Germain, soda water, mint."
-      },
-      "id": "hugo"
-     },
-     {
-      "n": {
-       "es": "Carajillo tradicional",
-       "en": "Traditional carajillo"
-      },
-      "p": 175,
-      "d": {
-       "es": "Licor 43, espresso.",
-       "en": "Licor 43, espresso."
-      },
-      "id": "carajillo"
-     },
-     {
-      "n": {
-       "es": "Baileys shakeado",
-       "en": "Shaken Baileys"
-      },
-      "p": 170,
-      "d": {
-       "es": "Baileys, Licor 43, espresso.",
-       "en": "Baileys, Licor 43, espresso."
-      },
-      "id": "baileys"
-     }
-    ]
-   },
-   {
-    "id": "cerveza",
-    "tab": {
-     "es": "Cerveza",
-     "en": "Beer"
-    },
-    "layout": "grid",
-    "items": [
-     {
-      "n": {
-       "es": "Colimita",
-       "en": "Colimita"
-      },
-      "p": 110,
-      "d": {
-       "es": "Pilsner",
-       "en": "Pilsner"
-      },
-      "id": "colimita"
-     },
-     {
-      "n": {
-       "es": "Piedra Lisa",
-       "en": "Piedra Lisa"
-      },
-      "p": 115,
-      "d": {
-       "es": "Session IPA",
-       "en": "Session IPA"
-      },
-      "id": "piedralisa"
-     },
-     {
-      "n": {
-       "es": "Espectra",
-       "en": "Espectra"
-      },
-      "p": 140,
-      "d": {
-       "es": "IPA",
-       "en": "IPA"
-      },
-      "id": "espectra"
-     },
-     {
-      "n": {
-       "es": "Cerveza (355 ml)",
-       "en": "Beer (355 ml)"
-      },
-      "p": 50,
-      "d": {
-       "es": "Indio, XX",
-       "en": "Indio, XX"
-      },
-      "id": "cerveza"
-     },
-     {
-      "n": {
-       "es": "Cerveza premium (355 ml)",
-       "en": "Premium beer (355 ml)"
-      },
-      "p": 60,
-      "d": {
-       "es": "Ultra, Heineken",
-       "en": "Ultra, Heineken"
-      },
-      "id": "premium"
-     },
-     {
-      "n": {
-       "es": "Vasos",
-       "en": "Prepared glasses"
-      },
-      "p": null,
-      "d": {
-       "es": "Chelado / michelado / ojo rojo",
-       "en": "Chelado / michelado / ojo rojo"
-      },
-      "p_texto": "20 / 25 / 50",
-      "id": "vasos"
-     }
-    ]
-   },
-   {
-    "id": "suaves",
-    "tab": {
-     "es": "Bebidas suaves",
-     "en": "Soft drinks"
-    },
-    "layout": "grid",
-    "items": [
-     {
-      "n": {
-       "es": "Limonadas",
-       "en": "Lemonades"
-      },
-      "p": 65,
-      "d": {
-       "es": "Maracuyá, jamaica, mango",
-       "en": "Passion fruit, hibiscus, mango"
-      },
-      "id": "limonadas"
-     },
-     {
-      "n": {
-       "es": "Félix (355 ml)",
-       "en": "Félix (355 ml)"
-      },
-      "p": 65,
-      "d": {
-       "es": "Manzana, guayaba",
-       "en": "Apple, guava"
-      },
-      "id": "felix"
-     },
-     {
-      "n": {
-       "es": "Sodas (355 ml)",
-       "en": "Sodas (355 ml)"
-      },
-      "p": 50,
-      "d": {
-       "es": "Coca, Fanta, Sprite",
-       "en": "Coke, Fanta, Sprite"
-      },
-      "id": "sodas"
-     },
-     {
-      "n": {
-       "es": "Agua (600 ml)",
-       "en": "Water (600 ml)"
-      },
-      "p": 40,
-      "d": {
-       "es": "Ciel",
-       "en": "Ciel"
-      },
-      "id": "agua"
-     },
-     {
-      "n": {
-       "es": "Agua mineral (355 ml)",
-       "en": "Sparkling water (355 ml)"
-      },
-      "p": 55,
-      "d": {
-       "es": "Topo Chico",
-       "en": "Topo Chico"
-      },
-      "id": "mineral"
-     },
-     {
-      "n": {
-       "es": "Café",
-       "en": "Coffee"
-      },
-      "p": 50,
-      "d": {
-       "es": "Americano, espresso",
-       "en": "Americano, espresso"
-      },
-      "id": "cafe"
-     }
-    ]
-   },
-   {
-    "id": "vino",
-    "tab": {
-     "es": "Vino mexicano",
-     "en": "Mexican wine"
-    },
-    "layout": "list",
-    "nota": {
-     "es": "Copa / botella 700 ml",
-     "en": "Glass / 700 ml bottle"
-    },
-    "items": [
-     {
-      "n": {
-       "es": "Sangría tinta",
-       "en": "Red sangria"
-      },
-      "p": 140,
-      "d": null,
-      "id": "sangria"
-     },
-     {
-      "n": {
-       "es": "Puerto Nuevo Sauvignon Blanc",
-       "en": "Puerto Nuevo Sauvignon Blanc"
-      },
-      "p": null,
-      "d": {
-       "es": "Blanco · Valle de Guadalupe, B. California",
-       "en": "White · Valle de Guadalupe, B. California"
-      },
-      "p_texto": "99 / 450",
-      "id": "pn-blanco"
-     },
-     {
-      "n": {
-       "es": "Puerto Nuevo Cabernet Malbec",
-       "en": "Puerto Nuevo Cabernet Malbec"
-      },
-      "p": null,
-      "d": {
-       "es": "Tinto · Valle de Guadalupe, B. California",
-       "en": "Red · Valle de Guadalupe, B. California"
-      },
-      "p_texto": "99 / 450",
-      "id": "pn-tinto"
-     },
-     {
-      "n": {
-       "es": "Megacero",
-       "en": "Megacero"
-      },
-      "p": null,
-      "d": {
-       "es": "Tinto · Encinillas, Chihuahua",
-       "en": "Red · Encinillas, Chihuahua"
-      },
-      "p_texto": "180 / 900",
-      "id": "megacero"
-     }
-    ]
-   }
-  ]
- },
- "_notas_fotos": "Fotos en src/img/*.webp. 'foto' = foto normal; 'recorte' = versión sin fondo. Solo fotos reales."
+  },
+  "_notas_fotos": "Fotos en src/img/*.webp. 'foto' = foto normal; 'recorte' = versión sin fondo. Solo fotos reales."
 }
