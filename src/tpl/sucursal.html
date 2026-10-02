@@ -1,0 +1,70 @@
+{% extends '_base.html' %}
+{% set br = page.br %}
+{% block extra_css %}<link rel="stylesheet" href="/assets/sucursal.css?v={{ V }}">{% endblock %}
+{% block inline_css %}<style>{{ CSS_PAGES.sucursal }}</style>{% endblock %}
+{% block body %}
+{{ m.bar(br.slug, cta='home') }}
+
+<main id="top">
+  <section class="hero wrap" data-theme-section="light">
+    <nav class="crumbs mono" aria-label="Breadcrumb"><a href="{{ L }}/" data-ev="home_nav">{BI:Inicio|Home}</a> <span aria-hidden="true">›</span> <span aria-current="page">{{ br.nombre }}</span></nav>
+    <div class="meta mono">
+      <span>{{ br.nombre_largo }}</span>
+      <span>{{ br.ciudad }} · {{ br.codigo }}</span>
+    </div>
+    <div class="title">
+      <h1 class="display xl">{{ br.nombre }}</h1>
+      {%- if br.calificacion_google %}<span class="rate mono"><a href="{{ br.resenas_url }}" data-ev="review" data-branch="{{ br.slug }}" target="_blank" rel="noopener">★ {{ br.calificacion_google }} · {{ "{:,}".format(br.resenas_google).replace(",", " ") }} {BI:reseñas en Google|Google reviews}</a></span>{% endif %}
+    </div>
+    {{ m.ctas(br, 'hero-ctas') }}
+    <div class="base"></div>
+  </section>
+
+  <section class="info wrap" data-theme-section="light">
+    <div class="cols">
+      <div class="card" data-reveal>
+        <h2 class="mono">{BI:Dirección|Address}</h2>
+        <address><a href="{{ br.maps_url }}" data-ev="como_llegar" data-branch="{{ br.slug }}" target="_blank" rel="noopener">{{ br.dir_txt }}</a></address>
+        {%- if br.referencia %}<p class="ref">{{ br.referencia|t }}</p>{% endif %}
+        <h2 class="mono">{BI:Horario|Hours}</h2>
+        {{ m.hours_table(br) }}
+        {%- if br.telefono %}
+        <h2 class="mono">{BI:Teléfono|Phone}</h2>
+        <p class="tel"><a href="tel:{{ br.telefono|tel }}" data-ev="phone" data-branch="{{ br.slug }}">{{ br.telefono }}</a></p>{% endif %}
+        {%- if br.pedidos %}
+        <h2 class="mono">{BI:Pedidos a domicilio|Delivery}</h2>
+        <div class="ctas">{% for o in br.pedidos %}<a class="btn" data-ev="order_{{ o.id }}" data-branch="{{ br.slug }}" href="{{ o.url }}" target="_blank" rel="noopener">{{ o.nombre }} →</a>{% endfor %}</div>{% endif %}
+        <div class="ctas" style="margin-top:18px"><a class="btn" href="{{ L }}/menu" data-ev="menu_nav" data-branch="{{ br.slug }}">{BI:Ver el menú|See the menu} →</a></div>
+      </div>
+      <div class="map" data-reveal>{% if INLINE %}<a class="map-ph mono" href="{{ br.maps_url }}" target="_blank" rel="noopener" data-ev="como_llegar" data-branch="{{ br.slug }}">{BI:Mapa · abrir en Google Maps|Map · open in Google Maps} →</a>{% else %}<iframe title="{BI:Mapa|Map} {{ br.nombre_largo }}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="{{ br.maps_embed }}"></iframe>{% endif %}</div>
+    </div>
+  </section>
+
+  <section class="others dark wrap" data-theme-section="dark">
+    <div class="head" data-reveal>
+      <h2 class="display lg">{BI:Otras sucursales|Other locations}</h2>
+      <span class="mono">{{ SUC|length - 1 }}</span>
+    </div>
+    <div class="grid">
+      {%- for b in SUC if b.slug != br.slug %}
+      <a class="o" href="{{ L }}/{{ b.slug }}" data-ev="branch_page" data-branch="{{ b.slug }}" data-reveal>
+        <span class="mono">{{ b.ciudad }} · {{ b.codigo }}</span>
+        <h3>{{ b.nombre }}</h3>
+        <span class="mono" style="opacity:.6">{{ b.horario_resumen|t }}</span>
+      </a>
+      {%- endfor %}
+    </div>
+  </section>
+
+  {%- if FAQ %}
+  <section class="faq wrap" id="faq" data-theme-section="light">
+    <div class="head" data-reveal><h2 class="display lg">{BI:Preguntas frecuentes|FAQ}</h2></div>
+    {%- for f in FAQ %}
+    <details data-reveal><summary>{{ f.q|t }}</summary><p>{{ f.a|t }}</p></details>
+    {%- endfor %}
+  </section>
+  {%- endif %}
+
+  {{ m.footer() }}
+</main>
+{% endblock %}

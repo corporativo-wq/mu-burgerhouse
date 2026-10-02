@@ -1,0 +1,81 @@
+{#- Macros compartidos. Todo el contenido llega de contenido.json vía build.py -#}
+
+{%- macro bar(active, cta='menu') -%}
+<header id="bar">
+  <a class="logo" href="{{ L }}/" aria-label="{{ S.nombre }} — {BI:inicio|home}" data-ev="home_nav">{{ LOGO }}</a>
+  <nav class="mono" aria-label="{BI:Secciones|Sections}">
+    {%- if active == 'inicio' %}
+    <a href="#top" class="active">Intro /</a>
+    <a href="#carnes">{BI:Carnes|Patties} /</a>
+    <a href="#nuevo">{BI:Lo nuevo|What's new} /</a>
+    <a href="#sucursales">{BI:Sucursales|Locations}</a>
+    {%- else %}
+    <a href="{{ L }}/" data-ev="home_nav">{BI:Inicio|Home} /</a>
+    <a href="{{ L }}/menu" data-ev="menu_nav"{% if active == 'menu' %} class="active"{% endif %}>{BI:Menú|Menu} /</a>
+    {%- for b in SUC %}<a href="{{ L }}/{{ b.slug }}" data-ev="branch_page" data-branch="{{ b.slug }}"{% if active == b.slug %} class="active"{% endif %}>{{ b.nombre }}{% if not loop.last %} /{% endif %}</a>{% endfor %}
+    {%- endif %}
+  </nav>
+  <div class="toggles mono">
+    <button class="toggle" id="tnoche" aria-pressed="false" type="button"><span>{BI:Noche|Night}:</span><span class="sw"></span></button>
+    {{ caller() if caller else '' }}
+  </div>
+  {{ lang_switch() }}
+  {%- if cta == 'menu' %}<a class="cta-bar mono" href="{{ L }}/menu" data-ev="menu_nav">{BI:Menú|Menu} →</a>
+  {%- elif cta == 'home' %}<a class="cta-bar mono keep" href="{{ L }}/" data-ev="home_nav">← {BI:Inicio|Home}</a>{% endif %}
+</header>
+{%- endmacro -%}
+
+{%- macro lang_switch() -%}
+<div class="lang mono" role="group" aria-label="Idioma / Language"><a href="{{ ALT.es }}" hreflang="es-MX" lang="es"{% if LANG=='es' %} aria-current="true"{% endif %}>ES</a><a href="{{ ALT.en }}" hreflang="en" lang="en"{% if LANG=='en' %} aria-current="true"{% endif %}>EN</a></div>
+{%- endmacro -%}
+
+{%- macro tags(it) -%}
+{%- for tg in (it.tags or []) %}<span class="tag {{ tg }}">{{ TAGS[tg]|t }}</span>{% endfor -%}
+{%- if it.solo_en %}<span class="tag">{BI:Solo 40 · Nichupté|Only 40 · Nichupté}</span>{% endif -%}
+{%- endmacro -%}
+
+{%- macro price(it) -%}
+{%- if it.variantes %}{{ it.variantes.values()|join(' / ') }}{% elif it.p is not none %}{{ it.p }}{% elif it.p_texto %}{{ it.p_texto }}{% endif -%}
+{%- endmacro -%}
+
+{%- macro hours_table(br) -%}
+<table class="hours mono">
+{%- for k, dnum, es, en in DIAS %}
+  {%- set h = br.horario[k] %}
+  <tr data-d="{{ dnum }}"{% if not h %} class="closed"{% endif %}><td>{{ es if LANG=='es' else en }}</td><td>{% if h %}{{ h[0] }} – {{ h[1] }}{% else %}{BI:Cerrado|Closed}{% endif %}</td></tr>
+{%- endfor %}
+</table>
+{%- endmacro -%}
+
+{%- macro ctas(br, cls='') -%}
+<div class="ctas {{ cls }}">
+  <a class="btn" data-ev="como_llegar" data-branch="{{ br.slug }}" href="{{ br.maps_url }}" target="_blank" rel="noopener">{BI:Cómo llegar|Directions} →</a>
+  {%- if br.whatsapp %}<a class="btn" data-ev="whatsapp" data-branch="{{ br.slug }}" href="https://wa.me/{{ br.whatsapp|digits }}?text={{ br.whatsapp_texto|urlencode }}" target="_blank" rel="noopener">WhatsApp →</a>{% endif %}
+  {%- if br.telefono %}<a class="btn" data-ev="phone" data-branch="{{ br.slug }}" href="tel:{{ br.telefono|tel }}">{BI:Llamar|Call} →</a>{% endif %}
+  {%- for o in br.pedidos %}<a class="btn" data-ev="order_{{ o.id }}" data-branch="{{ br.slug }}" href="{{ o.url }}" target="_blank" rel="noopener">{{ o.nombre }} →</a>{% endfor %}
+</div>
+{%- endmacro -%}
+
+{%- macro socials(cls='') -%}
+{%- if R.instagram %}<a class="{{ cls }}" href="{{ R.instagram }}" data-ev="social_instagram" target="_blank" rel="noopener">Instagram →</a>{% endif %}
+{%- if R.facebook %}<a class="{{ cls }}" href="{{ R.facebook }}" data-ev="social_facebook" target="_blank" rel="noopener">Facebook →</a>{% endif %}
+{%- if R.tiktok %}<a class="{{ cls }}" href="{{ R.tiktok }}" data-ev="social_tiktok" target="_blank" rel="noopener">TikTok →</a>{% endif %}
+{%- endmacro -%}
+
+{%- macro footer() -%}
+<footer class="dark wrap" data-theme-section="dark">
+  <div class="grid">
+    <div class="vert" aria-hidden="true"><span>M</span><span>U</span><span>!</span></div>
+    <div class="info">
+      <div class="block"><span class="mono">{BI:Menú|Menu}</span><a class="big" href="{{ L }}/menu" data-ev="menu_nav">{BI:Ver menú completo|See full menu} →</a></div>
+      {%- if CT.whatsapp %}<div class="block"><span class="mono">{BI:Reservaciones y pedidos|Reservations & orders}</span><a class="big" href="https://wa.me/{{ CT.whatsapp|digits }}?text={{ CT.whatsapp_texto|urlencode }}" data-ev="whatsapp" target="_blank" rel="noopener">WhatsApp →</a></div>{% endif %}
+      <div class="block"><span class="mono">{BI:Sucursales|Locations}</span>{% for b in SUC %}<a class="big" href="{{ L }}/{{ b.slug }}" data-ev="branch_page" data-branch="{{ b.slug }}">{{ b.nombre }} · {{ b.ciudad }} →</a>{% endfor %}</div>
+      <div class="block"><span class="mono">{BI:Redes|Social}</span>{{ socials('big') }}</div>
+    </div>
+  </div>
+  <div class="bottom mono">
+    <div class="mark">{{ LOGO }}</div>
+    <span>{{ S.nombre }} ©<span id="y">2026</span> — Playa del Carmen · Cancún · {{ S.dominio.split('//')[1] }}{% if S.fundacion %} · {BI:Desde|Since} {{ S.fundacion }}{% endif %}</span>
+  </div>
+</footer>
+{%- endmacro -%}

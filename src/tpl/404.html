@@ -1,0 +1,22 @@
+{% extends '_base.html' %}
+{% block extra_css %}<link rel="stylesheet" href="/assets/sucursal.css?v={{ V }}">{% endblock %}
+{% block inline_css %}<style>{{ CSS_PAGES.sucursal }}</style>{% endblock %}
+{% block body %}
+{{ m.bar('404', cta='home') }}
+<main id="top">
+  <section class="hero wrap nf" data-theme-section="light">
+    <div class="meta mono"><span>{{ S.nombre }}</span><span>Error 404</span></div>
+    <div class="title"><h1 class="display xl">Se enfrió.</h1></div>
+    <p class="lead">Esta página no existe. Pero la plancha sigue caliente:</p>
+    <div class="ctas">
+      <a class="btn" href="/menu" data-ev="menu_nav">Ver el menú →</a>
+      <a class="btn" href="/" data-ev="home_nav">Ir al inicio →</a>
+      {%- for b in SUC %}<a class="btn" href="/{{ b.slug }}" data-ev="branch_page" data-branch="{{ b.slug }}">{{ b.nombre }} →</a>{% endfor %}
+    </div>
+    <p class="mono" style="margin-top:22px"><a href="/en/" lang="en">English version →</a></p>
+    <div class="base"></div>
+  </section>
+  {{ m.footer() }}
+</main>
+<script>/* /menu/ → /menu (QRs viejos) y rutas con barra final */(function(){var p=location.pathname.replace(/\/+$/,'').replace(/\.html$/,'');var ok=['/menu','/en/menu'{% for b in SUC %},'/{{ b.slug }}','/en/{{ b.slug }}'{% endfor %}];if(location.pathname!==p&&ok.indexOf(p)>-1)location.replace(p+location.search+location.hash)})();</script>
+{% endblock %}

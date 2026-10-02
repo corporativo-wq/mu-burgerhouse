@@ -1,0 +1,53 @@
+{%- import '_macros.html' as m with context -%}
+<!doctype html>
+<html lang="{{ 'es-MX' if LANG=='es' else 'en' }}" data-lang="{{ LANG }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ page.title }}</title>
+<meta name="description" content="{{ page.description }}">
+{%- if 'noindex' not in (page.robots|default('')) %}
+<link rel="canonical" href="{{ page.url }}">
+<link rel="alternate" hreflang="es-MX" href="{{ S.dominio }}{{ ALT.es }}">
+<link rel="alternate" hreflang="en" href="{{ S.dominio }}{{ ALT.en }}">
+<link rel="alternate" hreflang="x-default" href="{{ S.dominio }}{{ ALT.es }}">{% endif %}
+<meta name="robots" content="{{ page.robots|default('index,follow') }}">
+<meta name="theme-color" content="{{ S.tema }}">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="{{ page.og_type|default('website') }}">
+<meta property="og:site_name" content="{{ S.nombre }}">
+<meta property="og:title" content="{{ page.title }}">
+<meta property="og:description" content="{{ page.description }}">
+<meta property="og:url" content="{{ page.url }}">
+<meta property="og:image" content="{{ S.dominio }}{{ SEO.og_imagen }}">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+{%- if LANG=='es' %}<meta property="og:locale" content="es_MX"><meta property="og:locale:alternate" content="en_US">{% else %}<meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="es_MX">{% endif %}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.title }}">
+<meta name="twitter:description" content="{{ page.description }}">
+<meta name="twitter:image" content="{{ S.dominio }}{{ SEO.og_imagen }}">
+{%- if S.search_console_meta %}
+<meta name="google-site-verification" content="{{ S.search_console_meta }}">{% endif %}
+{%- if INLINE %}
+<style>{{ CSS_SITE }}</style>{% block inline_css %}{% endblock %}
+{%- else %}
+<link rel="preload" href="/assets/fonts/archivo-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/jetbrains-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css?v={{ V }}">
+{%- block extra_css %}{% endblock %}
+{%- endif %}
+{%- if page.ld %}
+<script type="application/ld+json">{{ page.ld }}</script>{% endif %}
+</head>
+<body class="page-{{ page.id }}">
+{{ LOGO_DEFS }}
+{% block body %}{% endblock %}
+{%- if INLINE %}
+<script>{{ JS_SITE }}</script>{% block inline_js %}{% endblock %}
+{%- else %}
+<script src="/assets/site.js?v={{ V }}" defer></script>
+{%- block extra_js %}{% endblock %}
+{%- endif %}
+</body>
+</html>

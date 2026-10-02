@@ -1,0 +1,136 @@
+{% extends '_base.html' %}
+{% block extra_css %}<link rel="stylesheet" href="/assets/menu.css?v={{ V }}">{% endblock %}
+{% block inline_css %}<style>{{ CSS_PAGES.menu }}</style>{% endblock %}
+{% block body %}
+{{ m.bar('menu', cta='home') }}
+
+<main id="top">
+  <section class="hero wrap" data-theme-section="light">
+    <div class="meta mono">
+      <span>{{ S.nombre }}</span>
+      <span>Playa del Carmen · Cancún</span>
+    </div>
+    <div class="title">
+      <h1 class="display xl">{BI:Menú|Menu}</h1>
+      <span class="ver mono">{BI:Versión|Version} {{ S.version_menu }}<br>{{ M.lema|t }}</span>
+    </div>
+    <div class="notes">
+      <p>{{ TX.menu_notas|t }}</p>
+      <div class="r mono">
+        <span>{BI:Secciones|Sections}: {{ MENU.secciones|length }}</span>
+        <span>{BI:Platillos|Dishes}: {{ TOTAL }}</span>
+        <span>★ {{ TX.solo_en|t }}</span>
+      </div>
+    </div>
+  </section>
+
+  <nav class="chips mono" id="chips" aria-label="{BI:Secciones del menú|Menu sections}">
+    <div class="in">
+      {%- for s in MENU.secciones %}<a href="#{{ s.id }}">{{ s.tab|t }}</a>{% endfor %}
+    </div>
+  </nav>
+
+  {%- for s in MENU.secciones %}
+  <section class="sec wrap" id="{{ s.id }}" data-sec>
+    <div class="head" data-reveal>
+      <div class="l"><span class="num">{{ '%02d'|format(loop.index) }}</span><h2 class="display md">{{ s.tab|t }}</h2></div>
+      {%- if s.nota %}<span class="k mono">{{ s.nota|t }}</span>{% endif %}
+    </div>
+
+    {%- if s.layout == 'photos' %}
+    <div class="items photos">
+      {%- for it in s['items'] %}
+      <article class="card item" id="{{ it.id }}" data-reveal>
+        <div class="ph">
+          <img src="{{ img(it.foto) }}" alt="{{ it.n|t }}" loading="lazy" width="600" height="750">
+          <div class="tags">{{ m.tags(it) }}</div>
+        </div>
+        <div class="row">
+          <h3>{{ it.n|t }}</h3>
+          <span class="price">{{ m.price(it) }}{% if it.p_nota %}<span class="pn mono">{{ it.p_nota|t }}</span>{% endif %}</span>
+        </div>
+        {%- if it.d %}<p>{{ it.d|t }}</p>{% endif %}
+      </article>
+      {%- endfor %}
+    </div>
+
+    {%- elif s.layout in ['burgers','tiers'] %}
+    {%- if s.layout == 'burgers' %}
+    <div class="patties">
+      {%- for p in CARNES %}
+      <div class="patty" data-reveal>
+        <div class="row mono"><span>0{{ loop.index }}</span><span>{{ p.grams }}</span></div>
+        <h4>{{ p.name|t }}</h4>
+        <p>{{ p.desc|t }}</p>
+        {%- if p.proteina_g %}<div class="prot mono"><span>{BI:Proteína|Protein}</span><span>≈ {{ p.proteina_g }} g</span></div>{% endif %}
+      </div>
+      {%- endfor %}
+    </div>
+    <p class="mono foot-note">{{ TX.proteina_nota|t }}</p>
+    {%- endif %}
+    <div class="items">
+      <div class="cols-head mono"><span style="text-align:left">Burger</span>{% for c in s.columnas %}<span>{{ c|t }}</span>{% endfor %}</div>
+      {%- for it in s['items'] %}
+      <div class="brow item" id="{{ it.id }}" data-reveal>
+        <div class="nm">
+          {%- if it.recorte %}<img src="{{ img(it.recorte) }}" alt="" loading="lazy" width="72" height="72">{% endif %}
+          <div>
+            <h3>{{ it.n|t }} {{ m.tags(it) }}</h3>
+            {%- if it.d %}<p>{{ it.d|t }}</p>{% endif %}
+            {%- if it.proteina %}<p class="prot-line mono">{{ it.proteina_nota|t }}: {% for c in s.columnas %}{{ c|t }} ≈ {{ it.proteina[c.id] }} g{% if not loop.last %} · {% endif %}{% endfor %}</p>{% endif %}
+          </div>
+        </div>
+        <div class="prices">{% for c in s.columnas %}<span class="price" data-col="{{ c|t }}">{{ it.variantes[c.id] }}</span>{% endfor %}</div>
+      </div>
+      {%- endfor %}
+    </div>
+
+    {%- elif s.layout == 'list' %}
+    <div class="items list">
+      {%- for it in s['items'] %}
+      <div class="lrow item {{ 'has-img' if it.foto }}" id="{{ it.id }}" data-reveal>
+        {%- if it.foto %}<img src="{{ img(it.foto) }}" alt="" loading="lazy" width="64" height="64">{% endif %}
+        <div>
+          <h3>{{ it.n|t }}</h3>
+          {%- if it.d %}<p>{{ it.d|t }}</p>{% endif %}
+          {%- if it.tags or it.solo_en %}<div class="tg">{{ m.tags(it) }}</div>{% endif %}
+        </div>
+        <span class="price">{{ m.price(it) }}{% if it.p_nota %}<span class="pn mono">{{ it.p_nota|t }}</span>{% endif %}</span>
+      </div>
+      {%- endfor %}
+    </div>
+
+    {%- else %}
+    <div class="items cells">
+      {%- for it in s['items'] %}
+      <div class="cell item" id="{{ it.id }}" data-reveal>
+        <div><h3>{{ it.n|t }}</h3>{% if it.d %}<p>{{ it.d|t }}</p>{% endif %}</div>
+        <span class="price">{{ m.price(it) }}</span>
+      </div>
+      {%- endfor %}
+    </div>
+    {%- endif %}
+  </section>
+  {%- endfor %}
+
+  <footer class="dark wrap" data-theme-section="dark">
+    <div class="places">
+      <div class="grid">
+        {%- for b in SUC %}
+        <a class="p" href="{{ L }}/{{ b.slug }}" data-ev="branch_page" data-branch="{{ b.slug }}">
+          <span class="mono">{{ b.ciudad }} · {{ b.codigo }}</span>
+          <h3>{{ b.nombre }}</h3>
+          <span class="mono" style="opacity:.6">{{ b.horario_resumen|t }}</span>
+        </a>
+        {%- endfor %}
+      </div>
+    </div>
+    <div class="bottom mono">
+      <div class="mark">{{ LOGO }}</div>
+      <span>{{ S.nombre }} ©<span id="y">2026</span> — {BI:Precios en MXN · IVA incluido|Prices in MXN · tax included} · <a href="{{ L }}/" data-ev="home_nav">{{ S.dominio.split('//')[1] }}</a></span>
+    </div>
+  </footer>
+</main>
+{% endblock %}
+{% block extra_js %}<script src="/assets/menu.js?v={{ V }}" defer></script>{% endblock %}
+{% block inline_js %}<script>{{ JS_PAGES.menu }}</script>{% endblock %}

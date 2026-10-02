@@ -1,0 +1,194 @@
+{% extends '_base.html' %}
+{% block extra_css %}<link rel="stylesheet" href="/assets/inicio.css?v={{ V }}">{% endblock %}
+{% block inline_css %}<style>{{ CSS_PAGES.inicio }}</style>{% endblock %}
+{% block body %}
+<div id="loader" aria-hidden="true">
+  <div class="bar"></div>
+  <div class="mark">{{ LOGO }}</div>
+  <div class="foot mono"><span>{BI:Cargando…|Loading…}</span><span id="pct">0%</span></div>
+</div>
+
+{% call m.bar('inicio') %}
+    <button class="toggle" id="tloco" aria-pressed="false" type="button"><span>{BI:Modo loco|Crazy mode}:</span><span class="sw"></span></button>
+{% endcall %}
+
+<main id="top">
+  <!-- ============ HERO ============ -->
+  <section class="hero wrap" data-theme-section="light">
+    <div class="meta mono">
+      <div class="herologo" id="herologo" aria-hidden="true">{{ LOGO }}</div>
+      <span>Playa del Carmen · Cancún</span>
+    </div>
+    <div class="title">
+      <h1 class="display xl">{{ TX.hero_titulo|t }}</h1>
+      {%- if S.fundacion %}<span class="num mono">{BI:Desde|Since} {{ S.fundacion }}</span>{% endif %}
+    </div>
+    <div class="stage">
+      <div class="side mono">
+        <span>{{ TX.hero_producto|t }}</span><br>
+        {{ TX.hero_lead|t }}
+      </div>
+      <div class="img" id="heroimg" data-clip>
+        {%- set h = hero() %}
+        <img src="{{ h[0] }}" srcset="{{ h[0] }} 800w, {{ h[1] }} 1400w" sizes="(max-width:760px) 100vw, 50vw" alt="{{ VITRINA[0].n|t }}" width="800" height="{{ HERO_H }}" fetchpriority="high">
+      </div>
+      <div class="side2 mono">
+        <a class="btn" href="{{ L }}/menu" data-ev="menu_nav">{BI:Ver el menú|See the menu} →</a>
+        <span class="down">{BI:Baja|Scroll} ↓</span>
+      </div>
+    </div>
+    <div class="base"></div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="track">
+      {%- for _ in range(2) %}<span>{% for w in TX.ticker|t %}{{ w }} <b>—</b> {% endfor %}</span>{% endfor %}
+    </div>
+  </div>
+
+  <!-- ============ 3 CARNES ============ -->
+  <section class="carnes dark wrap" id="carnes" data-theme-section="dark">
+    <div class="head" data-reveal>
+      <h2 class="display lg">{BI:3 carnes|3 patties}</h2>
+      <span class="mono">{{ TX.carnes_kicker|t }}</span>
+    </div>
+    <div class="grid">
+      {%- for p in CARNES %}
+      <article class="carne" data-reveal style="--w:{{ [38,72,86][loop.index0] }}%">
+        <div class="row mono"><span>{{ p.name|t }}</span><span>0{{ loop.index }}</span></div>
+        <div class="g">{{ p.grams.split(' ')[0] }}<small>g</small></div>
+        <div class="sw"></div>
+        <h3>{{ p.name|t }}</h3>
+        <p>{{ p.desc|t }}</p>
+        {%- if p.proteina_g %}<div class="prot mono"><span>{BI:Proteína|Protein}</span><span>≈ {{ p.proteina_g }} g</span></div>{% endif %}
+      </article>
+      {%- endfor %}
+    </div>
+    <p class="mono foot-note">{{ TX.proteina_nota|t }}</p>
+  </section>
+
+  <!-- ============ LO NUEVO ============ -->
+  <section class="nuevo wrap" id="nuevo" data-theme-section="light">
+    <div class="head" data-reveal>
+      <h2 class="display lg">{{ TX.nuevo_titulo|t }}</h2>
+      <span class="mono">{{ S.version_menu }}</span>
+    </div>
+    <div class="grid">
+      {%- for it in DESTACADOS %}
+      <article class="card" data-reveal>
+        <a class="ph" href="{{ L }}/menu#{{ it.id }}" data-ev="menu_nav">
+          <img src="{{ img(it.foto) }}" alt="{{ it.n|t }}" loading="lazy" width="600" height="750">
+          <div class="tags">{{ m.tags(it) }}</div>
+        </a>
+        <div class="row"><h3>{{ it.n|t }}</h3><span class="price">{{ m.price(it) }}</span></div>
+        <p>{{ it.d|t }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+    <div class="more" data-reveal><a class="btn" href="{{ L }}/menu" data-ev="menu_nav">{BI:Ver el menú completo|See the full menu} →</a></div>
+  </section>
+
+  <!-- ============ VITRINA ============ -->
+  <section class="show dark wrap" data-theme-section="dark">
+    <div class="head" data-reveal>
+      <h2 class="display lg">{{ TX.burgers_titulo|t }}</h2>
+      <span class="mono">{BI:Baja para verlas|Scroll to see them}</span>
+    </div>
+    <div class="cols">
+      <div class="pin" id="pin">
+        {%- for it in VITRINA %}<img src="{{ img(it.recorte) }}" alt="" loading="lazy" data-i="{{ loop.index0 }}" class="{{ 'on' if loop.first }}">{% endfor %}
+      </div>
+      <div class="list" id="steps">
+        {%- for it in VITRINA %}
+        <a class="step {{ 'active' if loop.first }}" href="{{ L }}/menu#{{ it.id }}" data-i="{{ loop.index0 }}" data-ev="menu_nav">
+          <span class="n mono">0{{ loop.index }}</span>
+          <div>
+            <h3>{{ it.n|t }}</h3>
+            <p>{{ it.d|t }}</p>
+            <div class="pr mono"><span>{{ it.p_nota|t if it.p_nota else '' }}</span><span>{{ m.price(it) }}</span></div>
+            <div class="line"></div>
+          </div>
+        </a>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ JUEGO ============ -->
+  <section class="play wrap" id="juego" data-theme-section="light">
+    <div class="head" data-reveal>
+      <h2 class="display lg">Torre Mu</h2>
+      <span class="mono">{BI:Minijuego sin fin · una vida · marcador general|Endless minigame · one life · leaderboard}</span>
+    </div>
+    <div class="body">
+      <div class="txt" data-reveal>
+        <span class="mono">{BI:(Cómo se juega)|(How to play)}</span>
+        <p>{{ TX.juego_desc|t }}</p>
+        <button class="btn" type="button" data-play data-ev="game_play">{BI:Jugar|Play} →</button>
+        <div class="scores">
+          <div class="shead mono"><span>{BI:Marcador|Leaderboard}</span><span>{BI:Capas|Layers}</span></div>
+          <div id="scores" class="slist"></div>
+        </div>
+      </div>
+      <div class="board" data-reveal data-play role="button" tabindex="0" aria-label="{BI:Jugar|Play}">
+        <div class="ing"></div><div class="ing q"></div><div class="ing b"></div>
+        <div class="bun"></div>
+        <div class="lay"><span class="mono"><span>Mu Arcade</span><span>01</span></span><span class="big">{BI:Jugar|Play}</span><span class="mono"><span>← →</span><span>{BI:Toca para empezar|Tap to start}</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SUCURSALES ============ -->
+  <section class="places wrap" id="sucursales" data-theme-section="light">
+    <div class="head" data-reveal>
+      <h2 class="display lg">{BI:Sucursales|Locations}</h2>
+      <span class="mono">{{ SUC|length }} {BI:ubicaciones|locations}</span>
+    </div>
+    <div class="grid">
+      {%- for b in SUC %}
+      <article class="place" data-reveal>
+        <div class="top mono"><span>{{ b.ciudad }}</span><span>{{ b.codigo }}</span></div>
+        <h3><a href="{{ L }}/{{ b.slug }}" data-ev="branch_page" data-branch="{{ b.slug }}">{{ b.nombre }}</a></h3>
+        <div class="rows mono">
+          <div><span>{BI:Dirección|Address}</span><span>{{ b.direccion.calle }}</span></div>
+          <div><span>{BI:Horario|Hours}</span><span>{{ b.horario_resumen|t }}</span></div>
+          {%- if b.telefono %}<div><span>{BI:Teléfono|Phone}</span><span><a href="tel:{{ b.telefono|tel }}" data-ev="phone" data-branch="{{ b.slug }}">{{ b.telefono }}</a></span></div>{% endif %}
+        </div>
+        <div class="ctas-row">
+          <a class="btn" href="{{ L }}/{{ b.slug }}" data-ev="branch_page" data-branch="{{ b.slug }}">{BI:Horario y ubicación|Hours & location} →</a>
+          <a class="btn" href="{{ b.maps_url }}" data-ev="como_llegar" data-branch="{{ b.slug }}" target="_blank" rel="noopener">{BI:Cómo llegar|Directions} →</a>
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+  </section>
+
+  {{ m.footer() }}
+</main>
+
+<div id="game" hidden>
+  <canvas id="gc"></canvas>
+  <div class="top mono"><span class="logo">{{ LOGO }}</span><span>Torre Mu</span><button id="gclose" class="mono" type="button">{BI:Cerrar|Close} ✕</button></div>
+  <div id="ghud" class="mono"></div>
+  <div id="gmsg" hidden>
+    <div class="gm">
+      <span class="big">0</span>
+      <h3>{BI:Se cayó la torre.|The tower fell.}</h3>
+      <p class="r"></p>
+      <form id="gform" class="gform" autocomplete="off">
+        <label for="gname" class="mono">{BI:Tu nombre para el marcador|Your name for the leaderboard}</label>
+        <div class="row"><input id="gname" type="text" maxlength="16" placeholder="{BI:Nombre|Name}" required><button class="btn" type="submit">{BI:Guardar|Save}</button></div>
+      </form>
+      <p id="gbest" class="mono"></p>
+      <div class="scores">
+        <div class="shead mono"><span>{BI:Marcador general|Leaderboard}</span><span>{BI:Capas|Layers}</span></div>
+        <div id="gboard" class="slist"></div>
+      </div>
+      <button class="btn" id="gagain" type="button">{BI:Otra vez|Again} →</button>
+    </div>
+  </div>
+</div>
+<script>window.MU_LANG="{{ LANG }}";window.MU_SCORE_API={{ (LINKS.score_api or '')|tojson }};</script>
+{% endblock %}
+{% block extra_js %}<script src="/assets/inicio.js?v={{ V }}" defer></script>{% endblock %}
+{% block inline_js %}<script>{{ JS_PAGES.inicio }}</script>{% endblock %}
