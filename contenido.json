@@ -353,6 +353,7 @@
   },
   "faq": [],
   "destacados": [
+    "diablo",
     "croquetas",
     "queseria",
     "hawai",
@@ -420,6 +421,23 @@
           "en": "New & seasonal"
         },
         "items": [
+          {
+            "n": {
+              "es": "Diablo Chipotle Burger",
+              "en": "Diablo Chipotle Burger"
+            },
+            "p": 290,
+            "d": {
+              "es": "180 g de carne, queso, tocino y aderezo Mu, bañada en salsa de queso con chipotle. Especial de Halloween.",
+              "en": "180 g patty, cheese, bacon and Mu dressing, drenched in chipotle cheese sauce. Halloween special."
+            },
+            "tags": [
+              "new"
+            ],
+            "foto": "diablo",
+            "video": "diablo",
+            "id": "diablo"
+          },
           {
             "n": {
               "es": "Croquetas de plátano",
@@ -1520,5 +1538,32 @@
       }
     ]
   },
-  "_notas_fotos": "Fotos en src/img/*.webp. 'foto' = foto normal; 'recorte' = versión sin fondo. Solo fotos reales."
+  "_notas_fotos": "Fotos en src/img/*.webp. 'foto' = foto normal; 'recorte' = versión sin fondo. Solo fotos reales.",
+  "especial": {
+    "activo": true,
+    "id": "diablo",
+    "video": "diablo",
+    "desde": "2026-10-08",
+    "hasta": "2026-11-02",
+    "kicker": {
+      "es": "Especial de Halloween · octubre",
+      "en": "Halloween special · October"
+    },
+    "titulo": {
+      "es": "Diablo Chipotle Burger",
+      "en": "Diablo Chipotle Burger"
+    },
+    "lead": {
+      "es": "180 g de carne, queso, tocino y aderezo Mu, bañada en salsa de queso con chipotle.",
+      "en": "180 g patty, cheese, bacon and Mu dressing, drenched in chipotle cheese sauce."
+    },
+    "cta": {
+      "es": "Ver el menú",
+      "en": "See the menu"
+    },
+    "saltar": {
+      "es": "Saltar",
+      "en": "Skip"
+    }
+  }
 }

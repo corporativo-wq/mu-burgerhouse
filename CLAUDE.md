@@ -16,8 +16,10 @@ Los HTML de la raíz y de `en/` se GENERAN: no los edites a mano. Mismo sistema 
 2. `./build.sh` (python3 + `pip install jinja2 pillow`).
 3. Publicar. La sesión de Claude NO tiene el repo vinculado (push directo da 403), así que se publica igual que ambymu.mx:
    por el Chrome de Fernando (extensión Claude in Chrome; preferir la Mac Studio, siempre encendida, con su sesión de GitHub abierta).
-   Abrir `https://github.com/corporativo-wq/mu-burgerhouse/upload/main`, inyectar por JavaScript los archivos cambiados en
-   `input[type=file]` (DataTransfer + File con el contenido; los archivos vacíos se ignoran) o pedirle a Fernando que arrastre
+   Abrir `https://github.com/corporativo-wq/mu-burgerhouse/upload/main` (y `/upload/main/en` para la carpeta en/), inyectar por JavaScript
+   TODOS los archivos cambiados de una vez en `input[type=file]`: gzip+base64 por archivo, acumular en `window.__B` en trozos
+   de ≤20 KB, decodificar con atob → Blob.stream().pipeThrough(new DecompressionStream('gzip')) (fetch de data: URLs lo bloquea
+   el CSP de GitHub) → DataTransfer + File → dispatch 'change' (los archivos vacíos se ignoran); o pedirle a Fernando que arrastre
    la carpeta "Mu Web" (sin `_old/` ni `preview/`), poner el mensaje y hacer clic en "Commit changes". Esperar a que
    termine "Processing your files" antes de navegar. Subir siempre `contenido.json` + los HTML regenerados (y `assets/`
    si cambió el hash). Pages publica en ~1 min.
