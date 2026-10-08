@@ -42,7 +42,7 @@ Eventos clave en GA4: como_llegar, whatsapp, phone, menu_nav (sin valor monetari
 - Burgers siempre con foto sin fondo (`recorte`). Fotos reales únicamente; nada generado con IA.
 - No cambiar nombre, horarios, teléfonos, direcciones ni datos del Perfil de Google sin su aprobación.
 - No mencionar otras marcas del grupo (AM, Papaya Slice, Marola) en el sitio.
-- Teléfonos: solo los de Mu. WhatsApp general: +52 984 168 8926 (tomado del sitio anterior en Wix; confirmar si es el de Wati).
+- Teléfonos: solo los de Mu. WhatsApp general (Wati): +52 984 179 2682 (confirmado por Fernando 2026-10-07; el 984 168 8926 del sitio Wix anterior era incorrecto).
 - Interruptores de la barra: **Noche** (invierte papel/tinta en todo el sitio, se recuerda por dispositivo) en todas las páginas y **Modo loco** solo en el inicio. El logo aparece grande en el hero y se encoge hasta la barra al hacer scroll.
 - Torre Mu (juego) se queda en el inicio. Marcador general pendiente de un endpoint propio (`MU_SCORE_API`); mientras, guarda por dispositivo.
 
