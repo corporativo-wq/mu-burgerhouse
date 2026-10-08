@@ -4,6 +4,27 @@
 {% block body %}
 {{ m.bar('menu', cta='home') }}
 
+{%- if ESP.activo %}
+<div id="intro" class="intro" hidden data-id="{{ ESP.id }}" data-hasta="{{ ESP.hasta }}" data-desde="{{ ESP.desde }}">
+  <video id="introv" muted playsinline preload="auto" poster="{{ vid(ESP.video,'webp') }}" aria-label="{{ ESP.titulo|t }}">
+    {%- set wm = vid(ESP.video,'webm') %}{% if wm %}<source src="{{ wm }}" type="video/webm">{% endif %}
+    <source src="{{ vid(ESP.video,'mp4') }}" type="video/mp4">
+  </video>
+  <div class="shade"></div>
+  <button class="skip mono" type="button" data-intro-close>{{ ESP.saltar|t }} ✕</button>
+  <div class="txt">
+    <span class="mono kicker">{{ ESP.kicker|t }}</span>
+    <h2 class="display">{{ ESP.titulo|t }}</h2>
+    <p>{{ ESP.lead|t }}</p>
+    <div class="row">
+      <span class="mono pr">{{ m.price(ESP_ITEM) }} MXN</span>
+      <a class="btn" href="#{{ ESP.id }}" data-intro-close data-ev="menu_nav">{{ ESP.cta|t }} →</a>
+    </div>
+    <div class="bar"><i></i></div>
+  </div>
+</div>
+{%- endif %}
+
 <main id="top">
   <section class="hero wrap" data-theme-section="light">
     <div class="meta mono">
@@ -42,7 +63,14 @@
       {%- for it in s['items'] %}
       <article class="card item" id="{{ it.id }}" data-reveal>
         <div class="ph">
+          {%- if it.video %}
+          <video class="loop" muted playsinline loop autoplay preload="metadata" poster="{{ img(it.foto) }}" aria-label="{{ it.n|t }}">
+            {%- set wm = vid(it.video,'webm') %}{% if wm %}<source src="{{ wm }}" type="video/webm">{% endif %}
+            <source src="{{ vid(it.video,'mp4') }}" type="video/mp4">
+          </video>
+          {%- else %}
           <img src="{{ img(it.foto) }}" alt="{{ it.n|t }}" loading="lazy" width="600" height="750">
+          {%- endif %}
           <div class="tags">{{ m.tags(it) }}</div>
         </div>
         <div class="row">

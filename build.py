@@ -138,6 +138,10 @@ hero_src.save("img/hero-2x.webp", quality=82, method=6)
 HERO_H = int(hero_src.height * 800 / hero_src.width)
 for f in ("favicon.png", "apple-touch-icon.png"):
     shutil.copy(f"{SRC}/img/{f}", f)
+# video del especial (mp4/webm/poster ya comprimidos en src/video/)
+if os.path.isdir(f"{SRC}/video"):
+    os.makedirs("video", exist_ok=True)
+    for f in os.listdir(f"{SRC}/video"): shutil.copy(f"{SRC}/video/{f}", f"video/{f}")
 # OG: la Deseo sobre fondo negro con el logo
 og = Image.new("RGB", (1200, 630), tuple(int(COL["ink"].lstrip("#")[i:i + 2], 16) for i in (0, 2, 4)))
 b = hero_src.resize((620, int(hero_src.height * 620 / hero_src.width)), Image.LANCZOS)
@@ -201,6 +205,14 @@ def img_url(name, inline):
         return "data:image/webp;base64," + base64.b64encode(open(f"img/{name}.webp", "rb").read()).decode()
     return f"/img/{name}.webp"
 
+def vid_url(name, ext, inline):
+    """video/<name>.<ext>; en preview se incrusta solo el mp4 (el webm se omite)."""
+    mime = {"mp4": "video/mp4", "webm": "video/webm", "webp": "image/webp"}[ext]
+    if inline:
+        if ext == "webm": return None
+        return f"data:{mime};base64," + base64.b64encode(open(f"video/{name}.{ext}", "rb").read()).decode()
+    return f"/video/{name}.{ext}"
+
 def build(inline=False, outdir=".", links=None):
     """inline=True: todo incrustado (CSS, JS, fuentes, fotos) para previsualizar como artefacto."""
     sizes = {}
@@ -210,10 +222,10 @@ def build(inline=False, outdir=".", links=None):
         HOME, MEN = ("Inicio", "Menú") if lg == "es" else ("Home", "Menu")
         G = dict(S=S, SEO=SEO, M=M, R=R, CT=CT, SUC=SUC, MENU=MENU, TX=TX, FAQ=C["faq"], DIAS=DIAS, CARNES=C["carnes"],
                  DESTACADOS=DESTACADOS, VITRINA=VITRINA, TOTAL=TOTAL, V=V, LANG=lg, L=L, LOGO=Markup(LOGO_SVG), LOGO_DEFS=Markup(LOGO_DEFS), HERO_H=HERO_H,
-                 TAGS={"new": {"es": "Nuevo", "en": "New"}}, INLINE=inline,
+                 TAGS={"new": {"es": "Nuevo", "en": "New"}}, INLINE=inline, ESP=C.get("especial") or {}, ESP_ITEM=BY_ID.get((C.get("especial") or {}).get("id"), {}),
                  CSS_SITE=Markup(font_css(True) + css_base) if inline else None,
                  CSS_PAGES={k: Markup(v) for k, v in css_pages.items()}, JS_SITE=Markup(js_site), JS_PAGES={k: Markup(v) for k, v in js_pages.items()},
-                 img=lambda n: img_url(n, inline), hero=lambda: (img_url("hero", inline), img_url("hero-2x", inline)),
+                 img=lambda n: img_url(n, inline), vid=lambda n, e: vid_url(n, e, inline), hero=lambda: (img_url("hero", inline), img_url("hero-2x", inline)),
                  LINKS=links or {})
         PAGES = [
             ("index.html", "inicio.html", "/", dict(id="inicio", title=T(SEO["inicio"]["title"]), description=T(SEO["inicio"]["description"]), og_type="website",
