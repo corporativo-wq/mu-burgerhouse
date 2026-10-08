@@ -222,7 +222,7 @@ def build(inline=False, outdir=".", links=None):
         HOME, MEN = ("Inicio", "Menú") if lg == "es" else ("Home", "Menu")
         G = dict(S=S, SEO=SEO, M=M, R=R, CT=CT, SUC=SUC, MENU=MENU, TX=TX, FAQ=C["faq"], DIAS=DIAS, CARNES=C["carnes"],
                  DESTACADOS=DESTACADOS, VITRINA=VITRINA, TOTAL=TOTAL, V=V, LANG=lg, L=L, LOGO=Markup(LOGO_SVG), LOGO_DEFS=Markup(LOGO_DEFS), HERO_H=HERO_H,
-                 TAGS={"new": {"es": "Nuevo", "en": "New"}}, INLINE=inline, ESP=C.get("especial") or {}, ESP_ITEM=BY_ID.get((C.get("especial") or {}).get("id"), {}),
+                 TAGS={"new": {"es": "Nuevo", "en": "New"}}, INLINE=inline, ESP=C.get("especial") or {}, ESP_ITEMS=[BY_ID[i] for i in (C.get("especial") or {}).get("items", []) if i in BY_ID],
                  CSS_SITE=Markup(font_css(True) + css_base) if inline else None,
                  CSS_PAGES={k: Markup(v) for k, v in css_pages.items()}, JS_SITE=Markup(js_site), JS_PAGES={k: Markup(v) for k, v in js_pages.items()},
                  img=lambda n: img_url(n, inline), vid=lambda n, e: vid_url(n, e, inline), hero=lambda: (img_url("hero", inline), img_url("hero-2x", inline)),

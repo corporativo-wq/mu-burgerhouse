@@ -4,24 +4,28 @@
 {% block body %}
 {{ m.bar('menu', cta='home') }}
 
-{%- if ESP.activo %}
-<div id="intro" class="intro" hidden data-id="{{ ESP.id }}" data-hasta="{{ ESP.hasta }}" data-desde="{{ ESP.desde }}">
-  <video id="introv" muted playsinline preload="auto" poster="{{ vid(ESP.video,'webp') }}" aria-label="{{ ESP.titulo|t }}">
-    {%- set wm = vid(ESP.video,'webm') %}{% if wm %}<source src="{{ wm }}" type="video/webm">{% endif %}
-    <source src="{{ vid(ESP.video,'mp4') }}" type="video/mp4">
-  </video>
-  <div class="shade"></div>
-  <button class="skip mono" type="button" data-intro-close>{{ ESP.saltar|t }} ✕</button>
-  <div class="txt">
-    <span class="mono kicker">{{ ESP.kicker|t }}</span>
-    <h2 class="display">{{ ESP.titulo|t }}</h2>
-    <p>{{ ESP.lead|t }}</p>
-    <div class="row">
-      <span class="mono pr">{{ m.price(ESP_ITEM) }} MXN</span>
-      <a class="btn" href="#{{ ESP.id }}" data-intro-close data-ev="menu_nav">{{ ESP.cta|t }} →</a>
+{%- if ESP.activo and ESP_ITEMS %}
+<div id="intro" class="intro" hidden data-hasta="{{ ESP.hasta }}" data-desde="{{ ESP.desde }}" data-n="{{ ESP_ITEMS|length }}">
+  {%- for it in ESP_ITEMS %}
+  <div class="one" data-id="{{ it.id }}" hidden>
+    <video muted playsinline preload="{{ 'auto' if loop.first else 'none' }}" poster="{{ vid(it.video,'webp') }}" aria-label="{{ it.n|t }}">
+      {%- set wm = vid(it.video,'webm') %}{% if wm %}<source src="{{ wm }}" type="video/webm">{% endif %}
+      <source src="{{ vid(it.video,'mp4') }}" type="video/mp4">
+    </video>
+    <div class="shade"></div>
+    <div class="txt">
+      <span class="mono kicker">{{ ESP.kicker|t }}{% if ESP_ITEMS|length > 1 %} · {{ loop.index }}/{{ ESP_ITEMS|length }}{% endif %}</span>
+      <h2 class="display">{{ it.n|t }}</h2>
+      <p>{{ it.d|t|replace(' Especial de Halloween.','')|replace(' Halloween special.','') }}</p>
+      <div class="row">
+        <span class="mono pr">{{ m.price(it) }} MXN</span>
+        <a class="btn" href="#{{ it.id }}" data-intro-close data-ev="menu_nav">{{ ESP.cta|t }} →</a>
+      </div>
+      <div class="bar"><i></i></div>
     </div>
-    <div class="bar"><i></i></div>
   </div>
+  {%- endfor %}
+  <button class="skip mono" type="button" data-intro-close>{{ ESP.saltar|t }} ✕</button>
 </div>
 {%- endif %}
 

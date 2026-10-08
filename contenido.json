@@ -354,11 +354,11 @@
   "faq": [],
   "destacados": [
     "diablo",
+    "bloody",
     "croquetas",
     "queseria",
     "hawai",
-    "ensalada-roja",
-    "hotdog-queso"
+    "ensalada-roja"
   ],
   "vitrina": [
     "deseo",
@@ -437,6 +437,23 @@
             "foto": "diablo",
             "video": "diablo",
             "id": "diablo"
+          },
+          {
+            "n": {
+              "es": "The Bloody Mary",
+              "en": "The Bloody Mary"
+            },
+            "p": 290,
+            "d": {
+              "es": "Pan negro con carbón activado, carne rellena de queso crema de rancho, cebolla crispy, tocino, queso gouda y mermelada de frutos rojos. Especial de Halloween.",
+              "en": "Activated-charcoal black bun, patty stuffed with ranch cream cheese, crispy onion, bacon, gouda and red berry jam. Halloween special."
+            },
+            "tags": [
+              "new"
+            ],
+            "foto": "bloody",
+            "video": "bloody",
+            "id": "bloody"
           },
           {
             "n": {
@@ -1541,21 +1558,11 @@
   "_notas_fotos": "Fotos en src/img/*.webp. 'foto' = foto normal; 'recorte' = versión sin fondo. Solo fotos reales.",
   "especial": {
     "activo": true,
-    "id": "diablo",
-    "video": "diablo",
     "desde": "2026-10-08",
     "hasta": "2026-11-02",
     "kicker": {
       "es": "Especial de Halloween · octubre",
       "en": "Halloween special · October"
-    },
-    "titulo": {
-      "es": "Diablo Chipotle Burger",
-      "en": "Diablo Chipotle Burger"
-    },
-    "lead": {
-      "es": "180 g de carne, queso, tocino y aderezo Mu, bañada en salsa de queso con chipotle.",
-      "en": "180 g patty, cheese, bacon and Mu dressing, drenched in chipotle cheese sauce."
     },
     "cta": {
       "es": "Ver el menú",
@@ -1564,6 +1571,10 @@
     "saltar": {
       "es": "Saltar",
       "en": "Skip"
-    }
+    },
+    "items": [
+      "diablo",
+      "bloody"
+    ]
   }
 }
