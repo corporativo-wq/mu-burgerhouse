@@ -28,3 +28,8 @@ if(window.dataLayer) dataLayer.push({event:'intro_view',id:one.getAttribute('dat
 } else { intro.remove(); }
 }
 })();
+(function(){
+document.querySelectorAll('.sweet [data-swap]').forEach(function(a){
+a.addEventListener('click',function(e){ e.preventDefault(); a.classList.toggle('zoom'); if(window.dataLayer) dataLayer.push({event:'dessert_zoom',id:a.closest('.sweet').id}); });
+});
+})();
