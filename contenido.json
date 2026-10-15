@@ -355,10 +355,10 @@
   "destacados": [
     "diablo",
     "bloody",
+    "chocoflan",
+    "pay-limon",
     "croquetas",
-    "queseria",
-    "hawai",
-    "ensalada-roja"
+    "queseria"
   ],
   "vitrina": [
     "deseo",
@@ -1162,8 +1162,58 @@
           "es": "Postres",
           "en": "Desserts"
         },
-        "layout": "list",
+        "layout": "postres",
         "items": [
+          {
+            "n": {
+              "es": "Chocoflan",
+              "en": "Chocoflan"
+            },
+            "p": 80,
+            "p_nota": {
+              "es": "la rebanada",
+              "en": "per slice"
+            },
+            "d": {
+              "es": "Pastel de chocolate húmedo abajo, flan de vainilla arriba y caramelo que escurre. Dos postres en una rebanada.",
+              "en": "Moist chocolate cake below, vanilla flan on top and caramel running down. Two desserts in one slice."
+            },
+            "tags": [
+              "new"
+            ],
+            "foto": "chocoflan",
+            "foto2": "chocoflan-close",
+            "foto_sq": "chocoflan-sq",
+            "id": "chocoflan",
+            "solo_en": [
+              "mu-40"
+            ]
+          },
+          {
+            "n": {
+              "es": "Pay de limón verde y amarillo",
+              "en": "Green & yellow lemon pie"
+            },
+            "p": 85,
+            "p_nota": {
+              "es": "la rebanada",
+              "en": "per slice"
+            },
+            "d": {
+              "es": "Base de galleta, cremoso de limón verde y amarillo, crema batida. Ácido, dulce y frío.",
+              "en": "Cookie crust, green and yellow lemon cream, whipped cream. Tart, sweet and cold."
+            },
+            "tags": [
+              "new"
+            ],
+            "foto": "pay-limon",
+            "foto2": "pay-limon-close",
+            "foto_sq": "pay-limon-sq",
+            "id": "pay-limon",
+            "solo_en": [
+              "mu-40"
+            ]
+          },
           {
             "n": {
               "es": "Plátanos postreros",
@@ -1185,7 +1235,11 @@
             "d": null,
             "id": "copa"
           }
-        ]
+        ],
+        "nota": {
+          "es": "Guarda lugar. O no, pero pídelo igual.",
+          "en": "Save room. Or don't, order it anyway."
+        }
       },
       {
         "id": "mezcalita-bar",
@@ -1553,7 +1607,29 @@
           }
         ]
       }
-    ]
+    ],
+    "postre_band": {
+      "despues_de": [
+        "burgers",
+        "hotdogs"
+      ],
+      "kicker": {
+        "es": "¿Y de postre?",
+        "en": "Dessert?"
+      },
+      "titulo": {
+        "es": "Guarda lugar para el final.",
+        "en": "Save room for the end."
+      },
+      "cta": {
+        "es": "Ver los postres",
+        "en": "See desserts"
+      },
+      "items": [
+        "chocoflan",
+        "pay-limon"
+      ]
+    }
   },
   "_notas_fotos": "Fotos en src/img/*.webp. 'foto' = foto normal; 'recorte' = versión sin fondo. Solo fotos reales.",
   "especial": {
