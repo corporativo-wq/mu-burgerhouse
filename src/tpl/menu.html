@@ -117,6 +117,36 @@
       {%- endfor %}
     </div>
 
+    {%- elif s.layout == 'postres' %}
+    <div class="items sweets">
+      {%- for it in s['items'] if it.foto %}
+      <article class="sweet item" id="{{ it.id }}" data-reveal>
+        <a class="ph" href="#{{ it.id }}" aria-label="{{ it.n|t }}" data-swap>
+          <img src="{{ img(it.foto) }}" alt="{{ it.n|t }}" loading="lazy" width="960" height="1200">
+          {%- if it.foto2 %}<img class="alt" src="{{ img(it.foto2) }}" alt="" loading="lazy" width="960" height="1200">{% endif %}
+          <div class="tags">{{ m.tags(it) }}</div>
+          {%- if it.foto2 %}<span class="mono hint">{BI:Toca para acercar|Tap to zoom}</span>{% endif %}
+        </a>
+        <div class="row">
+          <h3>{{ it.n|t }}</h3>
+          <span class="price big">{{ m.price(it) }}{% if it.p_nota %}<span class="pn mono">{{ it.p_nota|t }}</span>{% endif %}</span>
+        </div>
+        {%- if it.d %}<p>{{ it.d|t }}</p>{% endif %}
+      </article>
+      {%- endfor %}
+    </div>
+    <div class="items list">
+      {%- for it in s['items'] if not it.foto %}
+      <div class="lrow item" id="{{ it.id }}" data-reveal>
+        <div>
+          <h3>{{ it.n|t }}</h3>
+          {%- if it.d %}<p>{{ it.d|t }}</p>{% endif %}
+        </div>
+        <span class="price">{{ m.price(it) }}{% if it.p_nota %}<span class="pn mono">{{ it.p_nota|t }}</span>{% endif %}</span>
+      </div>
+      {%- endfor %}
+    </div>
+
     {%- elif s.layout == 'list' %}
     <div class="items list">
       {%- for it in s['items'] %}
@@ -143,6 +173,21 @@
     </div>
     {%- endif %}
   </section>
+  {%- if PB and s.id in PB.despues_de %}
+  <aside class="sweet-band wrap" aria-label="{{ PB.kicker|t }}" data-reveal>
+    <a class="in" href="#postres" data-ev="menu_nav" data-branch="postres">
+      <div class="pics">
+        {%- for it in PB_ITEMS %}<img src="{{ img(it.foto_sq or it.foto) }}" alt="{{ it.n|t }}" loading="lazy" width="480" height="480">{% endfor %}
+      </div>
+      <div class="t">
+        <span class="mono kicker">{{ PB.kicker|t }}</span>
+        <h3 class="display">{{ PB.titulo|t }}</h3>
+        <span class="mono list">{% for it in PB_ITEMS %}{{ it.n|t }} {{ m.price(it) }}{% if not loop.last %} · {% endif %}{% endfor %}</span>
+      </div>
+      <span class="mono go">{{ PB.cta|t }} →</span>
+    </a>
+  </aside>
+  {%- endif %}
   {%- endfor %}
 
   <footer class="dark wrap" data-theme-section="dark">

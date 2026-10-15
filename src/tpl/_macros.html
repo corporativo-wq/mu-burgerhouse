@@ -31,7 +31,7 @@
 
 {%- macro tags(it) -%}
 {%- for tg in (it.tags or []) %}<span class="tag {{ tg }}">{{ TAGS[tg]|t }}</span>{% endfor -%}
-{%- if it.solo_en %}<span class="tag">{BI:Solo 40 · Nichupté|Only 40 · Nichupté}</span>{% endif -%}
+{%- if it.solo_en and it.solo_en|length == 1 and it.solo_en[0] == 'mu-40' %}<span class="tag">{BI:Solo Av. 40|Only Av. 40}</span>{% elif it.solo_en %}<span class="tag">{BI:Solo 40 · Nichupté|Only 40 · Nichupté}</span>{% endif -%}
 {%- endmacro -%}
 
 {%- macro price(it) -%}
