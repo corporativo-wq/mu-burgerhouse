@@ -39,7 +39,7 @@ Los HTML de la raíz y de `en/` se GENERAN: no los edites a mano. Mismo sistema 
 - `build.py --preview` escribe `preview/*.html` con todo incrustado para previsualizar como artefacto en Claude (no se publica).
 
 ## Medición
-Meta Pixel 287356442311515 (Mu Group) en el `<head>` de todas las páginas vía `src/tpl/_base.html` (código de Fernando, sin modificar; no se incluye en `--preview`): PageView + evento `Contact` en cada clic a `wa.me`. Añadido 2026-10-20.
+Meta Pixel 287356442311515 (Mu Group) en el `<head>` de todas las páginas vía `src/tpl/_base.html` (código de Fernando, sin modificar; no se incluye en `--preview`): PageView + evento `Contact` en cada clic a `wa.me` o `whatsapp.com`. Añadido 2026-10-20. Meta `facebook-domain-verification` solo en el inicio (`page.id == 'inicio'`, ES y EN). El menú lleva botón flotante de WhatsApp (`.wa-float`, mismo enlace `contacto.whatsapp`).
 Cada CTA lleva `data-ev` (`como_llegar`, `whatsapp`, `phone`, `order_rappi`, `order_ubereats`, `menu_nav`, `branch_page`, `home_nav`, `review`, `social_*`, `game_play`; además `noche` al cambiar el modo)
 y `data-branch`. Un clic = `dataLayer.push({event:'cta_click',…})` + `gtag('event', ev, {branch})`. Sin GTM.
 Eventos clave en GA4: como_llegar, whatsapp, phone, menu_nav (sin valor monetario). Dimensión personalizada "Sucursal" = parámetro `branch`.
