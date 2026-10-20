@@ -22,7 +22,7 @@
 <meta name="twitter:image" content="https://muburgers.mx/og.jpg">
 <link rel="preload" href="/assets/fonts/archivo-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/jetbrains-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/site.css?v=8c9055b0"><link rel="stylesheet" href="/assets/sucursal.css?v=8c9055b0">
+<link rel="stylesheet" href="/assets/site.css?v=065739ea"><link rel="stylesheet" href="/assets/sucursal.css?v=065739ea">
 <!-- Meta Pixel · Mu Group -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -33,8 +33,7 @@ document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','287356442311515');
 fbq('track','PageView');
 // Cada clic a WhatsApp cuenta como "Contacto"
-document.addEventListener('click',function(e){var a=e.target.closest('a[href*="wa.me"]');
-if(a)fbq('track','Contact');});
+document.addEventListener('click',function(e){var a=e.target.closest('a[href*="wa.me"],a[href*="whatsapp.com"]');if(a)fbq('track','Contact');});
 </script>
 </head>
 <body class="page-404">
@@ -78,6 +77,6 @@ if(a)fbq('track','Contact');});
 </footer>
 </main>
 <script>/* /menu/ → /menu (QRs viejos) y rutas con barra final */(function(){var p=location.pathname.replace(/\/+$/,'').replace(/\.html$/,'');var ok=['/menu','/en/menu','/mu-10','/en/mu-10','/mu-40','/en/mu-40','/mu-nichupte','/en/mu-nichupte'];if(location.pathname!==p&&ok.indexOf(p)>-1)location.replace(p+location.search+location.hash)})();</script>
-<script src="/assets/site.js?v=8c9055b0" defer></script>
+<script src="/assets/site.js?v=065739ea" defer></script>
 </body>
 </html>
