@@ -208,6 +208,9 @@
     </div>
   </footer>
 </main>
+{%- if CT.whatsapp %}
+<a class="wa-float mono" href="https://wa.me/{{ CT.whatsapp|digits }}?text={{ CT.whatsapp_texto|urlencode }}" data-ev="whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp →</a>
+{%- endif %}
 {% endblock %}
 {% block extra_js %}<script src="/assets/menu.js?v={{ V }}" defer></script>{% endblock %}
 {% block inline_js %}<script>{{ JS_PAGES.menu }}</script>{% endblock %}

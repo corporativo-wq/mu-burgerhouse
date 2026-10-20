@@ -12,6 +12,8 @@
 <link rel="alternate" hreflang="en" href="{{ S.dominio }}{{ ALT.en }}">
 <link rel="alternate" hreflang="x-default" href="{{ S.dominio }}{{ ALT.es }}">{% endif %}
 <meta name="robots" content="{{ page.robots|default('index,follow') }}">
+{%- if page.id == 'inicio' %}
+<meta name="facebook-domain-verification" content="dryzms9udgnyyfee2q7eyvw1mc3vtu" />{% endif %}
 <meta name="theme-color" content="{{ S.tema }}">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -50,8 +52,7 @@ document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','287356442311515');
 fbq('track','PageView');
 // Cada clic a WhatsApp cuenta como "Contacto"
-document.addEventListener('click',function(e){var a=e.target.closest('a[href*="wa.me"]');
-if(a)fbq('track','Contact');});
+document.addEventListener('click',function(e){var a=e.target.closest('a[href*="wa.me"],a[href*="whatsapp.com"]');if(a)fbq('track','Contact');});
 </script>
 {%- endif %}
 </head>
