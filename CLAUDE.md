@@ -16,13 +16,17 @@ Los HTML de la raíz y de `en/` se GENERAN: no los edites a mano. Mismo sistema 
 2. `./build.sh` (python3 + `pip install jinja2 pillow`).
 3. Publicar. La sesión de Claude NO tiene el repo vinculado (push directo da 403), así que se publica igual que ambymu.mx:
    por el Chrome de Fernando (extensión Claude in Chrome; preferir la Mac Studio, siempre encendida, con su sesión de GitHub abierta).
-   Abrir `https://github.com/corporativo-wq/mu-burgerhouse/upload/main` (y `/upload/main/en` para la carpeta en/), inyectar por JavaScript
-   TODOS los archivos cambiados de una vez en `input[type=file]`: gzip+base64 por archivo, acumular en `window.__B` en trozos
-   de ≤20 KB, decodificar con atob → Blob.stream().pipeThrough(new DecompressionStream('gzip')) (fetch de data: URLs lo bloquea
-   el CSP de GitHub) → DataTransfer + File → dispatch 'change' (los archivos vacíos se ignoran); o pedirle a Fernando que arrastre
-   la carpeta "Mu Web" (sin `_old/` ni `preview/`), poner el mensaje y hacer clic en "Commit changes". Esperar a que
-   termine "Processing your files" antes de navegar. Subir siempre `contenido.json` + los HTML regenerados (y `assets/`
-   si cambió el hash). Pages publica en ~1 min.
+   **Método rápido (2026-10-15):** copiar los archivos cambiados a `/mnt/user-data/uploads/mu-pub/<ruta>` y, por carpeta,
+   abrir `https://github.com/corporativo-wq/mu-burgerhouse/upload/main/<carpeta>` (raíz, `assets`, `en`, `img`, `src`, `src/css`,
+   `src/tpl`, `src/img`), localizar el `input[type=file]` con `find` y subir con la herramienta `file_upload` de Claude in Chrome
+   (acepta rutas bajo `/mnt/user-data/uploads/`; NO acepta `/mnt/user-data/outputs/` ni rutas de la Mac). Luego tomar una captura,
+   hacer clic por coordenadas en el campo "Commit summary", escribir el mensaje y pulsar Return (los clics por `ref` fallan tras la
+   subida). Sirve también para binarios (webp, video) — ya no hace falta que Fernando arrastre nada.
+   Método anterior (respaldo): inyectar por JavaScript gzip+base64 en `window.__B` (trozos ≤20 KB) → atob → Blob.stream().pipeThrough(
+   new DecompressionStream('gzip')) → DataTransfer + File → dispatch 'change' (fetch de data: URLs lo bloquea el CSP de GitHub).
+   Subir siempre `contenido.json` + los HTML regenerados (y `assets/` si cambió el hash). Pages publica en ~1 min.
+   Verificación en vivo: los shells (nube y Mac) tienen bloqueado muburgers.mx por la lista de dominios; verificar con
+   `javascript_tool` en Chrome (fetch de cada archivo + naturalWidth de las imágenes).
    Copia espejo en la Mac: Documentos → "Mu Web" (iCloud), vía device_commit_files.
 4. Verificar en vivo (descargar las páginas publicadas y compararlas con el build).
 
@@ -46,6 +50,9 @@ Eventos clave en GA4: como_llegar, whatsapp, phone, menu_nav (sin valor monetari
 - No mencionar otras marcas del grupo (AM, Papaya Slice, Marola) en el sitio.
 - Teléfonos: solo los de Mu. WhatsApp general (Wati): +52 984 179 2682 (confirmado por Fernando 2026-10-07; el 984 168 8926 del sitio Wix anterior era incorrecto).
 - Interruptores de la barra: **Noche** (invierte papel/tinta en todo el sitio, se recuerda por dispositivo) en todas las páginas y **Modo loco** solo en el inicio. El logo aparece grande en el hero y se encoge hasta la barra al hacer scroll.
+- Especiales (`contenido.especial`): lista `items` de ids del menú con `video`; el intro del menú muestra uno por visita y los alterna (contador `mu-intro-n` en localStorage), vigencia `desde`/`hasta`. Platillos con `video` usan el loop en la tarjeta. Oct 2026: `diablo` (Diablo Chipotle Burger, 290) y `bloody` (The Bloody Mary, 290; el reel original dice "The Bloody Mu Burger", se cortó en 7.3 s antes del rótulo).
+- GitHub "Upload files" acepta máximo 100 archivos por subida: la carpeta `video/` suele ir en una segunda subida (`/upload/main/video`).
+- Postres (`layout: "postres"`): platillos con `foto` van en tarjetas grandes (2 columnas) con `foto2` (close-up al pasar el mouse / tocar) y `foto_sq` (miniatura); los sin foto, en lista. Fotos de postre con fondo igualado al papel (#f2f0eb) salvo los close-ups. `menu.postre_band` = banda "¿Y de postre?" tras las secciones en `despues_de` (burgers, hotdogs). `solo_en: ["mu-40"]` muestra la etiqueta "Solo Av. 40". Oct 2026: Chocoflan 80 y Pay de limón verde y amarillo 85 (la rebanada, solo Av. 40).
 - Torre Mu (juego) se queda en el inicio. Marcador general pendiente de un endpoint propio (`MU_SCORE_API`); mientras, guarda por dispositivo.
 
 ## Datos reales (octubre 2026)
