@@ -135,7 +135,8 @@
   .sweet .pn{display:block;opacity:.6;margin-top:4px;text-align:right;font-size:10px}
   .sweet p{margin:0;font-size:clamp(15px,1.3vw,17px);opacity:.8;line-height:1.4;max-width:44ch}
   .sweets + .list{margin-top:clamp(18px,3vw,36px);border-top:1px solid var(--line)}
-  @media (max-width:560px){.sweets{grid-template-columns:1fr}.sweet .ph .hint{opacity:.7}}
+  .sweets.one{grid-template-columns:minmax(0,620px)}
+  @media (max-width:560px){.sweets,.sweets.one{grid-template-columns:1fr}.sweet .ph .hint{opacity:.7}}
   @media (hover:none){.sweet .ph{cursor:pointer}}
 
   /* postres: banda de antojo después de las burgers y de los hot dogs */
