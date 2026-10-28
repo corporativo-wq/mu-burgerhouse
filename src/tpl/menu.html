@@ -118,7 +118,8 @@
     </div>
 
     {%- elif s.layout == 'postres' %}
-    <div class="items sweets">
+    {%- set nsw = s['items']|selectattr('foto')|list|length %}
+    <div class="items sweets{{ ' one' if nsw == 1 }}">
       {%- for it in s['items'] if it.foto %}
       <article class="sweet item" id="{{ it.id }}" data-reveal>
         <a class="ph" href="#{{ it.id }}" aria-label="{{ it.n|t }}" data-swap>
