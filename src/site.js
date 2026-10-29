@@ -14,8 +14,9 @@
   if(noche) setNoche(true);
   if(tn) tn.addEventListener('click',function(){ setNoche(!noche); if(window.dataLayer) dataLayer.push({event:'noche',on:noche}); });
   /* ---- aparición al hacer scroll ---- */
-  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{rootMargin:'0px 0px -6% 0px',threshold:.05});
-  d.querySelectorAll('[data-reveal],[data-clip]').forEach(function(el){ io.observe(el); });
+  /* el observador de aparición va inline al final del body (_base.html) para no esperar a este script; aquí solo de respaldo */
+  if(!window.__rv){ var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{rootMargin:'0px 0px -6% 0px',threshold:.05});
+  d.querySelectorAll('[data-reveal],[data-clip]').forEach(function(el){ io.observe(el); }); }
   /* ---- barra clara/oscura según la sección visible + enlace activo ---- */
   var secs=d.querySelectorAll('[data-theme-section]'), links=d.querySelectorAll('#bar nav a[href^="#"]');
   var io2=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ b.classList.toggle('on-dark', e.target.getAttribute('data-theme-section')==='dark'); var id=e.target.id; if(id&&links.length){ links.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href')==='#'+id); }); } } }); },{rootMargin:'-52px 0px -85% 0px',threshold:0});
