@@ -49,3 +49,9 @@ html[lang="en"] .hours tr.today td:first-child::after{content:" · today"}
 .faq details p{margin:10px 0 0;max-width:60ch;opacity:.8}
 .info .map .map-ph{position:absolute;inset:0;display:grid;place-items:center;color:var(--ink-on-dark);background:repeating-linear-gradient(45deg,transparent 0 18px,rgba(242,240,235,.05) 18px 19px)}
 .info .map .map-ph:hover{color:var(--amber)}
+
+/* facturación */
+.fact-branch{border-top:1px solid var(--line-soft);padding:14px 0 6px}
+.fact-branch h3{margin:0 0 6px;font-weight:600;font-stretch:88%;letter-spacing:-.03em;font-size:clamp(22px,2.4vw,32px);line-height:1;text-transform:uppercase}
+.fact-branch address{font-style:normal}
+.fact-branch .ref{margin:4px 0 0}
