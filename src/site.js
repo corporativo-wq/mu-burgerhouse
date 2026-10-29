@@ -1,6 +1,5 @@
 /* Mu. Burgerhouse — JS común (GA4, eventos, barra, retícula, aparición al hacer scroll, horario de hoy). Generado por build.py */
-/* ---- GA4 (gtag directo, sin GTM). El ID vive en contenido.json → sitio.ga4_id ---- */
-(function(){var id='__GA4_ID__';if(!id||id.indexOf('G-')!==0)return;window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config',id);var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+id;document.head.appendChild(s)})();
+/* ---- GA4: el gtag estándar va en el <head> (_base.html) cuando sitio.ga4_id tiene valor ---- */
 (function(){
   var d=document, b=d.body, root=d.documentElement; root.classList.add('js');
   /* ---- medición: cada CTA con data-ev → dataLayer + gtag ---- */
