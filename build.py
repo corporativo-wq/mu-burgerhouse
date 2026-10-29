@@ -7,7 +7,7 @@ Uso:  python3 build.py        (requiere: pip install jinja2 pillow)
 Salida en la raíz del repo (lo que publica GitHub Pages): index.html, menu.html, mu-10.html, mu-40.html,
 mu-nichupte.html, 404.html, en/…, assets/, img/, robots.txt, sitemap.xml, CNAME, favicon, og.jpg.
 """
-import json, re, os, sys, hashlib, datetime, base64, shutil
+import unicodedata, json, re, os, sys, hashlib, datetime, base64, shutil
 from urllib.parse import quote
 from jinja2 import Environment, BaseLoader, TemplateNotFound
 from markupsafe import Markup
@@ -227,7 +227,7 @@ def build(inline=False, outdir=".", links=None):
                  CSS_SITE=Markup(font_css(True) + css_base) if inline else None,
                  CSS_PAGES={k: Markup(v) for k, v in css_pages.items()}, JS_SITE=Markup(js_site), JS_PAGES={k: Markup(v) for k, v in js_pages.items()},
                  img=lambda n: img_url(n, inline), vid=lambda n, e: vid_url(n, e, inline), hero=lambda: (img_url("hero", inline), img_url("hero-2x", inline)),
-                 LINKS=links or {})
+                 LINKS=links or {}, REDIR_JSON=Markup(json.dumps({"/" + unicodedata.normalize("NFC", r["de"]): D + r["a"] for r in C.get("redirecciones", [])}, ensure_ascii=False)))
         PAGES = [
             ("index.html", "inicio.html", "/", dict(id="inicio", title=T(SEO["inicio"]["title"]), description=T(SEO["inicio"]["description"]), og_type="website",
                 ld=ld(ORG, SITE, *[REST(b, lg) for b in SUC]) if lg == "es" else ld(*[REST(b, lg) for b in SUC]))),
@@ -238,6 +238,9 @@ def build(inline=False, outdir=".", links=None):
             PAGES.append((br["slug"] + ".html", "sucursal.html", "/" + br["slug"],
                 dict(id="sucursal", br=br, title=env.filters["fmt"](T(SEO["sucursal"]["title"]), br), description=env.filters["fmt"](T(SEO["sucursal"]["description"]), br), og_type="restaurant",
                      ld=ld(REST(br, lg), crumbs((HOME, D + L + "/"), (br["nombre"], D + L + "/" + br["slug"])), FAQ_LD(lg)))))
+        PAGES.append(("facturacion.html", "facturacion.html", "/facturacion",
+            dict(id="facturacion", title=T(SEO["facturacion"]["title"]), description=T(SEO["facturacion"]["description"]),
+                 ld=crumbs((HOME, D + L + "/"), (("Facturación" if lg == "es" else "Invoicing"), D + L + "/facturacion")))))
         if lg == "es":
             PAGES.append(("404.html", "404.html", "/404", dict(id="404", title=f'Página no encontrada · {S["nombre"]}', description="Esta página no existe.", robots="noindex,follow", ld=None)))
         for out, tpl, path, page in PAGES:
@@ -264,7 +267,7 @@ def build(inline=False, outdir=".", links=None):
 
 sizes = build()
 today = datetime.date.today().isoformat()
-urls = [("/", "weekly", "1.0"), ("/menu", "weekly", "0.9")] + [("/" + b["slug"], "monthly", "0.8") for b in SUC]
+urls = [("/", "weekly", "1.0"), ("/menu", "weekly", "0.9")] + [("/" + b["slug"], "monthly", "0.8") for b in SUC] + [("/facturacion", "yearly", "0.3")]
 rows = []
 for u, c, p in urls:
     en = "/en/" if u == "/" else "/en" + u
@@ -274,6 +277,18 @@ for u, c, p in urls:
     rows.append(f"<url><loc>{D}{en}</loc><lastmod>{today}</lastmod><changefreq>{c}</changefreq><priority>{p}</priority>{al}</url>")
 open("sitemap.xml", "w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + "\n".join(rows) + "\n</urlset>\n")
 open("robots.txt", "w").write(f"User-agent: *\nAllow: /\nSitemap: {D}/sitemap.xml\n")
+# Redirecciones de URLs viejas (Wix): carpeta/index.html con meta refresh 0 + canonical. No van al sitemap.
+import unicodedata
+for r in C.get("redirecciones", []):
+    folder = unicodedata.normalize("NFC", r["de"]); dest = D + r["a"]; en = folder.startswith("en/")
+    os.makedirs(folder, exist_ok=True)
+    label = ("Go to the menu" if "menu" in r["a"] else "Continue") if en else ("Ir al menú" if "menu" in r["a"] else "Continuar")
+    open(os.path.join(folder, "index.html"), "w", encoding="utf-8").write(
+        f'<!doctype html><html lang="{"en" if en else "es"}"><head><meta charset="utf-8"><title>{S["nombre"]}</title>'
+        f'<meta http-equiv="refresh" content="0;url={dest}"><link rel="canonical" href="{dest}">'
+        f'<meta name="viewport" content="width=device-width, initial-scale=1">'
+        f'<script>location.replace("{dest}")</script></head>'
+        f'<body style="font-family:system-ui,sans-serif;padding:24px"><p><a href="{dest}">{label} →</a></p></body></html>\n')
 open("CNAME", "w").write(HOST + "\n")
 open(".nojekyll", "w").write("")
 for k, v in sizes.items(): print(f"{k:28s} {v/1024:6.1f} KB")

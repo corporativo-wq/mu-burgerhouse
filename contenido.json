@@ -284,7 +284,17 @@
         "en": "{nombre_largo} in {ciudad}: address, hours, phone, directions and delivery. Smash, classic cut and wagyu burgers."
       }
     },
-    "og_imagen": "/og.jpg"
+    "og_imagen": "/og.jpg",
+    "facturacion": {
+      "title": {
+        "es": "Facturación · Mu. Burgerhouse",
+        "en": "Invoicing · Mu. Burgerhouse"
+      },
+      "description": {
+        "es": "Cómo pedir tu factura en Mu. Burgerhouse: con el capitán de la sucursal donde consumiste. Direcciones y teléfonos de Mu 10, Mu 40 y Mu Nichupté.",
+        "en": "How to get your invoice (CFDI) at Mu. Burgerhouse: ask the captain at the branch where you dined. Addresses and phones for Mu 10, Mu 40 and Mu Nichupté."
+      }
+    }
   },
   "textos": {
     "hero_titulo": {
@@ -1626,5 +1636,35 @@
       "diablo",
       "bloody"
     ]
-  }
+  },
+  "redirecciones": [
+    {
+      "de": "menú",
+      "a": "/menu"
+    },
+    {
+      "de": "en/menú",
+      "a": "/en/menu"
+    },
+    {
+      "de": "delivery",
+      "a": "/#sucursales"
+    },
+    {
+      "de": "en/cancun",
+      "a": "/en/mu-nichupte"
+    },
+    {
+      "de": "empleo",
+      "a": "/"
+    },
+    {
+      "de": "en/empleo",
+      "a": "/"
+    },
+    {
+      "de": "en/encuestasmu",
+      "a": "/"
+    }
+  ]
 }

@@ -22,7 +22,7 @@
 <meta name="twitter:image" content="https://muburgers.mx/og.jpg">
 <link rel="preload" href="/assets/fonts/archivo-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/jetbrains-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/site.css?v=c6e4c3e1"><link rel="stylesheet" href="/assets/sucursal.css?v=c6e4c3e1">
+<link rel="stylesheet" href="/assets/site.css?v=7dae8a28"><link rel="stylesheet" href="/assets/sucursal.css?v=7dae8a28">
 <!-- Meta Pixel · Mu Group -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -68,6 +68,7 @@ document.addEventListener('click',function(e){var a=e.target.closest('a[href*="w
       <div class="block"><span class="mono">Menú</span><a class="big" href="/menu" data-ev="menu_nav">Ver menú completo →</a></div><div class="block"><span class="mono">Reservaciones y pedidos</span><a class="big" href="https://wa.me/529841792682?text=Hola%20Mu" data-ev="whatsapp" target="_blank" rel="noopener">WhatsApp →</a></div>
       <div class="block"><span class="mono">Sucursales</span><a class="big" href="/mu-10" data-ev="branch_page" data-branch="mu-10">Mu 10 · Playa del Carmen →</a><a class="big" href="/mu-40" data-ev="branch_page" data-branch="mu-40">Mu 40 · Playa del Carmen →</a><a class="big" href="/mu-nichupte" data-ev="branch_page" data-branch="mu-nichupte">Mu Nichupté · Cancún →</a></div>
       <div class="block"><span class="mono">Redes</span><a class="big" href="https://www.instagram.com/muburgerhouse/" data-ev="social_instagram" target="_blank" rel="noopener">Instagram →</a><a class="big" href="https://www.facebook.com/MUBURGERHOUSE/" data-ev="social_facebook" target="_blank" rel="noopener">Facebook →</a><a class="big" href="https://www.tiktok.com/@muburgerhouse" data-ev="social_tiktok" target="_blank" rel="noopener">TikTok →</a></div>
+      <div class="block"><span class="mono">Facturación</span><a class="big" href="/facturacion" data-ev="facturacion">Pide tu factura con el capitán →</a></div>
     </div>
   </div>
   <div class="bottom mono">
@@ -76,7 +77,7 @@ document.addEventListener('click',function(e){var a=e.target.closest('a[href*="w
   </div>
 </footer>
 </main>
-<script>/* /menu/ → /menu (QRs viejos) y rutas con barra final */(function(){var p=location.pathname.replace(/\/+$/,'').replace(/\.html$/,'');var ok=['/menu','/en/menu','/mu-10','/en/mu-10','/mu-40','/en/mu-40','/mu-nichupte','/en/mu-nichupte'];if(location.pathname!==p&&ok.indexOf(p)>-1)location.replace(p+location.search+location.hash)})();</script>
-<script src="/assets/site.js?v=c6e4c3e1" defer></script>
+<script>/* /menu/ → /menu (QRs viejos), rutas con barra final y URLs viejas de Wix (plan B si la carpeta con acento no resuelve) */(function(){var raw=location.pathname;try{raw=decodeURIComponent(raw)}catch(e){}var p=raw.normalize?raw.normalize('NFC'):raw;p=p.replace(/\/+$/,'').replace(/\.html$/,'');var old={"/menú": "https://muburgers.mx/menu", "/en/menú": "https://muburgers.mx/en/menu", "/delivery": "https://muburgers.mx/#sucursales", "/en/cancun": "https://muburgers.mx/en/mu-nichupte", "/empleo": "https://muburgers.mx/", "/en/empleo": "https://muburgers.mx/", "/en/encuestasmu": "https://muburgers.mx/"};if(old[p]){location.replace(old[p]);return}var ok=['/menu','/en/menu','/facturacion','/en/facturacion','/mu-10','/en/mu-10','/mu-40','/en/mu-40','/mu-nichupte','/en/mu-nichupte'];if(location.pathname!==p&&ok.indexOf(p)>-1)location.replace(p+location.search+location.hash)})();</script>
+<script src="/assets/site.js?v=7dae8a28" defer></script>
 </body>
 </html>
