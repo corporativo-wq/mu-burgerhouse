@@ -1,0 +1,32 @@
+# Fuente única: Google Sheet (BUSINESS TRUTH / Menu & Prices) → contenido.json → HTML + JSON-LD, vía Pull Request.
+# Nunca publica directo: abre un PR en la rama `sheet/menu-<fecha>` para que una persona lo revise y lo fusione.
+# Requisitos (una sola vez): Settings → Secrets → SHEET_CSV_URL = enlace "Publicar en la web → CSV" de la pestaña Menu & Prices.
+name: Menú desde la Google Sheet
+on:
+  workflow_dispatch:          # botón "Run workflow" en GitHub
+  schedule:
+    - cron: "0 13 * * 1-5"    # lunes a viernes 13:00 UTC (07:00 Cancún): si la hoja cambió, abre/actualiza el PR
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install jinja2 pillow
+      - name: Sheet → contenido.json
+        env: { SHEET_CSV_URL: "${{ secrets.SHEET_CSV_URL }}" }
+        run: python3 tools/sheet_to_contenido.py --csv-url "$SHEET_CSV_URL" | tee /tmp/cambios.txt
+      - name: Regenerar HTML, sitemap y JSON-LD
+        run: python3 build.py
+      - name: Abrir / actualizar Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: sheet/menu
+          title: "Menú desde BUSINESS TRUTH (Google Sheet)"
+          commit-message: "Menú: cambios desde la Google Sheet"
+          body-path: /tmp/cambios.txt
+          delete-branch: true
