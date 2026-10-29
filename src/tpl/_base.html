@@ -46,8 +46,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', '{{ S.ga4_id }}');
-  if(/[?&]_dbg=1/.test(location.search)){gtag('config','{{ S.ga4_id }}',{debug_mode:true});}
+  gtag('config', '{{ S.ga4_id }}', /[?&]_dbg=1/.test(location.search) ? {debug_mode: true} : {});
 </script>
 {%- endif %}
 {%- if page.ld %}
