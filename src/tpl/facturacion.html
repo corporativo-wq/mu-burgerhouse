@@ -1,0 +1,37 @@
+{% extends '_base.html' %}
+{% block extra_css %}<link rel="stylesheet" href="/assets/sucursal.css?v={{ V }}">{% endblock %}
+{% block inline_css %}<style>{{ CSS_PAGES.sucursal }}</style>{% endblock %}
+{% block body %}
+{{ m.bar('facturacion', cta='home') }}
+<main id="top">
+  <section class="hero wrap nf" data-theme-section="light">
+    <nav class="crumbs mono" aria-label="Breadcrumb"><a href="{{ L }}/" data-ev="home_nav">{BI:Inicio|Home}</a> <span aria-hidden="true">›</span> <span aria-current="page">{BI:Facturación|Invoicing}</span></nav>
+    <div class="meta mono"><span>{{ S.nombre }}</span><span>{BI:Facturación|Invoicing (CFDI)}</span></div>
+    <div class="title"><h1 class="display xl">{BI:Facturación|Invoicing}</h1></div>
+    <p class="lead">{BI:Tu factura se pide con el capitán de la sucursal donde consumiste, antes de retirarte. Ten a la mano tu ticket y tus datos fiscales (RFC, razón social, uso de CFDI y correo).|Ask the captain at the branch where you dined for your invoice (Mexican CFDI) before you leave. Have your receipt and tax details ready (RFC, legal name, CFDI use and email).}</p>
+    <div class="ctas">
+      {%- if CT.whatsapp %}<a class="btn" href="https://wa.me/{{ CT.whatsapp|digits }}?text={{ CT.whatsapp_texto|urlencode }}" data-ev="whatsapp" target="_blank" rel="noopener">WhatsApp →</a>{% endif %}
+      <a class="btn" href="{{ L }}/menu" data-ev="menu_nav">{BI:Ver el menú|See the menu} →</a>
+    </div>
+    <div class="base"></div>
+  </section>
+
+  <section class="info wrap" data-theme-section="light">
+    <div class="cols">
+      <div class="card" data-reveal style="grid-column:1/-1">
+        <h2 class="mono">{BI:Sucursales|Locations}</h2>
+        {%- for b in SUC %}
+        <div class="fact-branch">
+          <h3>{{ b.nombre }} · {{ b.ciudad }}</h3>
+          <address><a href="{{ b.maps_url }}" data-ev="como_llegar" data-branch="{{ b.slug }}" target="_blank" rel="noopener">{{ b.dir_txt }}</a></address>
+          {%- if b.telefono %}<p class="tel"><a href="tel:{{ b.telefono|tel }}" data-ev="phone" data-branch="{{ b.slug }}">{{ b.telefono }}</a></p>{% endif %}
+          <p class="ref"><a href="{{ L }}/{{ b.slug }}" data-ev="branch_page" data-branch="{{ b.slug }}">{BI:Horario y cómo llegar|Hours & directions} →</a></p>
+        </div>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  {{ m.footer() }}
+</main>
+{% endblock %}

@@ -71,6 +71,7 @@
       {%- if CT.whatsapp %}<div class="block"><span class="mono">{BI:Reservaciones y pedidos|Reservations & orders}</span><a class="big" href="https://wa.me/{{ CT.whatsapp|digits }}?text={{ CT.whatsapp_texto|urlencode }}" data-ev="whatsapp" target="_blank" rel="noopener">WhatsApp →</a></div>{% endif %}
       <div class="block"><span class="mono">{BI:Sucursales|Locations}</span>{% for b in SUC %}<a class="big" href="{{ L }}/{{ b.slug }}" data-ev="branch_page" data-branch="{{ b.slug }}">{{ b.nombre }} · {{ b.ciudad }} →</a>{% endfor %}</div>
       <div class="block"><span class="mono">{BI:Redes|Social}</span>{{ socials('big') }}</div>
+      <div class="block"><span class="mono">{BI:Facturación|Invoicing}</span><a class="big" href="{{ L }}/facturacion" data-ev="facturacion">{BI:Pide tu factura con el capitán|Ask the captain for your invoice} →</a></div>
     </div>
   </div>
   <div class="bottom mono">

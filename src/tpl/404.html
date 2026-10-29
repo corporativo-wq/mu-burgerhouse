@@ -18,5 +18,5 @@
   </section>
   {{ m.footer() }}
 </main>
-<script>/* /menu/ → /menu (QRs viejos) y rutas con barra final */(function(){var p=location.pathname.replace(/\/+$/,'').replace(/\.html$/,'');var ok=['/menu','/en/menu'{% for b in SUC %},'/{{ b.slug }}','/en/{{ b.slug }}'{% endfor %}];if(location.pathname!==p&&ok.indexOf(p)>-1)location.replace(p+location.search+location.hash)})();</script>
+<script>/* /menu/ → /menu (QRs viejos), rutas con barra final y URLs viejas de Wix (plan B si la carpeta con acento no resuelve) */(function(){var raw=location.pathname;try{raw=decodeURIComponent(raw)}catch(e){}var p=raw.normalize?raw.normalize('NFC'):raw;p=p.replace(/\/+$/,'').replace(/\.html$/,'');var old={{ REDIR_JSON }};if(old[p]){location.replace(old[p]);return}var ok=['/menu','/en/menu','/facturacion','/en/facturacion'{% for b in SUC %},'/{{ b.slug }}','/en/{{ b.slug }}'{% endfor %}];if(location.pathname!==p&&ok.indexOf(p)>-1)location.replace(p+location.search+location.hash)})();</script>
 {% endblock %}
