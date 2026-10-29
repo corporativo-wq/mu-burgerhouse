@@ -1,3 +1,26 @@
+# muburgers.mx — política de rastreo (Estándar SEO GMBH 2.0, punto 13)
+# Búsqueda: permitidos
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: Applebot
+Allow: /
+
+# Entrenamiento de modelos: permitidos
+User-agent: Google-Extended
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Applebot-Extended
+User-agent: CCBot
+Allow: /
+
+# Resto de agentes
 User-agent: *
 Allow: /
+
 Sitemap: https://muburgers.mx/sitemap.xml

@@ -9,7 +9,8 @@
     "ga4_id": null,
     "search_console_meta": null,
     "tema": "#0a0a0a",
-    "version_menu": "octubre 2026"
+    "version_menu": "octubre 2026",
+    "fundacion_mes": 10
   },
   "marca": {
     "colores": {
@@ -54,7 +55,7 @@
       "codigo": "PDC",
       "direccion": {
         "calle": "10 Avenida Norte esq. Calle 24 Norte",
-        "colonia": "Gonzalo Guerrero",
+        "colonia": "Quintas del Carmen",
         "ciudad": "Playa del Carmen",
         "estado": "Quintana Roo",
         "cp": "77720",
@@ -114,7 +115,94 @@
       "reservas": null,
       "referencia": null,
       "calificacion_google": 4.6,
-      "resenas_google": 2761
+      "resenas_google": 2761,
+      "texto": {
+        "es": [
+          "Mu 10 es la casa de Mu. Burgerhouse sobre la 10 Avenida Norte, esquina con Calle 24, en la colonia Quintas del Carmen de Playa del Carmen, a unas cuadras de la Quinta Avenida. Aquí se come la carta completa de Mu: hamburguesas smash, classic cut y wagyu con papas incluidas, Big Mu Cheese Burger, hot dogs de salchicha de res, entradas para compartir, órdenes de 300 g y el Margarita & Mezcalita Bar con coctelería, cerveza artesanal y vino mexicano.",
+          "Abre todos los días de 13:30 a 23:30, sin cerrar entre comida y cena. Para llegar en coche, la 10 Avenida corre paralela a la Quinta, dos cuadras hacia la carretera; caminando desde la Quinta Avenida son cinco minutos por la Calle 24. [CONFIRMAR] estacionamiento.",
+          "Es para comer sin prisa después de la playa, para la cena en grupo o en pareja y para familias con niños que quieren una burger de verdad. Si vienes de fuera, es la sucursal más cercana a la zona turística. También hay opciones sin carne de res: la Olvídate de mí con Beyond Meat (+20) y la No carne, no problem."
+        ],
+        "en": [
+          "Mu 10 is the Mu. Burgerhouse location on 10 Avenida Norte at Calle 24, in the Quintas del Carmen neighbourhood of Playa del Carmen, a few blocks from Quinta Avenida. You get the full Mu menu here: smash, classic cut and wagyu burgers with fries included, the Big Mu Cheese Burger, beef hot dogs, starters to share, 300 g orders and the Margarita & Mezcalita Bar with cocktails, craft beer and Mexican wine.",
+          "Open every day from 1:30 pm to 11:30 pm, with no break between lunch and dinner. By car, 10 Avenida runs parallel to Quinta Avenida two blocks inland; on foot it is five minutes from Quinta along Calle 24. [CONFIRM] parking.",
+          "It is for a slow meal after the beach, for dinner with friends or as a couple, and for families with kids who want a real burger. If you are visiting, it is the location closest to the tourist area. There are beef-free options too: the Olvídate de mí with Beyond Meat (+20) and the No carne, no problem."
+        ]
+      },
+      "fotos": [
+        {
+          "img": "deseo",
+          "alt": {
+            "es": "Una hamburguesa llamada Deseo: tocino, hongos salteados, queso fundido y salsa secreta Mu, con papas",
+            "en": "A burger called Deseo: bacon, sautéed mushrooms, melted cheese and Mu secret sauce, with fries"
+          }
+        },
+        {
+          "img": "reina-trufada",
+          "alt": {
+            "es": "La Reina Trufada, hamburguesa con trufa de Mu. Burgerhouse",
+            "en": "La Reina Trufada, Mu. Burgerhouse truffle burger"
+          }
+        },
+        {
+          "img": "cocteles",
+          "alt": {
+            "es": "Cocteles del Margarita & Mezcalita Bar de Mu. Burgerhouse",
+            "en": "Cocktails from Mu. Burgerhouse's Margarita & Mezcalita Bar"
+          }
+        }
+      ],
+      "faq": [
+        {
+          "q": {
+            "es": "¿Cuál es el horario de Mu 10?",
+            "en": "What are Mu 10's hours?"
+          },
+          "a": {
+            "es": "Todos los días de 13:30 a 23:30.",
+            "en": "Every day from 1:30 pm to 11:30 pm."
+          }
+        },
+        {
+          "q": {
+            "es": "¿Puedo reservar?",
+            "en": "Can I book a table?"
+          },
+          "a": {
+            "es": "Escríbenos por WhatsApp al +52 984 179 2682 (el mismo número para las tres sucursales). [CONFIRMAR] política de reservaciones y grupos.",
+            "en": "Message us on WhatsApp at +52 984 179 2682 (the same number for all three locations). [CONFIRM] reservation and group policy."
+          }
+        },
+        {
+          "q": {
+            "es": "¿Hay servicio a domicilio?",
+            "en": "Do you deliver?"
+          },
+          "a": {
+            "es": "Sí, Mu 10 está en Rappi y en Uber Eats; los enlaces directos están arriba en esta página.",
+            "en": "Yes, Mu 10 is on Rappi and Uber Eats; the direct links are above on this page."
+          }
+        },
+        {
+          "q": {
+            "es": "¿Cómo pido factura?",
+            "en": "How do I get an invoice (CFDI)?"
+          },
+          "a": {
+            "es": "Con el capitán de la sucursal donde consumiste, antes de retirarte, con tu ticket y tus datos fiscales.",
+            "en": "Ask the captain at the branch where you dined, before you leave, with your receipt and tax details."
+          }
+        },
+        {
+          "q": {
+            "es": "¿Tienen opciones sin carne?",
+            "en": "Are there meat-free options?"
+          },
+          "a": {
+            "es": "Sí: la Olvídate de mí se prepara con Beyond Meat (carne vegana, +20) y la No carne, no problem es la burger sin carne de la carta. Pregunta al capitán por el resto de ingredientes.",
+            "en": "Yes: the Olvídate de mí is made with Beyond Meat (plant-based, +20) and the No carne, no problem is the meat-free burger on the menu. Ask the captain about the other ingredients."
+          }
+        }
+      ]
     },
     {
       "slug": "mu-40",
@@ -182,7 +270,94 @@
       "reservas": null,
       "referencia": null,
       "calificacion_google": 4.6,
-      "resenas_google": 5743
+      "resenas_google": 5743,
+      "texto": {
+        "es": [
+          "Mu 40 es la casa de Mu. Burgerhouse en el centro de Playa del Carmen: 40 Avenida Norte 11, entre las calles 4 y 6. Es la sucursal con más reseñas de las tres y la única con los especiales exclusivos de la Av. 40, como el Pay de limón verde y amarillo. La carta es la misma de siempre: hamburguesas smash, classic cut y wagyu con papas incluidas, Big Mu Cheese Burger, hot dogs, entradas, órdenes de 300 g y el Margarita & Mezcalita Bar.",
+          "Abre de martes a domingo: martes, miércoles y domingo de 14:00 a 22:00; jueves, viernes y sábado de 14:00 a 23:00. Lunes cerrado. Para llegar, la 40 Avenida es la avenida principal que cruza el centro; la entrada está entre las calles 4 y 6, del lado de la Avenida Juárez. [CONFIRMAR] estacionamiento.",
+          "Es la sucursal de los que viven en Playa: comida de oficina, cena entre semana y las noches de jueves a sábado con coctelería. Para quien no come carne de res están la Olvídate de mí con Beyond Meat (+20) y la No carne, no problem."
+        ],
+        "en": [
+          "Mu 40 is the Mu. Burgerhouse location in downtown Playa del Carmen: 40 Avenida Norte 11, between Calle 4 and Calle 6. It has the most reviews of the three and it is the only one with the Av. 40 exclusives, such as the green & yellow lemon pie. The menu is the usual one: smash, classic cut and wagyu burgers with fries included, the Big Mu Cheese Burger, hot dogs, starters, 300 g orders and the Margarita & Mezcalita Bar.",
+          "Open Tuesday to Sunday: Tuesday, Wednesday and Sunday from 2 pm to 10 pm; Thursday, Friday and Saturday from 2 pm to 11 pm. Closed on Mondays. 40 Avenida is the main avenue across downtown; the entrance is between Calle 4 and Calle 6, on the Avenida Juárez side. [CONFIRM] parking.",
+          "It is the locals' branch: office lunch, weekday dinner and Thursday-to-Saturday nights with cocktails. If you do not eat beef, there are the Olvídate de mí with Beyond Meat (+20) and the No carne, no problem."
+        ]
+      },
+      "fotos": [
+        {
+          "img": "deseo",
+          "alt": {
+            "es": "Una hamburguesa llamada Deseo: tocino, hongos salteados, queso fundido y salsa secreta Mu, con papas",
+            "en": "A burger called Deseo: bacon, sautéed mushrooms, melted cheese and Mu secret sauce, with fries"
+          }
+        },
+        {
+          "img": "reina-trufada",
+          "alt": {
+            "es": "La Reina Trufada, hamburguesa con trufa de Mu. Burgerhouse",
+            "en": "La Reina Trufada, Mu. Burgerhouse truffle burger"
+          }
+        },
+        {
+          "img": "cocteles",
+          "alt": {
+            "es": "Cocteles del Margarita & Mezcalita Bar de Mu. Burgerhouse",
+            "en": "Cocktails from Mu. Burgerhouse's Margarita & Mezcalita Bar"
+          }
+        }
+      ],
+      "faq": [
+        {
+          "q": {
+            "es": "¿Cuál es el horario de Mu 40?",
+            "en": "What are Mu 40's hours?"
+          },
+          "a": {
+            "es": "Martes, miércoles y domingo de 14:00 a 22:00; jueves, viernes y sábado de 14:00 a 23:00. Lunes cerrado.",
+            "en": "Tuesday, Wednesday and Sunday 2–10 pm; Thursday to Saturday 2–11 pm. Closed Mondays."
+          }
+        },
+        {
+          "q": {
+            "es": "¿Puedo reservar?",
+            "en": "Can I book a table?"
+          },
+          "a": {
+            "es": "Escríbenos por WhatsApp al +52 984 179 2682 (el mismo número para las tres sucursales). [CONFIRMAR] política de reservaciones y grupos.",
+            "en": "Message us on WhatsApp at +52 984 179 2682 (the same number for all three locations). [CONFIRM] reservation and group policy."
+          }
+        },
+        {
+          "q": {
+            "es": "¿Hay servicio a domicilio?",
+            "en": "Do you deliver?"
+          },
+          "a": {
+            "es": "Sí, Mu 40 está en Rappi y en Uber Eats; los enlaces directos están arriba en esta página.",
+            "en": "Yes, Mu 40 is on Rappi and Uber Eats; the direct links are above on this page."
+          }
+        },
+        {
+          "q": {
+            "es": "¿Cómo pido factura?",
+            "en": "How do I get an invoice (CFDI)?"
+          },
+          "a": {
+            "es": "Con el capitán de la sucursal donde consumiste, antes de retirarte, con tu ticket y tus datos fiscales.",
+            "en": "Ask the captain at the branch where you dined, before you leave, with your receipt and tax details."
+          }
+        },
+        {
+          "q": {
+            "es": "¿Tienen opciones sin carne?",
+            "en": "Are there meat-free options?"
+          },
+          "a": {
+            "es": "Sí: la Olvídate de mí se prepara con Beyond Meat (carne vegana, +20) y la No carne, no problem es la burger sin carne de la carta. Pregunta al capitán por el resto de ingredientes.",
+            "en": "Yes: the Olvídate de mí is made with Beyond Meat (plant-based, +20) and the No carne, no problem is the meat-free burger on the menu. Ask the captain about the other ingredients."
+          }
+        }
+      ]
     },
     {
       "slug": "mu-nichupte",
@@ -250,7 +425,94 @@
       "reservas": null,
       "referencia": null,
       "calificacion_google": 4.5,
-      "resenas_google": 2716
+      "resenas_google": 2716,
+      "texto": {
+        "es": [
+          "Mu Nichupté es la casa de Mu. Burgerhouse en Cancún, sobre la Avenida Nichupté en la Supermanzana 51, cerca del cruce con la Avenida Kabah. La carta es la misma de Playa del Carmen: hamburguesas smash, classic cut y wagyu con papas incluidas, Big Mu Cheese Burger, hot dogs de salchicha de res, entradas para compartir, órdenes de 300 g y el Margarita & Mezcalita Bar con coctelería, cerveza y vino mexicano.",
+          "Abre de martes a domingo: martes, miércoles y domingo de 14:00 a 22:00; jueves, viernes y sábado de 14:00 a 23:00. Lunes cerrado. Está en la zona de Cancún centro, a unos minutos de la zona hotelera por la Avenida Kabah, con acceso directo desde la Avenida Nichupté. [CONFIRMAR] estacionamiento.",
+          "Es para familias y grupos de Cancún que buscan hamburguesas de calidad sin ir a la zona hotelera, y para quien sale de la oficina. Hay opciones sin carne de res: la Olvídate de mí con Beyond Meat (+20) y la No carne, no problem."
+        ],
+        "en": [
+          "Mu Nichupté is the Mu. Burgerhouse location in Cancún, on Avenida Nichupté in Supermanzana 51, near the junction with Avenida Kabah. The menu is the same as in Playa del Carmen: smash, classic cut and wagyu burgers with fries included, the Big Mu Cheese Burger, beef hot dogs, starters to share, 300 g orders and the Margarita & Mezcalita Bar with cocktails, beer and Mexican wine.",
+          "Open Tuesday to Sunday: Tuesday, Wednesday and Sunday from 2 pm to 10 pm; Thursday, Friday and Saturday from 2 pm to 11 pm. Closed on Mondays. It is in downtown Cancún, a few minutes from the hotel zone via Avenida Kabah, with direct access from Avenida Nichupté. [CONFIRM] parking.",
+          "It is for Cancún families and groups looking for a quality burger without going to the hotel zone, and for the after-office crowd. Beef-free options: the Olvídate de mí with Beyond Meat (+20) and the No carne, no problem."
+        ]
+      },
+      "fotos": [
+        {
+          "img": "deseo",
+          "alt": {
+            "es": "Una hamburguesa llamada Deseo: tocino, hongos salteados, queso fundido y salsa secreta Mu, con papas",
+            "en": "A burger called Deseo: bacon, sautéed mushrooms, melted cheese and Mu secret sauce, with fries"
+          }
+        },
+        {
+          "img": "reina-trufada",
+          "alt": {
+            "es": "La Reina Trufada, hamburguesa con trufa de Mu. Burgerhouse",
+            "en": "La Reina Trufada, Mu. Burgerhouse truffle burger"
+          }
+        },
+        {
+          "img": "cocteles",
+          "alt": {
+            "es": "Cocteles del Margarita & Mezcalita Bar de Mu. Burgerhouse",
+            "en": "Cocktails from Mu. Burgerhouse's Margarita & Mezcalita Bar"
+          }
+        }
+      ],
+      "faq": [
+        {
+          "q": {
+            "es": "¿Cuál es el horario de Mu Nichupté?",
+            "en": "What are Mu Nichupté's hours?"
+          },
+          "a": {
+            "es": "Martes, miércoles y domingo de 14:00 a 22:00; jueves, viernes y sábado de 14:00 a 23:00. Lunes cerrado.",
+            "en": "Tuesday, Wednesday and Sunday 2–10 pm; Thursday to Saturday 2–11 pm. Closed Mondays."
+          }
+        },
+        {
+          "q": {
+            "es": "¿Puedo reservar?",
+            "en": "Can I book a table?"
+          },
+          "a": {
+            "es": "Escríbenos por WhatsApp al +52 984 179 2682 (el mismo número para las tres sucursales). [CONFIRMAR] política de reservaciones y grupos.",
+            "en": "Message us on WhatsApp at +52 984 179 2682 (the same number for all three locations). [CONFIRM] reservation and group policy."
+          }
+        },
+        {
+          "q": {
+            "es": "¿Hay servicio a domicilio?",
+            "en": "Do you deliver?"
+          },
+          "a": {
+            "es": "Sí, Mu Nichupté está en Rappi y en Uber Eats; los enlaces directos están arriba en esta página.",
+            "en": "Yes, Mu Nichupté is on Rappi and Uber Eats; the direct links are above on this page."
+          }
+        },
+        {
+          "q": {
+            "es": "¿Cómo pido factura?",
+            "en": "How do I get an invoice (CFDI)?"
+          },
+          "a": {
+            "es": "Con el capitán de la sucursal donde consumiste, antes de retirarte, con tu ticket y tus datos fiscales.",
+            "en": "Ask the captain at the branch where you dined, before you leave, with your receipt and tax details."
+          }
+        },
+        {
+          "q": {
+            "es": "¿Tienen opciones sin carne?",
+            "en": "Are there meat-free options?"
+          },
+          "a": {
+            "es": "Sí: la Olvídate de mí se prepara con Beyond Meat (carne vegana, +20) y la No carne, no problem es la burger sin carne de la carta. Pregunta al capitán por el resto de ingredientes.",
+            "en": "Yes: the Olvídate de mí is made with Beyond Meat (plant-based, +20) and the No carne, no problem is the meat-free burger on the menu. Ask the captain about the other ingredients."
+          }
+        }
+      ]
     }
   ],
   "seo": {
@@ -260,14 +522,14 @@
         "en": "Mu. Burgerhouse · Burgers in Playa del Carmen & Cancún"
       },
       "description": {
-        "es": "Hamburguesas smash, classic cut y wagyu con papas incluidas. Tres sucursales: Mu 10 y Mu 40 en Playa del Carmen y Mu Nichupté en Cancún. Menú, horarios y pedidos.",
-        "en": "Smash, classic cut and wagyu burgers, fries included. Three locations: Mu 10 and Mu 40 in Playa del Carmen and Mu Nichupté in Cancún. Menu, hours and delivery."
+        "es": "Hamburguesas smash, classic cut y wagyu con papas incluidas. Mu 10 y Mu 40 en Playa del Carmen, Mu Nichupté en Cancún. Menú, horarios y pedidos.",
+        "en": "Smash, classic cut and wagyu burgers, fries included. Mu 10 and Mu 40 in Playa del Carmen, Mu Nichupté in Cancún. Menu, hours and delivery."
       }
     },
     "menu": {
       "title": {
-        "es": "Menú · Mu. Burgerhouse",
-        "en": "Menu · Mu. Burgerhouse"
+        "es": "Menú y precios | Mu. Burgerhouse Playa del Carmen y Cancún",
+        "en": "Menu & prices | Mu. Burgerhouse Playa del Carmen & Cancún"
       },
       "description": {
         "es": "Menú completo de Mu. Burgerhouse con precios en MXN: burgers smash, classic cut y wagyu, Big Mu Cheese Burger, hot dogs, entradas, bar y vino mexicano.",
@@ -359,6 +621,30 @@
     "proteina_nota": {
       "es": "Proteína estimada por carne, antes de cocinar.",
       "en": "Estimated protein per patty, raw weight."
+    },
+    "hero_h1": {
+      "es": "Hamburguesas en Playa del Carmen y Cancún",
+      "en": "Burgers in Playa del Carmen & Cancún"
+    },
+    "sucursal_h1_sufijo": {
+      "es": "Hamburguesas en {ciudad}",
+      "en": "Burgers in {ciudad}"
+    },
+    "mas_pedidos_titulo": {
+      "es": "Los más pedidos",
+      "en": "Most ordered"
+    },
+    "mapa_abrir": {
+      "es": "Ver el mapa",
+      "en": "Show the map"
+    },
+    "mapa_llegar": {
+      "es": "Cómo llegar en Google Maps",
+      "en": "Directions in Google Maps"
+    },
+    "resenas_mas": {
+      "es": "más de {n} reseñas en Google",
+      "en": "{n}+ Google reviews"
     }
   },
   "faq": [],
@@ -1666,5 +1952,20 @@
       "de": "en/encuestasmu",
       "a": "/"
     }
+  ],
+  "historia": {
+    "titulo": {
+      "es": "Desde 2017",
+      "en": "Since 2017"
+    },
+    "texto": {
+      "es": "Mu. Burgerhouse abrió en Playa del Carmen en octubre de 2017 y en octubre de 2026 cumple {anios} años. Hoy somos tres sucursales: Mu 10 y Mu 40 en Playa del Carmen y Mu Nichupté en Cancún. Lo que nos distingue: tú eliges la base de cada burger (smash, classic cut o wagyu), las papas van incluidas y el menú es el mismo en las tres casas, con especiales de temporada.",
+      "en": "Mu. Burgerhouse opened in Playa del Carmen in October 2017 and turns {anios} in October 2026. Today we are three locations: Mu 10 and Mu 40 in Playa del Carmen and Mu Nichupté in Cancún. What sets us apart: you pick the base of every burger (smash, classic cut or wagyu), fries are included and the menu is the same at all three houses, with seasonal specials."
+    }
+  },
+  "mas_pedidos": [
+    "fantasia",
+    "cielo",
+    "deseo"
   ]
 }

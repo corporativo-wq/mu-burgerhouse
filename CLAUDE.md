@@ -38,6 +38,15 @@ Los HTML de la raíz y de `en/` se GENERAN: no los edites a mano. Mismo sistema 
 - `src/img/` originales (WebP, recortes sin fondo, logo SVG, favicon) → `img/` (hero con versión 2x), `og.jpg`.
 - `build.py --preview` escribe `preview/*.html` con todo incrustado para previsualizar como artefacto en Claude (no se publica).
 
+## SEO (Estándar GMBH 2.0, aprobado 2026-10-29)
+- Redirecciones de URLs viejas de Wix: `contenido.redirecciones` → `build.py` genera `<ruta>/index.html` (meta refresh 0 + canonical, NFC). No van al sitemap. Plan B en 404.html.
+- `/facturacion` (ES/EN): factura con el capitán de la sucursal; en sitemap y en el pie.
+- H1: portada "Hamburguesas en Playa del Carmen y Cancún" (`textos.hero_h1`; el lema es subtítulo); sucursales "Mu X · Hamburguesas en <ciudad>" (`textos.sucursal_h1_sufijo`).
+- Sucursal: `texto` (párrafos ES/EN, ~300 palabras con los FAQ), `fotos` (con alt), `faq` propio (FAQPage JSON-LD de las mismas); `mas_pedidos` (ids) se lista en cada sucursal; mapa = tarjeta estática, iframe al tocar; reseñas como "más de N" (`resenas_redondo`).
+- `historia` (portada, años calculados con `sitio.fundacion` + `fundacion_mes`). robots.txt con la política del punto 13 (generado). GA4 estándar en el `<head>` cuando `sitio.ga4_id` tiene valor; `?_dbg=1` activa debug_mode para DebugView.
+- Fuente única: `tools/sheet_to_contenido.py` + `.github/workflows/menu-from-sheet.yml` (Sheet → contenido.json → build → PR; requiere el secret `SHEET_CSV_URL`).
+- Textos marcados [CONFIRMAR] deben confirmarse con Fernando antes de publicar.
+
 ## Medición
 Meta Pixel 287356442311515 (Mu Group) en el `<head>` de todas las páginas vía `src/tpl/_base.html` (código de Fernando, sin modificar; no se incluye en `--preview`): PageView + evento `Contact` en cada clic a `wa.me` o `whatsapp.com`. Añadido 2026-10-20. Meta `facebook-domain-verification` solo en el inicio (`page.id == 'inicio'`, ES y EN). El menú lleva botón flotante de WhatsApp (`.wa-float`, mismo enlace `contacto.whatsapp`).
 Cada CTA lleva `data-ev` (`como_llegar`, `whatsapp`, `phone`, `order_rappi`, `order_ubereats`, `menu_nav`, `branch_page`, `home_nav`, `review`, `social_*`, `game_play`; además `noche` al cambiar el modo)
