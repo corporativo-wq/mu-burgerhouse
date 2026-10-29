@@ -83,6 +83,7 @@ for br in SUC:
     br["horario_resumen"], br["_opening"] = hours_meta(br)
     a = br["direccion"]
     br["dir_txt"] = f'{a["calle"]}, {a["colonia"]}, {a["cp"]} {a["ciudad"]}, Q.R.'
+    br["resenas_redondo"] = "{:,}".format((br.get("resenas_google") or 0) // 100 * 100)  # "más de 2,700": nunca un número fijo
     br["maps_embed"] = "https://www.google.com/maps?q=" + quote(f'{br["nombre_largo"]}, {a["calle"]}, {a["colonia"]}, {a["cp"]} {a["ciudad"]}') + "&z=17&output=embed"
     if not br.get("whatsapp") and CT.get("whatsapp"): br["whatsapp"] = CT["whatsapp"]
     br.setdefault("whatsapp_texto", CT.get("whatsapp_texto") or "Hola")
@@ -122,9 +123,12 @@ def MENU_LD(lg):
             "hasMenuSection": [{"@type": "MenuSection", "name": s["tab"][lg], "hasMenuItem": [item_ld(i, lg) for i in s["items"]]} for s in MENU["secciones"]]}
 def crumbs(*pairs):
     return {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": n, "item": u} for i, (n, u) in enumerate(pairs)]}
-def FAQ_LD(lg):
-    if not C["faq"]: return None
-    return {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": f["q"][lg], "acceptedAnswer": {"@type": "Answer", "text": f["a"][lg]}} for f in C["faq"]]}
+def FAQ_LD(lg, faqs=None):
+    faqs = faqs if faqs is not None else C["faq"]
+    if not faqs: return None
+    return {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": f["q"][lg], "acceptedAnswer": {"@type": "Answer", "text": f["a"][lg]}} for f in faqs]}
+_today = datetime.date.today()
+ANIOS = _today.year - int(S["fundacion"]) - (1 if _today.month < int(S.get("fundacion_mes", 1)) else 0)
 def ld(*nodes):
     return Markup(json.dumps({"@context": "https://schema.org", "@graph": [n for n in nodes if n]}, ensure_ascii=False).replace("</", "<\\/"))
 
@@ -227,7 +231,7 @@ def build(inline=False, outdir=".", links=None):
                  CSS_SITE=Markup(font_css(True) + css_base) if inline else None,
                  CSS_PAGES={k: Markup(v) for k, v in css_pages.items()}, JS_SITE=Markup(js_site), JS_PAGES={k: Markup(v) for k, v in js_pages.items()},
                  img=lambda n: img_url(n, inline), vid=lambda n, e: vid_url(n, e, inline), hero=lambda: (img_url("hero", inline), img_url("hero-2x", inline)),
-                 LINKS=links or {}, REDIR_JSON=Markup(json.dumps({"/" + unicodedata.normalize("NFC", r["de"]): D + r["a"] for r in C.get("redirecciones", [])}, ensure_ascii=False)))
+                 HIST=C.get("historia"), ANIOS=ANIOS, MAS_PEDIDOS=[BY_ID[i] for i in C.get("mas_pedidos", []) if i in BY_ID], LINKS=links or {}, REDIR_JSON=Markup(json.dumps({"/" + unicodedata.normalize("NFC", r["de"]): D + r["a"] for r in C.get("redirecciones", [])}, ensure_ascii=False)))
         PAGES = [
             ("index.html", "inicio.html", "/", dict(id="inicio", title=T(SEO["inicio"]["title"]), description=T(SEO["inicio"]["description"]), og_type="website",
                 ld=ld(ORG, SITE, *[REST(b, lg) for b in SUC]) if lg == "es" else ld(*[REST(b, lg) for b in SUC]))),
@@ -237,7 +241,7 @@ def build(inline=False, outdir=".", links=None):
         for br in SUC:
             PAGES.append((br["slug"] + ".html", "sucursal.html", "/" + br["slug"],
                 dict(id="sucursal", br=br, title=env.filters["fmt"](T(SEO["sucursal"]["title"]), br), description=env.filters["fmt"](T(SEO["sucursal"]["description"]), br), og_type="restaurant",
-                     ld=ld(REST(br, lg), crumbs((HOME, D + L + "/"), (br["nombre"], D + L + "/" + br["slug"])), FAQ_LD(lg)))))
+                     ld=ld(REST(br, lg), crumbs((HOME, D + L + "/"), (br["nombre"], D + L + "/" + br["slug"])), FAQ_LD(lg, br.get("faq"))))))
         PAGES.append(("facturacion.html", "facturacion.html", "/facturacion",
             dict(id="facturacion", title=T(SEO["facturacion"]["title"]), description=T(SEO["facturacion"]["description"]),
                  ld=crumbs((HOME, D + L + "/"), (("Facturación" if lg == "es" else "Invoicing"), D + L + "/facturacion")))))
@@ -276,7 +280,14 @@ for u, c, p in urls:
     rows.append(f"<url><loc>{D}{u}</loc><lastmod>{today}</lastmod><changefreq>{c}</changefreq><priority>{p}</priority>{al}</url>")
     rows.append(f"<url><loc>{D}{en}</loc><lastmod>{today}</lastmod><changefreq>{c}</changefreq><priority>{p}</priority>{al}</url>")
 open("sitemap.xml", "w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + "\n".join(rows) + "\n</urlset>\n")
-open("robots.txt", "w").write(f"User-agent: *\nAllow: /\nSitemap: {D}/sitemap.xml\n")
+# robots.txt — política GMBH (Estándar SEO 2.0, punto 13): búsqueda y entrenamiento permitidos para los agentes listados; el resto, permitido.
+_bots_busqueda = ["Googlebot", "Bingbot", "OAI-SearchBot", "ChatGPT-User", "PerplexityBot", "Perplexity-User", "Claude-SearchBot", "Claude-User", "Applebot"]
+_bots_entren = ["Google-Extended", "GPTBot", "ClaudeBot", "Applebot-Extended", "CCBot"]
+_r = ["# muburgers.mx — política de rastreo (Estándar SEO GMBH 2.0, punto 13)",
+      "# Búsqueda: permitidos"] + [f"User-agent: {b}" for b in _bots_busqueda] + ["Allow: /", "",
+      "# Entrenamiento de modelos: permitidos"] + [f"User-agent: {b}" for b in _bots_entren] + ["Allow: /", "",
+      "# Resto de agentes", "User-agent: *", "Allow: /", "", f"Sitemap: {D}/sitemap.xml"]
+open("robots.txt", "w").write("\n".join(_r) + "\n")
 # Redirecciones de URLs viejas (Wix): carpeta/index.html con meta refresh 0 + canonical. No van al sitemap.
 import unicodedata
 for r in C.get("redirecciones", []):
