@@ -1,5 +1,4 @@
 {% extends '_base.html' %}
-{% block extra_css %}<link rel="stylesheet" href="/assets/menu.css?v={{ V }}">{% endblock %}
 {% block inline_css %}<style>{{ CSS_PAGES.menu }}</style>{% endblock %}
 {% block body %}
 {{ m.bar('menu', cta='home') }}
@@ -8,7 +7,7 @@
 <div id="intro" class="intro" hidden data-hasta="{{ ESP.hasta }}" data-desde="{{ ESP.desde }}" data-n="{{ ESP_ITEMS|length }}">
   {%- for it in ESP_ITEMS %}
   <div class="one" data-id="{{ it.id }}" hidden>
-    <video muted playsinline preload="{{ 'auto' if loop.first else 'none' }}" poster="{{ vid(it.video,'webp') }}" aria-label="{{ it.n|t }}">
+    <video muted playsinline preload="none" data-poster="{{ vid(it.video,'webp') }}" aria-label="{{ it.n|t }}">
       {%- set wm = vid(it.video,'webm') %}{% if wm %}<source src="{{ wm }}" type="video/webm">{% endif %}
       <source src="{{ vid(it.video,'mp4') }}" type="video/mp4">
     </video>
@@ -68,7 +67,7 @@
       <article class="card item" id="{{ it.id }}" data-reveal>
         <div class="ph">
           {%- if it.video %}
-          <video class="loop" muted playsinline loop autoplay preload="metadata" poster="{{ img(it.foto) }}" aria-label="{{ it.n|t }}">
+          <video class="loop" muted playsinline loop preload="none" poster="{{ img(it.foto) }}" aria-label="{{ it.n|t }}">
             {%- set wm = vid(it.video,'webm') %}{% if wm %}<source src="{{ wm }}" type="video/webm">{% endif %}
             <source src="{{ vid(it.video,'mp4') }}" type="video/mp4">
           </video>
@@ -105,7 +104,7 @@
       {%- for it in s['items'] %}
       <div class="brow item" id="{{ it.id }}" data-reveal>
         <div class="nm">
-          {%- if it.recorte %}<img src="{{ img(it.recorte) }}" alt="" loading="lazy" width="72" height="72">{% endif %}
+          {%- if it.recorte %}<img src="{{ img(it.recorte ~ '-sm') }}" alt="" loading="lazy" width="72" height="72">{% endif %}
           <div>
             <h3>{{ it.n|t }} {{ m.tags(it) }}</h3>
             {%- if it.d %}<p>{{ it.d|t }}</p>{% endif %}

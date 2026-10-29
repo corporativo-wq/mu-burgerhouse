@@ -31,14 +31,12 @@
 <meta name="twitter:image" content="{{ S.dominio }}{{ SEO.og_imagen }}">
 {%- if S.search_console_meta %}
 <meta name="google-site-verification" content="{{ S.search_console_meta }}">{% endif %}
-{%- if INLINE %}
-<style>{{ CSS_SITE }}</style>{% block inline_css %}{% endblock %}
-{%- else %}
+{%- if not INLINE %}
+{%- block preload %}{% endblock %}
 <link rel="preload" href="/assets/fonts/archivo-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/jetbrains-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/site.css?v={{ V }}">
-{%- block extra_css %}{% endblock %}
 {%- endif %}
+<style>{{ CSS_SITE }}</style>{% block inline_css %}{% endblock %}
 {%- if S.ga4_id and not INLINE %}
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ S.ga4_id }}"></script>
