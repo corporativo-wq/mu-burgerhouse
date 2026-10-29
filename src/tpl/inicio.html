@@ -20,7 +20,8 @@
       <span>Playa del Carmen · Cancún</span>
     </div>
     <div class="title">
-      <h1 class="display xl">{{ TX.hero_titulo|t }}</h1>
+      <h1 class="display md h1seo">{{ TX.hero_h1|t }}</h1>
+      <p class="display xl sub">{{ TX.hero_titulo|t }}</p>
       {%- if S.fundacion %}<span class="num mono">{BI:Desde|Since} {{ S.fundacion }}</span>{% endif %}
     </div>
     <div class="stage">
@@ -96,7 +97,7 @@
     </div>
     <div class="cols">
       <div class="pin" id="pin">
-        {%- for it in VITRINA %}<img src="{{ img(it.recorte) }}" alt="" loading="lazy" data-i="{{ loop.index0 }}" class="{{ 'on' if loop.first }}">{% endfor %}
+        {%- for it in VITRINA %}<img src="{{ img(it.recorte) }}" alt="{{ it.n|t }}" loading="lazy" data-i="{{ loop.index0 }}" class="{{ 'on' if loop.first }}">{% endfor %}
       </div>
       <div class="list" id="steps">
         {%- for it in VITRINA %}
@@ -139,6 +140,13 @@
   </section>
 
   <!-- ============ SUCURSALES ============ -->
+  {%- if HIST %}
+  <section class="story wrap" id="historia" data-theme-section="light">
+    <div class="head" data-reveal><h2 class="display lg">{{ HIST.titulo|t }}</h2><span class="mono">{{ ANIOS }} {BI:años|years}</span></div>
+    <p data-reveal>{{ (HIST.texto|t).replace('{anios}', ANIOS|string) }}</p>
+  </section>
+  {%- endif %}
+
   <section class="places wrap" id="sucursales" data-theme-section="light">
     <div class="head" data-reveal>
       <h2 class="display lg">{BI:Sucursales|Locations}</h2>

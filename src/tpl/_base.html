@@ -39,6 +39,17 @@
 <link rel="stylesheet" href="/assets/site.css?v={{ V }}">
 {%- block extra_css %}{% endblock %}
 {%- endif %}
+{%- if S.ga4_id and not INLINE %}
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ S.ga4_id }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ S.ga4_id }}'{{ ", {debug_mode:true}" if false }});
+  if(/[?&]_dbg=1/.test(location.search)){gtag('config','{{ S.ga4_id }}',{debug_mode:true});}
+</script>
+{%- endif %}
 {%- if page.ld %}
 <script type="application/ld+json">{{ page.ld }}</script>{% endif %}
 {%- if not INLINE %}
