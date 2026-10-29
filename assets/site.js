@@ -1,4 +1,3 @@
-(function(){var id='';if(!id||id.indexOf('G-')!==0)return;window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config',id);var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+id;document.head.appendChild(s)})();
 (function(){
 var d=document, b=d.body, root=d.documentElement; root.classList.add('js');
 window.dataLayer=window.dataLayer||[];
