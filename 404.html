@@ -29,8 +29,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-X52288EYX4');
-  if(/[?&]_dbg=1/.test(location.search)){gtag('config','G-X52288EYX4',{debug_mode:true});}
+  gtag('config', 'G-X52288EYX4', /[?&]_dbg=1/.test(location.search) ? {debug_mode: true} : {});
 </script>
 <!-- Meta Pixel · Mu Group -->
 <script>
