@@ -244,7 +244,7 @@ def build(inline=False, outdir=".", links=None):
                      ld=ld(REST(br, lg), crumbs((HOME, D + L + "/"), (br["nombre"], D + L + "/" + br["slug"])), FAQ_LD(lg, br.get("faq"))))))
         PAGES.append(("facturacion.html", "facturacion.html", "/facturacion",
             dict(id="facturacion", title=T(SEO["facturacion"]["title"]), description=T(SEO["facturacion"]["description"]),
-                 ld=crumbs((HOME, D + L + "/"), (("Facturación" if lg == "es" else "Invoicing"), D + L + "/facturacion")))))
+                 ld=ld(crumbs((HOME, D + L + "/"), (("Facturación" if lg == "es" else "Invoicing"), D + L + "/facturacion"))))))
         if lg == "es":
             PAGES.append(("404.html", "404.html", "/404", dict(id="404", title=f'Página no encontrada · {S["nombre"]}', description="Esta página no existe.", robots="noindex,follow", ld=None)))
         for out, tpl, path, page in PAGES:
