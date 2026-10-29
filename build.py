@@ -134,11 +134,27 @@ def ld(*nodes):
 
 # ------------------------------------------------------------------ imágenes
 os.makedirs("img", exist_ok=True); os.makedirs("assets", exist_ok=True)
+# Rendimiento (2026-10-29): las fotos de más de 110 KB se recomprimen a q75 (mismos píxeles) y cada webp tiene una
+# miniatura `-sm` (200 px) para los recortes de las filas del menú (se muestran a 72 px).
+def _stale(dst, srcf): return not os.path.exists(dst) or os.path.getmtime(dst) < os.path.getmtime(srcf)
 for f in os.listdir(f"{SRC}/img"):
-    if f.endswith((".webp", ".png", ".svg")): shutil.copy(f"{SRC}/img/{f}", f"img/{f}")
+    srcf = f"{SRC}/img/{f}"
+    if f.endswith((".png", ".svg")): shutil.copy(srcf, f"img/{f}")
+    elif f.endswith(".webp"):
+        dst = f"img/{f}"
+        if _stale(dst, srcf):
+            if os.path.getsize(srcf) > 110 * 1024:
+                im = Image.open(srcf); im.save(dst, quality=75, method=6)
+                if os.path.getsize(dst) >= os.path.getsize(srcf): shutil.copy(srcf, dst)
+            else: shutil.copy(srcf, dst)
+        sm = f"img/{f[:-5]}-sm.webp"
+        if _stale(sm, srcf):
+            im = Image.open(srcf); im.thumbnail((200, 200), Image.LANCZOS); im.save(sm, quality=80, method=6)
 hero_src = Image.open(f"{SRC}/img/{BY_ID['deseo']['recorte']}.webp").convert("RGBA")
-hero_src.resize((800, int(hero_src.height * 800 / hero_src.width)), Image.LANCZOS).save("img/hero.webp", quality=84, method=6)
-hero_src.save("img/hero-2x.webp", quality=82, method=6)
+# Hero: tres candidatos (800 / 1100 / 1400) con calidad ajustada al LCP móvil (rendimiento, 2026-10-29): el móvil 2-3x toma el de 1100.
+hero_src.resize((800, int(hero_src.height * 800 / hero_src.width)), Image.LANCZOS).save("img/hero.webp", quality=75, method=6)
+hero_src.resize((1100, int(hero_src.height * 1100 / hero_src.width)), Image.LANCZOS).save("img/hero-m.webp", quality=70, method=6)
+hero_src.save("img/hero-2x.webp", quality=75, method=6)
 HERO_H = int(hero_src.height * 800 / hero_src.width)
 for f in ("favicon.png", "apple-touch-icon.png"):
     shutil.copy(f"{SRC}/img/{f}", f)
@@ -228,9 +244,9 @@ def build(inline=False, outdir=".", links=None):
                  DESTACADOS=DESTACADOS, VITRINA=VITRINA, TOTAL=TOTAL, V=V, LANG=lg, L=L, LOGO=Markup(LOGO_SVG), LOGO_DEFS=Markup(LOGO_DEFS), HERO_H=HERO_H,
                  TAGS={"new": {"es": "Nuevo", "en": "New"}}, INLINE=inline, ESP=C.get("especial") or {}, ESP_ITEMS=[BY_ID[i] for i in (C.get("especial") or {}).get("items", []) if i in BY_ID],
                  PB=C["menu"].get("postre_band"), PB_ITEMS=[BY_ID[i] for i in (C["menu"].get("postre_band") or {}).get("items", []) if i in BY_ID],
-                 CSS_SITE=Markup(font_css(True) + css_base) if inline else None,
+                 CSS_SITE=Markup(font_css(inline) + css_base),
                  CSS_PAGES={k: Markup(v) for k, v in css_pages.items()}, JS_SITE=Markup(js_site), JS_PAGES={k: Markup(v) for k, v in js_pages.items()},
-                 img=lambda n: img_url(n, inline), vid=lambda n, e: vid_url(n, e, inline), hero=lambda: (img_url("hero", inline), img_url("hero-2x", inline)),
+                 img=lambda n: img_url(n, inline), vid=lambda n, e: vid_url(n, e, inline), hero=lambda: (img_url("hero", inline), img_url("hero-m", inline), img_url("hero-2x", inline)),
                  HIST=C.get("historia"), ANIOS=ANIOS, MAS_PEDIDOS=[BY_ID[i] for i in C.get("mas_pedidos", []) if i in BY_ID], LINKS=links or {}, REDIR_JSON=Markup(json.dumps({"/" + unicodedata.normalize("NFC", r["de"]): D + r["a"] for r in C.get("redirecciones", [])}, ensure_ascii=False)))
         PAGES = [
             ("index.html", "inicio.html", "/", dict(id="inicio", title=T(SEO["inicio"]["title"]), description=T(SEO["inicio"]["description"]), og_type="website",
@@ -303,7 +319,7 @@ for r in C.get("redirecciones", []):
 open("CNAME", "w").write(HOST + "\n")
 open(".nojekyll", "w").write("")
 for k, v in sizes.items(): print(f"{k:28s} {v/1024:6.1f} KB")
-for k in ["assets/site.css", "assets/inicio.css", "assets/menu.css", "assets/site.js", "assets/inicio.js", "img/hero.webp", "img/hero-2x.webp", "og.jpg"]:
+for k in ["assets/site.css", "assets/inicio.css", "assets/menu.css", "assets/site.js", "assets/inicio.js", "img/hero.webp", "img/hero-m.webp", "img/hero-2x.webp", "og.jpg"]:
     print(f"{k:28s} {os.path.getsize(k)/1024:6.1f} KB")
 
 if PREVIEW:
