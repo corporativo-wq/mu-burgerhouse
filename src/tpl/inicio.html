@@ -11,9 +11,10 @@
 var d=document,l=d.getElementById('loader'),bar=l.querySelector('.bar'),pct=d.getElementById('pct'),p=0,done=false,fin=false;
 d.body.classList.add('locked');
 function finish(){if(fin)return;fin=true;l.classList.add('done');d.body.classList.remove('locked');setTimeout(function(){l.remove();},1000);}
-var t=setInterval(function(){p=done?100:Math.min(p+Math.random()*18,92);bar.style.width=p+'%';pct.textContent=Math.round(p)+'%';if(p>=100){clearInterval(t);setTimeout(finish,120);}},70);
+var hooked=false;
 function ready(){done=true;}
-d.addEventListener('DOMContentLoaded',function(){var i=d.querySelector('#heroimg img');if(!i)return ready();if(i.complete)ready();else{i.addEventListener('load',ready);i.addEventListener('error',ready);}});
+function check(){if(done)return;var i=d.querySelector('#heroimg img');if(!i)return;if(i.complete&&i.naturalWidth)return ready();if(!hooked){hooked=true;i.addEventListener('load',ready);i.addEventListener('error',ready);}}
+var t=setInterval(function(){check();p=done?100:Math.min(p+Math.random()*18,92);bar.style.width=p+'%';pct.textContent=Math.round(p)+'%';if(p>=100){clearInterval(t);setTimeout(finish,120);}},70);
 setTimeout(ready,2500);window.__ld=true;})()</script>
 
 {% call m.bar('inicio') %}
