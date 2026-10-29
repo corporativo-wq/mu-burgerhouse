@@ -13,12 +13,31 @@
       <span>{{ br.ciudad }} · {{ br.codigo }}</span>
     </div>
     <div class="title">
-      <h1 class="display xl">{{ br.nombre }}</h1>
-      {%- if br.calificacion_google %}<span class="rate mono"><a href="{{ br.resenas_url }}" data-ev="review" data-branch="{{ br.slug }}" target="_blank" rel="noopener">★ {{ br.calificacion_google }} · {{ "{:,}".format(br.resenas_google).replace(",", " ") }} {BI:reseñas en Google|Google reviews}</a></span>{% endif %}
+      <h1 class="display xl">{{ br.nombre }}<span class="h1sub"> · {{ (TX.sucursal_h1_sufijo|t).replace('{ciudad}', br.ciudad) }}</span></h1>
+      {%- if br.calificacion_google %}<span class="rate mono"><a href="{{ br.resenas_url }}" data-ev="review" data-branch="{{ br.slug }}" target="_blank" rel="noopener">★ {{ br.calificacion_google }} · {{ (TX.resenas_mas|t).replace('{n}', br.resenas_redondo) }}</a></span>{% endif %}
     </div>
     {{ m.ctas(br, 'hero-ctas') }}
     <div class="base"></div>
   </section>
+
+  {%- if br.texto %}
+  <section class="about wrap" data-theme-section="light">
+    <div class="cols">
+      <div class="txt" data-reveal>
+        {%- for p in br.texto|t %}<p>{{ p }}</p>{% endfor %}
+        {%- if MAS_PEDIDOS %}
+        <h2 class="mono">{{ TX.mas_pedidos_titulo|t }}</h2>
+        <ul class="top">
+          {%- for it in MAS_PEDIDOS %}<li><a href="{{ L }}/menu#{{ it.id }}" data-ev="menu_nav" data-branch="{{ br.slug }}"><strong>{{ it.n|t }}</strong>{% if it.d %} — {{ it.d|t }}{% endif %} <span class="mono">{{ m.price(it) }}</span></a></li>{% endfor %}
+        </ul>{% endif %}
+      </div>
+      {%- if br.fotos %}
+      <div class="pics" data-reveal>
+        {%- for f in br.fotos %}<img src="{{ img(f.img) }}" alt="{{ f.alt|t }}" loading="lazy" width="600" height="750">{% endfor %}
+      </div>{% endif %}
+    </div>
+  </section>
+  {%- endif %}
 
   <section class="info wrap" data-theme-section="light">
     <div class="cols">
@@ -36,7 +55,17 @@
         <div class="ctas">{% for o in br.pedidos %}<a class="btn" data-ev="order_{{ o.id }}" data-branch="{{ br.slug }}" href="{{ o.url }}" target="_blank" rel="noopener">{{ o.nombre }} →</a>{% endfor %}</div>{% endif %}
         <div class="ctas" style="margin-top:18px"><a class="btn" href="{{ L }}/menu" data-ev="menu_nav" data-branch="{{ br.slug }}">{BI:Ver el menú|See the menu} →</a></div>
       </div>
-      <div class="map" data-reveal>{% if INLINE %}<a class="map-ph mono" href="{{ br.maps_url }}" target="_blank" rel="noopener" data-ev="como_llegar" data-branch="{{ br.slug }}">{BI:Mapa · abrir en Google Maps|Map · open in Google Maps} →</a>{% else %}<iframe title="{BI:Mapa|Map} {{ br.nombre_largo }}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="{{ br.maps_embed }}"></iframe>{% endif %}</div>
+      <div class="map" data-reveal>
+        <div class="map-card" data-map="{{ br.maps_embed }}" data-title="{BI:Mapa|Map} {{ br.nombre_largo }}">
+          <span class="mono k">{{ br.ciudad }} · {{ br.codigo }}</span>
+          <strong>{{ br.nombre_largo }}</strong>
+          <span class="addr">{{ br.dir_txt }}</span>
+          <div class="ctas">
+            <button class="btn" type="button" data-map-open>{{ TX.mapa_abrir|t }} →</button>
+            <a class="btn" href="{{ br.maps_url }}" target="_blank" rel="noopener" data-ev="como_llegar" data-branch="{{ br.slug }}">{{ TX.mapa_llegar|t }} →</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -56,10 +85,11 @@
     </div>
   </section>
 
-  {%- if FAQ %}
+  {%- set faqs = br.faq or FAQ %}
+  {%- if faqs %}
   <section class="faq wrap" id="faq" data-theme-section="light">
     <div class="head" data-reveal><h2 class="display lg">{BI:Preguntas frecuentes|FAQ}</h2></div>
-    {%- for f in FAQ %}
+    {%- for f in faqs %}
     <details data-reveal><summary>{{ f.q|t }}</summary><p>{{ f.a|t }}</p></details>
     {%- endfor %}
   </section>
@@ -67,4 +97,5 @@
 
   {{ m.footer() }}
 </main>
+<script>/* mapa: el iframe de Google Maps carga solo al tocar "Ver el mapa" */(function(){document.querySelectorAll('[data-map-open]').forEach(function(b){b.addEventListener('click',function(){var c=b.closest('.map-card'),f=document.createElement('iframe');f.title=c.getAttribute('data-title');f.src=c.getAttribute('data-map');f.setAttribute('referrerpolicy','no-referrer-when-downgrade');c.parentNode.replaceChild(f,c)})})})();</script>
 {% endblock %}
