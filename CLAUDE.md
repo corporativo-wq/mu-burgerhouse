@@ -45,7 +45,24 @@ Los HTML de la raíz y de `en/` se GENERAN: no los edites a mano. Mismo sistema 
 - Sucursal: `texto` (párrafos ES/EN, ~300 palabras con los FAQ), `fotos` (con alt), `faq` propio (FAQPage JSON-LD de las mismas); `mas_pedidos` (ids) se lista en cada sucursal; mapa = tarjeta estática, iframe al tocar; reseñas como "más de N" (`resenas_redondo`).
 - `historia` (portada, años calculados con `sitio.fundacion` + `fundacion_mes`). robots.txt con la política del punto 13 (generado). GA4 estándar en el `<head>` cuando `sitio.ga4_id` tiene valor; `?_dbg=1` activa debug_mode para DebugView.
 - Fuente única: `tools/sheet_to_contenido.py` + `.github/workflows/menu-from-sheet.yml` (Sheet → contenido.json → build → PR; requiere el secret `SHEET_CSV_URL`).
-- Textos marcados [CONFIRMAR] deben confirmarse con Fernando antes de publicar.
+- Publicado en `main` el 2026-10-29 con OK de Fernando (PR #1 cerrado sin fusionar; rama `seo-2` obsoleta). Confirmado por él: estacionamiento
+  Mu 10 y Mu 40 "en la calle", Mu Nichupté "valet parking"; reservaciones "sí, por WhatsApp (grupos grandes, un día antes)".
+- 2026-10-29 (revisión Marketing HQ): el JSON-LD de /facturacion (ES/EN) imprimía el dict de Python; corregido con `ld(crumbs(...))` y publicado.
+- Rendimiento (2026-10-29, publicado con OK de Fernando: PR #2 fusionado + commits "Rendimiento 2/3/4" directos a main):
+  CSS inline en el head (ya no hay `<link rel=stylesheet>`; `assets/*.css` se generan pero no se enlazan); hero en 3 tamaños
+  (800 q75 / 1100 q70 / 1400 q75, `img/hero-m.webp`) + `<link rel=preload as=image>`; miniaturas `-sm` (200 px) para todo webp de
+  `src/img/` (las filas del menú usan `recorte-sm`); fotos >110 KB recomprimidas a q75 al copiar a `img/`; intro del menú con
+  `data-poster` (solo carga el póster que muestra) y videos `.loop` sin autoplay (menu.js los reproduce a la vista); el observador
+  de aparición (`[data-reveal]`) va inline al final del body en `_base.html` (`window.__rv`, site.js solo de respaldo); el loader
+  de la portada va inline en `inicio.html` (`window.__ld`, inicio.js de respaldo) y termina en cuanto el hero cargó.
+  NO poner la clase `js` en el head: deja invisible todo `[data-reveal]` hasta el final del body y hunde FCP/LCP en PSI (probado).
+  PageSpeed móvil tras publicar: menú 89 (LCP 3.8 s); portada 63–73 (LCP 5.5 s: el loader retiene el LCP); sucursal 69 (LCP 5.3 s).
+  Escritorio 93–99. **R24 queda PARCIAL por decisión de marca (Fernando, 2026-10-30): el loader de la portada se conserva** (es de los
+  pocos lugares con logo). Solo se revisa si en Search Console → Métricas web principales la portada pasa a "Necesita mejorar" con datos
+  reales. El loader solo existe en la portada (`inicio.html`); /menu y las sucursales no lo tienen (en el menú solo queda la regla CSS).
+  Terceros (no se retrasan, OF 6): Pixel 225 KiB / ~290 ms de hilo principal; gtag 178 KiB / ~230 ms.
+- Línea base de Search Console (30 oct, Marketing HQ): https://docs.google.com/document/d/1GbtixhS_leybUqz9Y2ynetGZOe0MoYtoHhdSurHDKvQ/edit
+  Search Console de Mu solo tiene datos desde el 28 oct; el seguimiento se hace contra la primera semana completa (2–8 nov). No duplicar.
 
 ## Medición
 Meta Pixel 287356442311515 (Mu Group) en el `<head>` de todas las páginas vía `src/tpl/_base.html` (código de Fernando, sin modificar; no se incluye en `--preview`): PageView + evento `Contact` en cada clic a `wa.me` o `whatsapp.com`. Añadido 2026-10-20. Meta `facebook-domain-verification` solo en el inicio (`page.id == 'inicio'`, ES y EN). El menú lleva botón flotante de WhatsApp (`.wa-float`, mismo enlace `contacto.whatsapp`).
@@ -70,8 +87,11 @@ sitemap `https://muburgers.mx/sitemap.xml` enviado (12 URLs). Bing Webmaster: si
 - Teléfonos: solo los de Mu. WhatsApp general (Wati): +52 984 179 2682 (confirmado por Fernando 2026-10-07; el 984 168 8926 del sitio Wix anterior era incorrecto).
 - Interruptores de la barra: **Noche** (invierte papel/tinta en todo el sitio, se recuerda por dispositivo) en todas las páginas y **Modo loco** solo en el inicio. El logo aparece grande en el hero y se encoge hasta la barra al hacer scroll.
 - Especiales (`contenido.especial`): lista `items` de ids del menú con `video`; el intro del menú muestra uno por visita y los alterna (contador `mu-intro-n` en localStorage), vigencia `desde`/`hasta`. Platillos con `video` usan el loop en la tarjeta. Oct 2026: `diablo` (Diablo Chipotle Burger, 290) y `bloody` (The Bloody Mary, 290; el reel original dice "The Bloody Mu Burger", se cortó en 7.3 s antes del rótulo).
+  2026-10-30 (Fernando): Diablo y Bloody se quedan tras el 2 nov hasta agotar existencias con la etiqueta `tags: ["new","limitada"]`
+  (TAGS en build.py: "Edición limitada · hasta agotar existencias" / "Limited edition · while supplies last"; `.tag.limitada` fondo papel).
+  Cuando Fernando avise que se agotaron: quitarlas del menú (y del JSON-LD, que se genera del menú) y vaciar `especial.items`.
 - GitHub "Upload files" acepta máximo 100 archivos por subida: la carpeta `video/` suele ir en una segunda subida (`/upload/main/video`).
-- Postres (`layout: "postres"`): platillos con `foto` van en tarjetas grandes (2 columnas) con `foto2` (close-up al pasar el mouse / tocar) y `foto_sq` (miniatura); los sin foto, en lista. Fotos de postre con fondo igualado al papel (#f2f0eb) salvo los close-ups. `menu.postre_band` = banda "¿Y de postre?" tras las secciones en `despues_de` (burgers, hotdogs). `solo_en: ["mu-40"]` muestra la etiqueta "Solo Av. 40". Oct 2026: Pay de limón verde y amarillo 85 (la rebanada, solo Av. 40). El Chocoflan (80) se retiró el 2026-10-28; con un solo postre con foto la rejilla usa `.sweets.one`.
+- Postres (`layout: "postres"`): platillos con `foto` van en tarjetas grandes (2 columnas) con `foto2` (close-up al pasar el mouse / tocar) y `foto_sq` (miniatura); los sin foto, en lista. Fotos de postre con fondo igualado al papel (#f2f0eb) salvo los close-ups. `menu.postre_band` = banda "¿Y de postre?" tras las secciones en `despues_de` (burgers, hotdogs). `solo_en: ["mu-40"]` muestra la etiqueta "Solo Av. 40". Oct 2026: Pay de limón verde y amarillo 85 (la rebanada; desde el 2026-10-30 en las 3 sucursales, sin `solo_en`). El Chocoflan (80) se retiró el 2026-10-28; con un solo postre con foto la rejilla usa `.sweets.one`.
 - Torre Mu (juego) se queda en el inicio. Marcador general pendiente de un endpoint propio (`MU_SCORE_API`); mientras, guarda por dispositivo.
 
 ## Datos reales (octubre 2026)
