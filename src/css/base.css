@@ -45,6 +45,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .display.md{font-size:clamp(28px,4.2vw,64px);letter-spacing:-.03em;line-height:.95}
 .tag{display:inline-block;border:1px solid currentColor;padding:3px 7px;border-radius:999px;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;line-height:1.2}
 .tag.new{background:var(--amber);border-color:var(--amber);color:var(--ink)}
+.tag.limitada{background:var(--paper);border-color:var(--paper);color:var(--ink)}
 
 /* ---------- loader ---------- */
 #loader{
