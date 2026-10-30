@@ -728,7 +728,8 @@
               "en": "180 g patty, cheese, bacon and Mu dressing, drenched in chipotle cheese sauce. Halloween special."
             },
             "tags": [
-              "new"
+              "new",
+              "limitada"
             ],
             "foto": "diablo",
             "video": "diablo",
@@ -745,7 +746,8 @@
               "en": "Activated-charcoal black bun, patty stuffed with ranch cream cheese, crispy onion, bacon, gouda and red berry jam. Halloween special."
             },
             "tags": [
-              "new"
+              "new",
+              "limitada"
             ],
             "foto": "bloody",
             "video": "bloody",
@@ -1480,10 +1482,7 @@
             "foto": "pay-limon",
             "foto2": "pay-limon-close",
             "foto_sq": "pay-limon-sq",
-            "id": "pay-limon",
-            "solo_en": [
-              "mu-40"
-            ]
+            "id": "pay-limon"
           },
           {
             "n": {

@@ -242,7 +242,7 @@ def build(inline=False, outdir=".", links=None):
         HOME, MEN = ("Inicio", "Menú") if lg == "es" else ("Home", "Menu")
         G = dict(S=S, SEO=SEO, M=M, R=R, CT=CT, SUC=SUC, MENU=MENU, TX=TX, FAQ=C["faq"], DIAS=DIAS, CARNES=C["carnes"],
                  DESTACADOS=DESTACADOS, VITRINA=VITRINA, TOTAL=TOTAL, V=V, LANG=lg, L=L, LOGO=Markup(LOGO_SVG), LOGO_DEFS=Markup(LOGO_DEFS), HERO_H=HERO_H,
-                 TAGS={"new": {"es": "Nuevo", "en": "New"}}, INLINE=inline, ESP=C.get("especial") or {}, ESP_ITEMS=[BY_ID[i] for i in (C.get("especial") or {}).get("items", []) if i in BY_ID],
+                 TAGS={"new": {"es": "Nuevo", "en": "New"}, "limitada": {"es": "Edición limitada · hasta agotar existencias", "en": "Limited edition · while supplies last"}}, INLINE=inline, ESP=C.get("especial") or {}, ESP_ITEMS=[BY_ID[i] for i in (C.get("especial") or {}).get("items", []) if i in BY_ID],
                  PB=C["menu"].get("postre_band"), PB_ITEMS=[BY_ID[i] for i in (C["menu"].get("postre_band") or {}).get("items", []) if i in BY_ID],
                  CSS_SITE=Markup(font_css(inline) + css_base),
                  CSS_PAGES={k: Markup(v) for k, v in css_pages.items()}, JS_SITE=Markup(js_site), JS_PAGES={k: Markup(v) for k, v in js_pages.items()},
