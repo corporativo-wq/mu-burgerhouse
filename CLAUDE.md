@@ -92,6 +92,8 @@ sitemap `https://muburgers.mx/sitemap.xml` enviado (12 URLs). Bing Webmaster: si
   Cuando Fernando avise que se agotaron: quitarlas del menú (y del JSON-LD, que se genera del menú) y vaciar `especial.items`.
 - GitHub "Upload files" acepta máximo 100 archivos por subida: la carpeta `video/` suele ir en una segunda subida (`/upload/main/video`).
 - Postres (`layout: "postres"`): platillos con `foto` van en tarjetas grandes (2 columnas) con `foto2` (close-up al pasar el mouse / tocar) y `foto_sq` (miniatura); los sin foto, en lista. Fotos de postre con fondo igualado al papel (#f2f0eb) salvo los close-ups. `menu.postre_band` = banda "¿Y de postre?" tras las secciones en `despues_de` (burgers, hotdogs). `solo_en: ["mu-40"]` muestra la etiqueta "Solo Av. 40". Oct 2026: Pay de limón verde y amarillo 85 (la rebanada; desde el 2026-10-30 en las 3 sucursales, sin `solo_en`). El Chocoflan (80) se retiró el 2026-10-28; con un solo postre con foto la rejilla usa `.sweets.one`.
+- Vinos (2026-11-02, Fernando): fuera de temporada la sección "Vino mexicano" lleva solo Sangría tinta (140) y Puerto Nuevo Sauvignon Blanc / Cabernet Malbec (copa 99 / botella 450). Megacero (1490, solo botella) y los demás vinos se quitaron; se vuelven a meter al empezar temporada alta (tarea programada el 1 dic 2026 para recordárselo; esperar su lista y OK).
+- 2026-11-02 (Fernando): Félix 65 → 75 (solo manzana y guayaba). Deseo: "mayo de trufa" en lugar de "salsa secreta Mu" (ES/EN, también en los alt de las fotos de sucursal). "Toronja spritz" y "crema de trufa" no existían en la web (vienen del menú impreso/POS).
 - Torre Mu (juego) se queda en el inicio. Marcador general pendiente de un endpoint propio (`MU_SCORE_API`); mientras, guarda por dispositivo.
 
 ## Datos reales (octubre 2026)
@@ -100,4 +102,4 @@ sitemap `https://muburgers.mx/sitemap.xml` enviado (12 URLs). Bing Webmaster: si
 - Mu Nichupté: Av. Nichupté, SM 51 MZ 51 Lote 11, 77533 Cancún. Mismo horario que Mu 40. Tel +52 998 138 2813. Google 4.5 (2 716).
 - Redes: instagram.com/muburgerhouse · facebook.com/MUBURGERHOUSE · tiktok.com/@muburgerhouse
 - Proteína estimada (por carne cruda, ~18 g/100 g; wagyu ~16 g/100 g): smash ≈17 g, classic cut ≈34 g, wagyu ≈32 g. Big Mu (carne+queso+pan): sencilla ≈29 g, doble ≈50 g, triple ≈70 g. Campos `carnes[].proteina_g` e `items[].proteina`.
-- Fundación: 2017. Menú vigente: octubre 2026 (sin la Burger en Nogada; la Croissant Burger se retiró el 2026-10-01). Precios oct 2026: Hawai 290/390, Deseo 260/390, Mu 2.0 390, Mezcalita/copeo Montelobos 220, Tehuacán 65, Megacero solo botella 1490, Beyond Meat +20.
+- Fundación: 2017. Menú vigente: octubre 2026 (sin la Burger en Nogada; la Croissant Burger se retiró el 2026-10-01). Precios oct 2026: Hawai 290/390, Deseo 260/390, Mu 2.0 390, Mezcalita/copeo Montelobos 220, Tehuacán 65, Félix 75 (desde 2026-11-02), Beyond Meat +20.
