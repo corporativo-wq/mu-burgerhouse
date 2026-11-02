@@ -132,8 +132,8 @@
         {
           "img": "deseo",
           "alt": {
-            "es": "Una hamburguesa llamada Deseo: tocino, hongos salteados, queso fundido y salsa secreta Mu, con papas",
-            "en": "A burger called Deseo: bacon, sautéed mushrooms, melted cheese and Mu secret sauce, with fries"
+            "es": "Una hamburguesa llamada Deseo: tocino, hongos salteados, queso fundido y mayo de trufa, con papas",
+            "en": "A burger called Deseo: bacon, sautéed mushrooms, melted cheese and truffle mayo, with fries"
           }
         },
         {
@@ -287,8 +287,8 @@
         {
           "img": "deseo",
           "alt": {
-            "es": "Una hamburguesa llamada Deseo: tocino, hongos salteados, queso fundido y salsa secreta Mu, con papas",
-            "en": "A burger called Deseo: bacon, sautéed mushrooms, melted cheese and Mu secret sauce, with fries"
+            "es": "Una hamburguesa llamada Deseo: tocino, hongos salteados, queso fundido y mayo de trufa, con papas",
+            "en": "A burger called Deseo: bacon, sautéed mushrooms, melted cheese and truffle mayo, with fries"
           }
         },
         {
@@ -442,8 +442,8 @@
         {
           "img": "deseo",
           "alt": {
-            "es": "Una hamburguesa llamada Deseo: tocino, hongos salteados, queso fundido y salsa secreta Mu, con papas",
-            "en": "A burger called Deseo: bacon, sautéed mushrooms, melted cheese and Mu secret sauce, with fries"
+            "es": "Una hamburguesa llamada Deseo: tocino, hongos salteados, queso fundido y mayo de trufa, con papas",
+            "en": "A burger called Deseo: bacon, sautéed mushrooms, melted cheese and truffle mayo, with fries"
           }
         },
         {
@@ -802,8 +802,8 @@
             },
             "p": 260,
             "d": {
-              "es": "Tocino, hongos salteados, queso fundido y salsa secreta Mu.",
-              "en": "Bacon, sautéed mushrooms, melted cheese and Mu secret sauce."
+              "es": "Tocino, hongos salteados, queso fundido y mayo de trufa.",
+              "en": "Bacon, sautéed mushrooms, melted cheese and truffle mayo."
             },
             "p_nota": {
               "es": "angus / wagyu",
@@ -1755,7 +1755,7 @@
               "es": "Félix (355 ml)",
               "en": "Félix (355 ml)"
             },
-            "p": 65,
+            "p": 75,
             "d": {
               "es": "Manzana, guayaba",
               "en": "Apple, guava"
@@ -1858,22 +1858,6 @@
             },
             "p_texto": "99 / 450",
             "id": "pn-tinto"
-          },
-          {
-            "n": {
-              "es": "Megacero",
-              "en": "Megacero"
-            },
-            "p": 1490,
-            "d": {
-              "es": "Tinto · Encinillas, Chihuahua",
-              "en": "Red · Encinillas, Chihuahua"
-            },
-            "id": "megacero",
-            "p_nota": {
-              "es": "solo botella",
-              "en": "bottle only"
-            }
           }
         ]
       }
