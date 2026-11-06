@@ -568,8 +568,8 @@
       "en": "(A burger called Deseo)"
     },
     "hero_lead": {
-      "es": "Tocino, hongos salteados, queso fundido y salsa secreta Mu. 260 / 390.",
-      "en": "Bacon, sautéed mushrooms, melted cheese and Mu secret sauce. 260 / 390."
+      "es": "Tocino, hongos salteados, queso fundido y mayo de trufa. 260 / 390.",
+      "en": "Bacon, sautéed mushrooms, melted cheese and truffle mayo. 260 / 390."
     },
     "carnes_kicker": {
       "es": "Tú eliges la base",
@@ -724,8 +724,8 @@
             },
             "p": 290,
             "d": {
-              "es": "180 g de carne, queso, tocino y aderezo Mu, bañada en salsa de queso con chipotle. Especial de Halloween.",
-              "en": "180 g patty, cheese, bacon and Mu dressing, drenched in chipotle cheese sauce. Halloween special."
+              "es": "Queso, tocino y salsa secreta Mu, bañada en salsa de queso con chipotle. Especial de Halloween.",
+              "en": "Cheese, bacon and Mu secret sauce, drenched in chipotle cheese sauce. Halloween special."
             },
             "tags": [
               "new",
@@ -780,8 +780,8 @@
             },
             "p": 290,
             "d": {
-              "es": "Piña asada, tocino, queso fundido y salsa de la casa.",
-              "en": "Grilled pineapple, bacon, melted cheese and house sauce."
+              "es": "Piña asada, jamón ahumado, queso cheddar fuerte, mayo trufa.",
+              "en": "Grilled pineapple, smoked ham, sharp cheddar, truffle mayo."
             },
             "p_nota": {
               "es": "angus / wagyu",
@@ -824,8 +824,8 @@
             },
             "p": 250,
             "d": {
-              "es": "Carne angus, queso oaxaca, sobre una chilaca caliente, cebolla parrillada, bañada con nuestra salsa de queso y jalapeño.",
-              "en": "Angus patty, oaxaca cheese, on a hot chilaca pepper, grilled onions, covered in our cheese & jalapeño sauce."
+              "es": "Queso oaxaca, sobre una chilaca caliente, bañada con nuestra salsa de queso y jalapeño. Servida en sartén de hierro fundido.",
+              "en": "Oaxaca cheese, on a hot chilaca pepper, covered in our cheese & jalapeño sauce. Served in a cast-iron skillet."
             },
             "foto": "queseria",
             "id": "queseria"
@@ -899,8 +899,8 @@
             },
             "p": 120,
             "d": {
-              "es": "Arúgula, compota de frutos rojos con chipotle, croquetas de queso de cabra con bites de tocino, mix de nueces.",
-              "en": "Arugula, berry & chipotle compote, goat cheese croquettes with bacon bites, mixed nuts."
+              "es": "Arúgula, compota de frutos rojos con chipotle, croquetas de queso de cabra, mix de nueces.",
+              "en": "Arugula, berry & chipotle compote, goat cheese croquettes, mixed nuts."
             },
             "solo_en": [
               "mu-40",
@@ -995,8 +995,8 @@
             },
             "p": 160,
             "d": {
-              "es": "Costra de dijon, tocino, queso oaxaca, cebolla picada, mayo xcatic.",
-              "en": "Sourdough bun, dijon crust, crunchy bacon, oaxaca cheese, onions, xcatic mayo."
+              "es": "Tocino, queso oaxaca, cebolla picada, mayo xcatic.",
+              "en": "Sourdough bun, crunchy bacon, oaxaca cheese, onions, xcatic mayo."
             },
             "variantes": {
               "smash": 160,
@@ -1029,8 +1029,8 @@
             },
             "p": 185,
             "d": {
-              "es": "Mermelada de tocino, mayo trufa, manchego, cebolla crunch.",
-              "en": "Sourdough bun, bacon jam, truffle mayo, crunchy onions, manchego."
+              "es": "Mermelada de tocino, mayo trufa, cheddar fuerte, cebolla crunch.",
+              "en": "Sourdough bun, bacon jam, truffle mayo, crunchy onions, sharp cheddar."
             },
             "variantes": {
               "smash": 185,
@@ -1046,8 +1046,8 @@
             },
             "p": 250,
             "d": {
-              "es": "New York a la brasa, cheddar, cebolla crunch, BBQ mexa.",
-              "en": "Sourdough bun, grilled ribeye, cheddar, crunchy onions, BBQ mexa."
+              "es": "Rib eye a la brasa, cheddar, cebolla crunch, BBQ mexa.",
+              "en": "Sourdough bun, grilled rib eye, cheddar, crunchy onions, BBQ mexa."
             },
             "variantes": {
               "smash": 250,
@@ -1063,8 +1063,8 @@
             },
             "p": 205,
             "d": {
-              "es": "Compota de frutos rojos/chipotle, mayo trufa, croqueta de queso de cabra y bites de tocino.",
-              "en": "Sourdough bun, berries & chipotle jam, truffle mayo, goat cheese & bacon bites croquette."
+              "es": "Compota de frutos rojos/chipotle, mayo trufa, croqueta de queso de cabra.",
+              "en": "Sourdough bun, berries & chipotle jam, truffle mayo, goat cheese croquette."
             },
             "variantes": {
               "smash": 205,
@@ -1254,8 +1254,8 @@
             },
             "p": 70,
             "d": {
-              "es": "Queso manchego, mayo trufada, cebolla crunchy, parmesano rallado.",
-              "en": "Manchego, truffled mayo, crunchy onions, parmesan."
+              "es": "Queso cheddar fuerte, mayo trufada, cebolla crunchy, parmesano rallado.",
+              "en": "Sharp cheddar, truffled mayo, crunchy onions, parmesan."
             },
             "id": "hd-delicioso"
           }
@@ -1337,13 +1337,13 @@
           },
           {
             "n": {
-              "es": "Quesadillota de New York",
-              "en": "NY big quesadilla"
+              "es": "Quesadillota de carne angus",
+              "en": "Angus beef quesadillota"
             },
             "p": 110,
             "d": {
-              "es": "Tortillota de harina recién hecha, queso oaxaca, NY picado, salsa verde.",
-              "en": "Big fresh flour tortilla, oaxaca cheese, chopped NY, salsa verde."
+              "es": "Tortillota de harina recién hecha, queso oaxaca, carne molida angus, salsa verde.",
+              "en": "Big fresh flour tortilla, oaxaca cheese, angus ground beef, salsa verde."
             },
             "id": "quesadillota"
           }
