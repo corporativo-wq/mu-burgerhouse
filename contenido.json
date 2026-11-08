@@ -9,7 +9,7 @@
     "ga4_id": "G-X52288EYX4",
     "search_console_meta": null,
     "tema": "#0a0a0a",
-    "version_menu": "octubre 2026",
+    "version_menu": "noviembre 2026",
     "fundacion_mes": 10
   },
   "marca": {
@@ -273,12 +273,12 @@
       "resenas_google": 5743,
       "texto": {
         "es": [
-          "Mu 40 es la casa de Mu. Burgerhouse en el centro de Playa del Carmen: 40 Avenida Norte 11, entre las calles 4 y 6. Es la sucursal con más reseñas de las tres y la única con los especiales exclusivos de la Av. 40, como el Pay de limón verde y amarillo. La carta es la misma de siempre: hamburguesas smash, classic cut y wagyu con papas incluidas, Big Mu Cheese Burger, hot dogs, entradas, órdenes de 300 g y el Margarita & Mezcalita Bar.",
+          "Mu 40 es la casa de Mu. Burgerhouse en el centro de Playa del Carmen: 40 Avenida Norte 11, entre las calles 4 y 6. Es la sucursal con más reseñas de las tres y la casa de la burger del mes. La carta es la misma de siempre: hamburguesas smash, classic cut y wagyu con papas incluidas, Big Mu Cheese Burger, hot dogs, entradas, órdenes de 300 g y el Margarita & Mezcalita Bar.",
           "Abre de martes a domingo: martes, miércoles y domingo de 14:00 a 22:00; jueves, viernes y sábado de 14:00 a 23:00. Lunes cerrado. Para llegar, la 40 Avenida es la avenida principal que cruza el centro; la entrada está entre las calles 4 y 6, del lado de la Avenida Juárez. Estacionamiento en la calle, sobre la 40 Avenida.",
           "Es la sucursal de los que viven en Playa: comida de oficina, cena entre semana y las noches de jueves a sábado con coctelería. Para quien no come carne de res están la Olvídate de mí con Beyond Meat (+20) y la No carne, no problem."
         ],
         "en": [
-          "Mu 40 is the Mu. Burgerhouse location in downtown Playa del Carmen: 40 Avenida Norte 11, between Calle 4 and Calle 6. It has the most reviews of the three and it is the only one with the Av. 40 exclusives, such as the green & yellow lemon pie. The menu is the usual one: smash, classic cut and wagyu burgers with fries included, the Big Mu Cheese Burger, hot dogs, starters, 300 g orders and the Margarita & Mezcalita Bar.",
+          "Mu 40 is the Mu. Burgerhouse location in downtown Playa del Carmen: 40 Avenida Norte 11, between Calle 4 and Calle 6. It has the most reviews of the three and it is home to the burger of the month. The menu is the usual one: smash, classic cut and wagyu burgers with fries included, the Big Mu Cheese Burger, hot dogs, starters, 300 g orders and the Margarita & Mezcalita Bar.",
           "Open Tuesday to Sunday: Tuesday, Wednesday and Sunday from 2 pm to 10 pm; Thursday, Friday and Saturday from 2 pm to 11 pm. Closed on Mondays. 40 Avenida is the main avenue across downtown; the entrance is between Calle 4 and Calle 6, on the Avenida Juárez side. Street parking on 40 Avenida.",
           "It is the locals' branch: office lunch, weekday dinner and Thursday-to-Saturday nights with cocktails. If you do not eat beef, there are the Olvídate de mí with Beyond Meat (+20) and the No carne, no problem."
         ]
@@ -649,8 +649,7 @@
   },
   "faq": [],
   "destacados": [
-    "diablo",
-    "bloody",
+    "french-kiss",
     "pay-limon",
     "croquetas",
     "queseria",
@@ -719,39 +718,24 @@
         "items": [
           {
             "n": {
-              "es": "Diablo Chipotle Burger",
-              "en": "Diablo Chipotle Burger"
+              "es": "French Kiss",
+              "en": "French Kiss"
             },
-            "p": 290,
+            "p": 280,
+            "corta": {
+              "es": "La burger de sopa de cebolla francesa.",
+              "en": "Our burger of the month: French onion soup, turned into a burger."
+            },
             "d": {
-              "es": "Queso, tocino y salsa secreta Mu, bañada en salsa de queso con chipotle. Especial de Halloween.",
-              "en": "Cheese, bacon and Mu secret sauce, drenched in chipotle cheese sauce. Halloween special."
+              "es": "Costra de pimienta gorda, cebolla caramelizada 8 horas con vino blanco, queso emmental, alioli de trufa y Dijon, cebollín picado. Se sirve bañada en jugo de sopa de cebolla en la mesa.",
+              "en": "Allspice crust, onions caramelized for 8 hours with white wine, Emmental cheese, truffle & Dijon aioli, chopped chives. Served drenched in onion-soup jus at the table."
             },
             "tags": [
-              "new",
-              "limitada"
+              "mes"
             ],
-            "foto": "diablo",
-            "video": "diablo",
-            "id": "diablo"
-          },
-          {
-            "n": {
-              "es": "The Bloody Mary",
-              "en": "The Bloody Mary"
-            },
-            "p": 290,
-            "d": {
-              "es": "Pan negro con carbón activado, carne rellena de queso crema de rancho, cebolla crispy, tocino, queso gouda y mermelada de frutos rojos. Especial de Halloween.",
-              "en": "Activated-charcoal black bun, patty stuffed with ranch cream cheese, crispy onion, bacon, gouda and red berry jam. Halloween special."
-            },
-            "tags": [
-              "new",
-              "limitada"
-            ],
-            "foto": "bloody",
-            "video": "bloody",
-            "id": "bloody"
+            "foto": "french-kiss",
+            "video": "french-kiss",
+            "id": "french-kiss"
           },
           {
             "n": {
@@ -1887,23 +1871,45 @@
   "_notas_fotos": "Fotos en src/img/*.webp. 'foto' = foto normal; 'recorte' = versión sin fondo. Solo fotos reales.",
   "especial": {
     "activo": true,
-    "desde": "2026-10-08",
-    "hasta": "2026-11-02",
+    "desde": "2026-11-01",
+    "hasta": "2026-11-30",
     "kicker": {
-      "es": "Especial de Halloween · octubre",
-      "en": "Halloween special · October"
+      "es": "Burger del mes · noviembre 2026",
+      "en": "Burger of the month · November 2026"
     },
+    "titulo": {
+      "es": "Burger del mes",
+      "en": "Burger of the month"
+    },
+    "mes": {
+      "es": "Noviembre 2026",
+      "en": "November 2026"
+    },
+    "disponibilidad": {
+      "es": "Solo en Mu 40 (Playa del Carmen), todo noviembre. No está en Mu 10 ni en Mu Nichupté. Mu 40 cierra los lunes.",
+      "en": "Only at Mu 40 (Playa del Carmen), all November. Not available at Mu 10 or Mu Nichupté. Mu 40 is closed on Mondays."
+    },
+    "solo_en": [
+      "mu-40"
+    ],
     "cta": {
       "es": "Ver el menú",
       "en": "See the menu"
+    },
+    "cta_ws": {
+      "es": "Reservar por WhatsApp",
+      "en": "Book on WhatsApp"
+    },
+    "ws_texto": {
+      "es": "Hola Mu, quiero reservar en Mu 40 para probar la French Kiss (burger del mes).",
+      "en": "Hi Mu, I'd like to book a table at Mu 40 to try the French Kiss (burger of the month)."
     },
     "saltar": {
       "es": "Saltar",
       "en": "Skip"
     },
     "items": [
-      "diablo",
-      "bloody"
+      "french-kiss"
     ]
   },
   "redirecciones": [
