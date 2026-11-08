@@ -64,6 +64,15 @@ html[lang="en"] .hours tr.today td:first-child::after{content:" · today"}
 .about .txt{grid-column:1/8}
 .about .txt p{margin:0 0 14px;font-size:clamp(16px,1.3vw,18px);line-height:1.5;max-width:62ch}
 .about .txt h2{margin:22px 0 8px;opacity:.6;font-weight:400}
+.about .mes{border:1px solid var(--line);padding:22px;margin:26px 0 8px;display:flex;flex-direction:column;gap:10px;background:var(--ink);color:var(--ink-on-dark)}
+.about .mes .kicker{color:var(--amber);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.about .mes h2{margin:0;opacity:1;font-weight:600;text-transform:uppercase}
+.about .mes .lead{font-size:clamp(17px,1.4vw,20px);margin:0}
+.about .mes p{margin:0;font-size:15px;opacity:.85}
+.about .mes .row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line-on-dark);padding-top:14px;margin-top:4px}
+.about .mes .price{font-size:14px;margin-right:auto}
+.about .mes .btn{border-color:var(--line-on-dark)}
+.about .mes .btn:hover{background:var(--paper);color:var(--ink)}
 .about .top{list-style:none;margin:0;padding:0}
 .about .top li{border-top:1px solid var(--line-soft);padding:10px 0}
 .about .top a{display:block;line-height:1.4}
