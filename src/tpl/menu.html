@@ -15,9 +15,11 @@
     <div class="txt">
       <span class="mono kicker">{{ ESP.kicker|t }}{% if ESP_ITEMS|length > 1 %} · {{ loop.index }}/{{ ESP_ITEMS|length }}{% endif %}</span>
       <h2 class="display">{{ it.n|t }}</h2>
-      <p>{{ it.d|t|replace(' Especial de Halloween.','')|replace(' Halloween special.','') }}</p>
+      <p>{% if it.corta %}{{ it.corta|t }} {% endif %}{{ it.d|t }}</p>
+      {%- if ESP.disponibilidad %}<p class="mono avail">{{ ESP.disponibilidad|t }}</p>{% endif %}
       <div class="row">
         <span class="mono pr">{{ m.price(it) }} MXN</span>
+        {%- if ESP.cta_ws %}<a class="btn" href="https://wa.me/{{ CT.whatsapp|digits }}?text={{ (ESP.ws_texto|t)|urlencode }}" data-ev="whatsapp" data-branch="{{ ESP.solo_en[0] if ESP.solo_en else '' }}" target="_blank" rel="noopener">{{ ESP.cta_ws|t }} →</a>{% endif %}
         <a class="btn" href="#{{ it.id }}" data-intro-close data-ev="menu_nav">{{ ESP.cta|t }} →</a>
       </div>
       <div class="bar"><i></i></div>
@@ -80,7 +82,9 @@
           <h3>{{ it.n|t }}</h3>
           <span class="price">{{ m.price(it) }}{% if it.p_nota %}<span class="pn mono">{{ it.p_nota|t }}</span>{% endif %}</span>
         </div>
-        {%- if it.d %}<p>{{ it.d|t }}</p>{% endif %}
+        {%- if it.d %}<p>{% if it.corta %}<strong>{{ it.corta|t }}</strong> {% endif %}{{ it.d|t }}</p>{% endif %}
+        {%- if ESP.activo and it.id in (ESP['items'] or []) and ESP.disponibilidad %}<p class="mono avail">{{ ESP.disponibilidad|t }}</p>
+        <div class="ctas"><a class="btn" href="https://wa.me/{{ CT.whatsapp|digits }}?text={{ (ESP.ws_texto|t)|urlencode }}" data-ev="whatsapp" data-branch="{{ ESP.solo_en[0] if ESP.solo_en else '' }}" target="_blank" rel="noopener">{{ ESP.cta_ws|t }} →</a></div>{% endif %}
       </article>
       {%- endfor %}
     </div>
@@ -131,7 +135,9 @@
           <h3>{{ it.n|t }}</h3>
           <span class="price big">{{ m.price(it) }}{% if it.p_nota %}<span class="pn mono">{{ it.p_nota|t }}</span>{% endif %}</span>
         </div>
-        {%- if it.d %}<p>{{ it.d|t }}</p>{% endif %}
+        {%- if it.d %}<p>{% if it.corta %}<strong>{{ it.corta|t }}</strong> {% endif %}{{ it.d|t }}</p>{% endif %}
+        {%- if ESP.activo and it.id in (ESP['items'] or []) and ESP.disponibilidad %}<p class="mono avail">{{ ESP.disponibilidad|t }}</p>
+        <div class="ctas"><a class="btn" href="https://wa.me/{{ CT.whatsapp|digits }}?text={{ (ESP.ws_texto|t)|urlencode }}" data-ev="whatsapp" data-branch="{{ ESP.solo_en[0] if ESP.solo_en else '' }}" target="_blank" rel="noopener">{{ ESP.cta_ws|t }} →</a></div>{% endif %}
       </article>
       {%- endfor %}
     </div>

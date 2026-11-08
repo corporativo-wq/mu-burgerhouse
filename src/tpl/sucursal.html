@@ -24,6 +24,20 @@
     <div class="cols">
       <div class="txt" data-reveal>
         {%- for p in br.texto|t %}<p>{{ p }}</p>{% endfor %}
+        {%- set MES = ESP_ITEMS[0] if (ESP.activo and ESP_ITEMS and ESP.solo_en and br.slug in ESP.solo_en) else none %}
+        {%- if MES %}
+        <aside class="mes" data-reveal>
+          <span class="mono kicker">{{ ESP.kicker|t }} · {BI:solo aquí|only here}</span>
+          <h2 class="display md">{{ MES.n|t }}</h2>
+          {%- if MES.corta %}<p class="lead">{{ MES.corta|t }}</p>{% endif %}
+          <p>{{ MES.d|t }}</p>
+          <div class="row">
+            <span class="price mono">{{ m.price(MES) }} MXN</span>
+            <a class="btn" href="https://wa.me/{{ br.whatsapp|digits }}?text={{ (ESP.ws_texto|t)|urlencode }}" data-ev="whatsapp" data-branch="{{ br.slug }}" target="_blank" rel="noopener">{{ ESP.cta_ws|t }} →</a>
+            <a class="btn" href="{{ L }}/menu#{{ MES.id }}" data-ev="menu_nav" data-branch="{{ br.slug }}">{{ ESP.cta|t }} →</a>
+          </div>
+        </aside>
+        {%- endif %}
         {%- if MAS_PEDIDOS %}
         <h2 class="mono">{{ TX.mas_pedidos_titulo|t }}</h2>
         <ul class="top">
